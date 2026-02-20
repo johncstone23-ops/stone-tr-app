@@ -1,36 +1,9 @@
 
 const STORE_KEY = "stone_tr_local_v2";
-const PLAN_URL = "assets/plan.json";
-const EX_URL = "assets/exercises.json";
+const PLAN_URL = "./assets/plan.json";
+const EX_URL = "./assets/exercises.json";
 let PLAN=null;
 let EX=null;
-
-function assetUrl(rel){
-  // Resolves correctly whether you're at /stone-tr-app/ or /stone-tr-app/index.html
-  return new URL(rel, window.location.href).toString();
-}
-
-function fatal(message, err){
-  const view=document.getElementById('view');
-  const details = err ? (err.stack || err.toString()) : '';
-  const href = window.location.href;
-  view.innerHTML = `
-    <section class="card errorbox">
-      <div class="h1">App failed to load</div>
-      <div class="small">${message}</div>
-      <div class="h2">Quick checks</div>
-      <ul class="list">
-        <li>Make sure <b>index.html</b>, <b>app.js</b>, <b>service-worker.js</b>, <b>styles.css</b>, and the <b>assets</b> folder are in the GitHub Pages folder (root or /docs).</li>
-        <li>Open these in your browser and confirm they do <b>not</b> 404: <span class="pill">/assets/plan.json</span>, <span class="pill">/assets/exercises.json</span>.</li>
-        <li>Clear site storage + unregister Service Worker, then reload.</li>
-      </ul>
-      <div class="h2">Location</div>
-      <div class="code">${href}</div>
-      ${details ? `<div class="h2">Error details</div><div class="code">${details.replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;')}</div>`:''}
-    </section>
-  `;
-  console.error('StoneTR fatal:', message, err);
-}
 
 function loadStore(){
   try{
@@ -71,6 +44,33 @@ function ensureKey(dateISO){
   if(!(dateISO in STORE.intensity)) STORE.intensity[dateISO]="";
 }
 
+function blankScreenWatchdog(){
+  // If something fails after load (cached SW serving old files, JSON mismatch, etc.), don't stay blank.
+  setTimeout(()=>{
+    const view = document.getElementById("view");
+    if(!view) return;
+    // If there is no card/h1 content rendered, show guidance.
+    const hasContent = view.querySelector(".card, h1, .h1, table, canvas, textarea, ul");
+    if(!hasContent){
+      view.innerHTML = `
+        <section class="card errorbox">
+          <div class="h1">Nothing rendered</div>
+          <div class="small">This usually means a cached Service Worker is still serving an older broken build, or the plan/exercise JSON failed to load/parse.</div>
+          <div class="h2">Fix</div>
+          <ul class="list">
+            <li>Hard refresh: Ctrl+Shift+R (desktop) or pull-to-refresh twice (mobile).</li>
+            <li>Chrome Android: Settings → Site settings → Storage → clear for johncstone23-ops.github.io</li>
+            <li>Remove the home-screen app and re-add after clearing storage.</li>
+            <li>Verify these URLs load (no 404): <span class="pill">/stone-tr-app/assets/plan.json</span> and <span class="pill">/stone-tr-app/app.js</span></li>
+          </ul>
+          <div class="h2">Build</div>
+          <div class="code">v=20260220042400</div>
+        </section>
+      `;
+    }
+  }, 900);
+}
+
 function ensureWarmupKey(dateISO){
   if(!STORE.warmups) STORE.warmups = {};
   if(!(dateISO in STORE.warmups)) STORE.warmups[dateISO] = {};
@@ -102,29 +102,18 @@ function renderWarmupChecklist(day){
 }
 
 async function init(){
-  try{
-    PLAN = await fetch(assetUrl(PLAN_URL), {cache:"no-cache"}).then(r=>{
-      if(!r.ok) throw new Error(`Failed to load plan.json (HTTP ${r.status})`);
-      return r.json();
-    });
-    EX = await fetch(assetUrl(EX_URL), {cache:"no-cache"}).then(r=>{
-      if(!r.ok) throw new Error(`Failed to load exercises.json (HTTP ${r.status})`);
-      return r.json();
-    }).catch(()=>({exercises:[]}));
-    registerSW();
-    wireTabs();
-    render("today");
-    document.getElementById("exportBtn").addEventListener("click", exportData);
-    document.getElementById("importFile").addEventListener("change", importData);
-  }catch(err){
-    // Try to still register SW so a later refresh can recover after you fix files.
-    try{ registerSW(); }catch{}
-    fatal("Could not load required assets (plan/exercises). This is usually a GitHub Pages path/layout issue or a cached old Service Worker.", err);
-  }
+  PLAN = await fetch(PLAN_URL).then(r=>r.json());
+  EX = await fetch(EX_URL).then(r=>r.json()).catch(()=>({exercises:[]}));
+  registerSW();
+  wireTabs();
+  render("today");
+    blankScreenWatchdog();
+  document.getElementById("exportBtn").addEventListener("click", exportData);
+  document.getElementById("importFile").addEventListener("change", importData);
 }
 function registerSW(){
   if("serviceWorker" in navigator){
-    navigator.serviceWorker.register("./service-worker.js").catch(()=>{});
+    navigator.serviceWorker.register("./service-worker.js?v=20260220042913").catch(()=>{});
   }
 }
 function wireTabs(){
@@ -217,6 +206,8 @@ function renderToday(){
   }).join("");
 
   const tiredBtn = `<button class="btn warn" id="tiredBtn">Tired / short on time</button>`;
+  const ssUrl = "https://www.youtube.com/watch?v=booDFgeuN6Y";
+  const showSS = (STORE.choice[day.date]||"").includes("Simple & Sinister");
 
   return `
     <section class="card">
@@ -240,6 +231,7 @@ function renderToday(){
           <select id="choice">${opt}</select>
         </label>
         ${tiredBtn}
+        ${showSS ? `<a class="ghost" id="ssLink" href="${ssUrl}" target="_blank" rel="noopener">S&amp;S follow-along video</a>` : ``}
         <button class="btn secondary" id="jumpLogs">Open Logs</button>
       </div>
 
