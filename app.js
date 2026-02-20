@@ -1,9 +1,35 @@
 
 const STORE_KEY = "stone_tr_local_v2";
-const PLAN_URL = "./assets/plan.json";
-const EX_URL = "./assets/exercises.json";
+const PLAN_URL = "assets/plan.json";
+const EX_URL = "assets/exercises.json";
 let PLAN=null;
 let EX=null;
+
+function assetUrl(rel){
+  return new URL(rel, window.location.href).toString();
+}
+
+function fatal(message, err){
+  const view=document.getElementById('view');
+  const details = err ? (err.stack || err.toString()) : '';
+  const href = window.location.href;
+  view.innerHTML = `
+    <section class="card errorbox">
+      <div class="h1">App failed to load</div>
+      <div class="small">${message}</div>
+      <div class="h2">Quick checks</div>
+      <ul class="list">
+        <li>Confirm these URLs load (no 404): <span class="pill">/stone-tr-app/assets/plan.json</span> and <span class="pill">/stone-tr-app/assets/exercises.json</span></li>
+        <li>Make sure <b>assets/</b> folder is uploaded at the same level as <b>index.html</b>.</li>
+        <li>If you previously installed the app: remove it, clear site storage, then re-add.</li>
+      </ul>
+      <div class="h2">Location</div>
+      <div class="code">${href}</div>
+      ${details ? `<div class="h2">Error details</div><div class="code">${details.replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;')}</div>`:''}
+    </section>
+  `;
+  console.error('StoneTR fatal:', message, err);
+}
 
 function loadStore(){
   try{
@@ -191,18 +217,29 @@ function renderWarmupChecklist(day){
 }
 
 async function init(){
-  PLAN = await fetch(PLAN_URL).then(r=>r.json());
-  EX = await fetch(EX_URL).then(r=>r.json()).catch(()=>({exercises:[]}));
-  registerSW();
-  wireTabs();
-  render("today");
+  try{
+    PLAN = await fetch(assetUrl(PLAN_URL), {cache:"no-cache"}).then(r=>{
+      if(!r.ok) throw new Error(`Failed to load plan.json (HTTP ${r.status})`);
+      return r.json();
+    });
+    EX = await fetch(assetUrl(EX_URL), {cache:"no-cache"}).then(r=>{
+      if(!r.ok) throw new Error(`Failed to load exercises.json (HTTP ${r.status})`);
+      return r.json();
+    }).catch(()=>({exercises:[]}));
+    registerSW();
+    wireTabs();
+    render("today");
     blankScreenWatchdog();
-  document.getElementById("exportBtn").addEventListener("click", exportData);
-  document.getElementById("importFile").addEventListener("change", importData);
+    document.getElementById("exportBtn").addEventListener("click", exportData);
+    document.getElementById("importFile").addEventListener("change", importData);
+  }catch(err){
+    try{ registerSW(); }catch{}
+    fatal("Could not load required assets. This is usually a GitHub Pages folder/path issue or an old cached Service Worker.", err);
+  }
 }
 function registerSW(){
   if("serviceWorker" in navigator){
-    navigator.serviceWorker.register("./service-worker.js?v=20260220045217").catch(()=>{});
+    navigator.serviceWorker.register("./service-worker.js?v=20260220045909").catch(()=>{});
   }
 }
 function wireTabs(){
