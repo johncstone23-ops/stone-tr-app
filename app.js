@@ -113,7 +113,7 @@ async function init(){
 }
 function registerSW(){
   if("serviceWorker" in navigator){
-    navigator.serviceWorker.register("./service-worker.js?v=20260220042913").catch(()=>{});
+    navigator.serviceWorker.register("./service-worker.js?v=20260220043721").catch(()=>{});
   }
 }
 function wireTabs(){
@@ -207,7 +207,7 @@ function renderToday(){
 
   const tiredBtn = `<button class="btn warn" id="tiredBtn">Tired / short on time</button>`;
   const ssUrl = "https://www.youtube.com/watch?v=booDFgeuN6Y";
-  const showSS = (STORE.choice[day.date]||"").includes("Simple & Sinister");
+  const showSS = (t.programOptions||[]).some(o => (o||"").includes("Simple & Sinister"));
 
   return `
     <section class="card">
@@ -475,7 +475,18 @@ function postWire(tab){
       const b=document.getElementById("save"); b.textContent="Saved"; setTimeout(()=>b.textContent="Save",700);
     });
 
-    document.getElementById("prev").addEventListener("click", ()=>jump(day.date, -1));
+    
+    // Program dropdown: save + re-render on change so helper links (S&S) appear immediately
+    const choiceEl = document.getElementById("choice");
+    if(choiceEl){
+      choiceEl.addEventListener("change", ()=>{
+        STORE.choice[day.date] = choiceEl.value || "Base plan (as written)";
+        saveStore();
+        render("today");
+      });
+    }
+
+document.getElementById("prev").addEventListener("click", ()=>jump(day.date, -1));
     document.getElementById("next").addEventListener("click", ()=>jump(day.date, +1));
     document.getElementById("todayBtn").addEventListener("click", ()=>{ STORE.focusDate=todayISO(); saveStore(); render("today"); });
 
