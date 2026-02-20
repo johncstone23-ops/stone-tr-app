@@ -42,6 +42,7 @@ function ensureKey(dateISO){
   if(!(dateISO in STORE.choice)) STORE.choice[dateISO]="Base plan (as written)";
   if(!(dateISO in STORE.rpe)) STORE.rpe[dateISO]="";
   if(!(dateISO in STORE.intensity)) STORE.intensity[dateISO]="";
+}
 
 function ensureWarmupKey(dateISO){
   if(!STORE.warmups) STORE.warmups = {};
@@ -71,7 +72,6 @@ function renderWarmupChecklist(day){
       <div class="small" style="margin-top:8px">Peloton classes include a warm-up, but still do 60–90 seconds of easy joint prep first. Run workouts already include a longer warm-up when specified.</div>
     </section>
   `;
-}
 }
 
 async function init(){
