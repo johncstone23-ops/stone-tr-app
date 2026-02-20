@@ -1,0 +1,2493 @@
+{
+  "startDate": "2026-02-17",
+  "days": [
+    {
+      "day": "Tuesday",
+      "shift": "Off (possible day OT)",
+      "code": "C",
+      "date": "2026-02-17",
+      "week": 1,
+      "template": {
+        "title": "Conditioning (run/walk or bike intervals) + grip/core",
+        "good": [
+          "Peloton Low Impact 20 min + 5 min core",
+          "OR Run/Walk 20 min (1 min run / 1 min walk)"
+        ],
+        "better": [
+          "Run: warm-up 8 min; 8 rounds 30s hard / 90s easy; cool-down 5 min",
+          "Grip: farmer holds 4x30-45s",
+          "Core: dead bug 2x8/side + side plank 2x25s/side"
+        ],
+        "best": [
+          "Peloton Intervals 30-45 min OR Run: 6x2 min hard / 2 min easy",
+          "Grip: towel hangs 4x15-25s (or heavy holds)",
+          "Mobility 8 min"
+        ],
+        "programOptions": [
+          "Base plan (as written)",
+          "P90X3: Agility X / Accelerator / CVX",
+          "Insanity: Cardio Recovery (Week 1-2 friendly)",
+          "Insanity: Core Cardio & Balance (Week 3+)",
+          "P90X: Plyometrics (Week 4+; only 1 plyo/week)"
+        ]
+      }
+    },
+    {
+      "day": "Wednesday",
+      "shift": "Double 07:00-23:00",
+      "code": "MOB",
+      "date": "2026-02-18",
+      "week": 1,
+      "template": {
+        "title": "Mobility / recovery (Wednesday double)",
+        "good": [
+          "5-10 min: couch stretch 60s/side + calves 60s/side + open books 8/side"
+        ],
+        "better": [
+          "10-20 min mobility flow + 2 min nasal breathing (long exhales)"
+        ],
+        "best": [
+          "20-30 min easy walk/ride + 10 min mobility"
+        ],
+        "programOptions": [
+          "Base mobility (as written)",
+          "P90X: X Stretch",
+          "P90X3: Dynamix",
+          "P90X2: Recovery + Mobility"
+        ]
+      }
+    },
+    {
+      "day": "Thursday",
+      "shift": "09:00-17:00",
+      "code": "SB",
+      "date": "2026-02-19",
+      "week": 1,
+      "template": {
+        "title": "Strength B (squat + pull + carries/sandbag)",
+        "good": [
+          "Goblet squat: 3x8 (44 lb)",
+          "Pull-ups: 4x2 (band-assisted ok)",
+          "Suitcase carry: 3x40s/side",
+          "Quick stretch"
+        ],
+        "better": [
+          "Goblet squat: 5x8 (44-53)",
+          "DB RDL: 4x10",
+          "Pull-ups: 5 sets (leave 1 rep in tank)",
+          "Sandbag bear-hug carry: 4x40-60s (50-60 lb)"
+        ],
+        "best": [
+          "DB front squat (or heavy goblet): 5x6",
+          "DB RDL: 5x8 heavier",
+          "Pull-ups: 6 sets of 2-4",
+          "Sandbag carry density 10 min (40-60s carry / 40-60s rest)"
+        ],
+        "programOptions": [
+          "Base plan (as written)",
+          "Simple & Sinister (scaled) + Carry Finisher",
+          "P90X3: Eccentric Lower (be cautious first time)",
+          "P90X: Legs & Back (Week 4+)"
+        ]
+      }
+    },
+    {
+      "day": "Friday",
+      "shift": "15:00-23:00",
+      "code": "R",
+      "date": "2026-02-20",
+      "week": 1,
+      "template": {
+        "title": "Zone 2 (ruck or easy ride) + mobility",
+        "good": [
+          "Ruck 20 lb: 20-30 min easy OR easy ride 20-30 min",
+          "Stretch calves/hips 5 min"
+        ],
+        "better": [
+          "Ruck 20 lb: 40-60 min Zone 2 (conversational pace)",
+          "Foot check + calf stretch"
+        ],
+        "best": [
+          "Ruck 20-30 lb: 60-75 min if joints/feet feel great",
+          "OR 45 min Zone 2 ride + 10 min mobility"
+        ],
+        "programOptions": [
+          "Base plan (as written)",
+          "P90X3: Dynamix (after ruck)",
+          "P90X: X Stretch (after ruck)"
+        ]
+      }
+    },
+    {
+      "day": "Saturday",
+      "shift": "Off",
+      "code": "TAC",
+      "date": "2026-02-21",
+      "week": 1,
+      "template": {
+        "title": "Tactical circuit (mixed modal) + sandbag finisher + pull-ups",
+        "good": [
+          "2 rounds easy: 10 swings (35), 8 goblet squats (35), 8 push-ups, 40s suitcase carry/side",
+          "Mobility 5 min"
+        ],
+        "better": [
+          "AMRAP 18-20 min: 12 swings (44), 8 DB push press, 10 rows total, 8 step-ups/burpees (scaled)",
+          "Sandbag carry density 8 min (50-60 lb)"
+        ],
+        "best": [
+          "5 rounds: 90s hard (sandbag carry + swings) / 90s easy walk",
+          "Pull-ups EMOM 10 min: 2-3 reps",
+          "Sandbag carry density 10 min (60-80 lb if solid)"
+        ],
+        "programOptions": [
+          "Base plan (as written)",
+          "P90X: Kenpo X + sandbag carry",
+          "P90X3: MMX / The Warrior",
+          "Insanity: Pure Cardio (Week 5+)"
+        ]
+      }
+    },
+    {
+      "day": "Sunday",
+      "shift": "15:00-23:00",
+      "code": "REC",
+      "date": "2026-02-22",
+      "week": 1,
+      "template": {
+        "title": "Recovery + readiness (Sunday before 15:00-23:00 shift)",
+        "good": [
+          "8-12 min mobility + 2 min breathing"
+        ],
+        "better": [
+          "10-15 min easy walk + mobility"
+        ],
+        "best": [
+          "20-30 min easy ride/walk + mobility (stop before fatigue)"
+        ],
+        "programOptions": [
+          "Base recovery (as written)",
+          "Insanity: Cardio Recovery",
+          "P90X3: Dynamix",
+          "P90X: X Stretch"
+        ]
+      }
+    },
+    {
+      "day": "Monday",
+      "shift": "Off",
+      "code": "SA",
+      "date": "2026-02-23",
+      "week": 1,
+      "template": {
+        "title": "Strength A (hinge + push + pull + core)",
+        "good": [
+          "KB swings: 5x10 (35-44 lb), rest 60s",
+          "Push-ups: 3x8-12 (stop 2 reps before failure)",
+          "1-arm DB row: 3x10/side",
+          "2 min breathing + quick stretch"
+        ],
+        "better": [
+          "Swings EMOM 8 min: 10 swings/min (35-44)",
+          "DB floor press: 4x8 (RPE ~7)",
+          "1-arm DB row: 4x10/side",
+          "Plank 2x45s + side plank 2x30s/side"
+        ],
+        "best": [
+          "Pull-ups: 5x2-3 strict (or band-assisted)",
+          "Swings EMOM 10 min: 10 swings/min (44-53)",
+          "DB floor press: 5x6 heavier",
+          "Farmer carry: 3-4 rounds x 40-60s"
+        ],
+        "programOptions": [
+          "Base plan (as written)",
+          "Simple & Sinister (scaled)",
+          "P90X3: Total Synergistics",
+          "P90X3: The Challenge",
+          "P90X: Chest & Back (Week 3+)"
+        ]
+      }
+    },
+    {
+      "day": "Tuesday",
+      "shift": "Off (possible day OT)",
+      "code": "C",
+      "date": "2026-02-24",
+      "week": 2,
+      "template": {
+        "title": "Conditioning (run/walk or bike intervals) + grip/core",
+        "good": [
+          "Peloton Low Impact 20 min + 5 min core",
+          "OR Run/Walk 20 min (1 min run / 1 min walk)"
+        ],
+        "better": [
+          "Run: warm-up 8 min; 8 rounds 30s hard / 90s easy; cool-down 5 min",
+          "Grip: farmer holds 4x30-45s",
+          "Core: dead bug 2x8/side + side plank 2x25s/side"
+        ],
+        "best": [
+          "Peloton Intervals 30-45 min OR Run: 6x2 min hard / 2 min easy",
+          "Grip: towel hangs 4x15-25s (or heavy holds)",
+          "Mobility 8 min"
+        ],
+        "programOptions": [
+          "Base plan (as written)",
+          "P90X3: Agility X / Accelerator / CVX",
+          "Insanity: Cardio Recovery (Week 1-2 friendly)",
+          "Insanity: Core Cardio & Balance (Week 3+)",
+          "P90X: Plyometrics (Week 4+; only 1 plyo/week)"
+        ]
+      }
+    },
+    {
+      "day": "Wednesday",
+      "shift": "Double 07:00-23:00",
+      "code": "MOB",
+      "date": "2026-02-25",
+      "week": 2,
+      "template": {
+        "title": "Mobility / recovery (Wednesday double)",
+        "good": [
+          "5-10 min: couch stretch 60s/side + calves 60s/side + open books 8/side"
+        ],
+        "better": [
+          "10-20 min mobility flow + 2 min nasal breathing (long exhales)"
+        ],
+        "best": [
+          "20-30 min easy walk/ride + 10 min mobility"
+        ],
+        "programOptions": [
+          "Base mobility (as written)",
+          "P90X: X Stretch",
+          "P90X3: Dynamix",
+          "P90X2: Recovery + Mobility"
+        ]
+      }
+    },
+    {
+      "day": "Thursday",
+      "shift": "09:00-17:00",
+      "code": "SB",
+      "date": "2026-02-26",
+      "week": 2,
+      "template": {
+        "title": "Strength B (squat + pull + carries/sandbag)",
+        "good": [
+          "Goblet squat: 3x8 (44 lb)",
+          "Pull-ups: 4x2 (band-assisted ok)",
+          "Suitcase carry: 3x40s/side",
+          "Quick stretch"
+        ],
+        "better": [
+          "Goblet squat: 5x8 (44-53)",
+          "DB RDL: 4x10",
+          "Pull-ups: 5 sets (leave 1 rep in tank)",
+          "Sandbag bear-hug carry: 4x40-60s (50-60 lb)"
+        ],
+        "best": [
+          "DB front squat (or heavy goblet): 5x6",
+          "DB RDL: 5x8 heavier",
+          "Pull-ups: 6 sets of 2-4",
+          "Sandbag carry density 10 min (40-60s carry / 40-60s rest)"
+        ],
+        "programOptions": [
+          "Base plan (as written)",
+          "Simple & Sinister (scaled) + Carry Finisher",
+          "P90X3: Eccentric Lower (be cautious first time)",
+          "P90X: Legs & Back (Week 4+)"
+        ]
+      }
+    },
+    {
+      "day": "Friday",
+      "shift": "15:00-23:00",
+      "code": "R",
+      "date": "2026-02-27",
+      "week": 2,
+      "template": {
+        "title": "Zone 2 (ruck or easy ride) + mobility",
+        "good": [
+          "Ruck 20 lb: 20-30 min easy OR easy ride 20-30 min",
+          "Stretch calves/hips 5 min"
+        ],
+        "better": [
+          "Ruck 20 lb: 40-60 min Zone 2 (conversational pace)",
+          "Foot check + calf stretch"
+        ],
+        "best": [
+          "Ruck 20-30 lb: 60-75 min if joints/feet feel great",
+          "OR 45 min Zone 2 ride + 10 min mobility"
+        ],
+        "programOptions": [
+          "Base plan (as written)",
+          "P90X3: Dynamix (after ruck)",
+          "P90X: X Stretch (after ruck)"
+        ]
+      }
+    },
+    {
+      "day": "Saturday",
+      "shift": "Off",
+      "code": "TAC",
+      "date": "2026-02-28",
+      "week": 2,
+      "template": {
+        "title": "Tactical circuit (mixed modal) + sandbag finisher + pull-ups",
+        "good": [
+          "2 rounds easy: 10 swings (35), 8 goblet squats (35), 8 push-ups, 40s suitcase carry/side",
+          "Mobility 5 min"
+        ],
+        "better": [
+          "AMRAP 18-20 min: 12 swings (44), 8 DB push press, 10 rows total, 8 step-ups/burpees (scaled)",
+          "Sandbag carry density 8 min (50-60 lb)"
+        ],
+        "best": [
+          "5 rounds: 90s hard (sandbag carry + swings) / 90s easy walk",
+          "Pull-ups EMOM 10 min: 2-3 reps",
+          "Sandbag carry density 10 min (60-80 lb if solid)"
+        ],
+        "programOptions": [
+          "Base plan (as written)",
+          "P90X: Kenpo X + sandbag carry",
+          "P90X3: MMX / The Warrior",
+          "Insanity: Pure Cardio (Week 5+)"
+        ]
+      }
+    },
+    {
+      "day": "Sunday",
+      "shift": "15:00-23:00",
+      "code": "REC",
+      "date": "2026-03-01",
+      "week": 2,
+      "template": {
+        "title": "Recovery + readiness (Sunday before 15:00-23:00 shift)",
+        "good": [
+          "8-12 min mobility + 2 min breathing"
+        ],
+        "better": [
+          "10-15 min easy walk + mobility"
+        ],
+        "best": [
+          "20-30 min easy ride/walk + mobility (stop before fatigue)"
+        ],
+        "programOptions": [
+          "Base recovery (as written)",
+          "Insanity: Cardio Recovery",
+          "P90X3: Dynamix",
+          "P90X: X Stretch"
+        ]
+      }
+    },
+    {
+      "day": "Monday",
+      "shift": "Off",
+      "code": "SA",
+      "date": "2026-03-02",
+      "week": 2,
+      "template": {
+        "title": "Strength A (hinge + push + pull + core)",
+        "good": [
+          "KB swings: 5x10 (35-44 lb), rest 60s",
+          "Push-ups: 3x8-12 (stop 2 reps before failure)",
+          "1-arm DB row: 3x10/side",
+          "2 min breathing + quick stretch"
+        ],
+        "better": [
+          "Swings EMOM 8 min: 10 swings/min (35-44)",
+          "DB floor press: 4x8 (RPE ~7)",
+          "1-arm DB row: 4x10/side",
+          "Plank 2x45s + side plank 2x30s/side"
+        ],
+        "best": [
+          "Pull-ups: 5x2-3 strict (or band-assisted)",
+          "Swings EMOM 10 min: 10 swings/min (44-53)",
+          "DB floor press: 5x6 heavier",
+          "Farmer carry: 3-4 rounds x 40-60s"
+        ],
+        "programOptions": [
+          "Base plan (as written)",
+          "Simple & Sinister (scaled)",
+          "P90X3: Total Synergistics",
+          "P90X3: The Challenge",
+          "P90X: Chest & Back (Week 3+)"
+        ]
+      }
+    },
+    {
+      "day": "Tuesday",
+      "shift": "Off (possible day OT)",
+      "code": "C",
+      "date": "2026-03-03",
+      "week": 3,
+      "template": {
+        "title": "Conditioning (run/walk or bike intervals) + grip/core",
+        "good": [
+          "Peloton Low Impact 20 min + 5 min core",
+          "OR Run/Walk 20 min (1 min run / 1 min walk)"
+        ],
+        "better": [
+          "Run: warm-up 8 min; 8 rounds 30s hard / 90s easy; cool-down 5 min",
+          "Grip: farmer holds 4x30-45s",
+          "Core: dead bug 2x8/side + side plank 2x25s/side"
+        ],
+        "best": [
+          "Peloton Intervals 30-45 min OR Run: 6x2 min hard / 2 min easy",
+          "Grip: towel hangs 4x15-25s (or heavy holds)",
+          "Mobility 8 min"
+        ],
+        "programOptions": [
+          "Base plan (as written)",
+          "P90X3: Agility X / Accelerator / CVX",
+          "Insanity: Cardio Recovery (Week 1-2 friendly)",
+          "Insanity: Core Cardio & Balance (Week 3+)",
+          "P90X: Plyometrics (Week 4+; only 1 plyo/week)"
+        ]
+      }
+    },
+    {
+      "day": "Wednesday",
+      "shift": "Double 07:00-23:00",
+      "code": "MOB",
+      "date": "2026-03-04",
+      "week": 3,
+      "template": {
+        "title": "Mobility / recovery (Wednesday double)",
+        "good": [
+          "5-10 min: couch stretch 60s/side + calves 60s/side + open books 8/side"
+        ],
+        "better": [
+          "10-20 min mobility flow + 2 min nasal breathing (long exhales)"
+        ],
+        "best": [
+          "20-30 min easy walk/ride + 10 min mobility"
+        ],
+        "programOptions": [
+          "Base mobility (as written)",
+          "P90X: X Stretch",
+          "P90X3: Dynamix",
+          "P90X2: Recovery + Mobility"
+        ]
+      }
+    },
+    {
+      "day": "Thursday",
+      "shift": "09:00-17:00",
+      "code": "SB",
+      "date": "2026-03-05",
+      "week": 3,
+      "template": {
+        "title": "Strength B (squat + pull + carries/sandbag)",
+        "good": [
+          "Goblet squat: 3x8 (44 lb)",
+          "Pull-ups: 4x2 (band-assisted ok)",
+          "Suitcase carry: 3x40s/side",
+          "Quick stretch"
+        ],
+        "better": [
+          "Goblet squat: 5x8 (44-53)",
+          "DB RDL: 4x10",
+          "Pull-ups: 5 sets (leave 1 rep in tank)",
+          "Sandbag bear-hug carry: 4x40-60s (50-60 lb)"
+        ],
+        "best": [
+          "DB front squat (or heavy goblet): 5x6",
+          "DB RDL: 5x8 heavier",
+          "Pull-ups: 6 sets of 2-4",
+          "Sandbag carry density 10 min (40-60s carry / 40-60s rest)"
+        ],
+        "programOptions": [
+          "Base plan (as written)",
+          "Simple & Sinister (scaled) + Carry Finisher",
+          "P90X3: Eccentric Lower (be cautious first time)",
+          "P90X: Legs & Back (Week 4+)"
+        ]
+      }
+    },
+    {
+      "day": "Friday",
+      "shift": "15:00-23:00",
+      "code": "R",
+      "date": "2026-03-06",
+      "week": 3,
+      "template": {
+        "title": "Zone 2 (ruck or easy ride) + mobility",
+        "good": [
+          "Ruck 20 lb: 20-30 min easy OR easy ride 20-30 min",
+          "Stretch calves/hips 5 min"
+        ],
+        "better": [
+          "Ruck 20 lb: 40-60 min Zone 2 (conversational pace)",
+          "Foot check + calf stretch"
+        ],
+        "best": [
+          "Ruck 20-30 lb: 60-75 min if joints/feet feel great",
+          "OR 45 min Zone 2 ride + 10 min mobility"
+        ],
+        "programOptions": [
+          "Base plan (as written)",
+          "P90X3: Dynamix (after ruck)",
+          "P90X: X Stretch (after ruck)"
+        ]
+      }
+    },
+    {
+      "day": "Saturday",
+      "shift": "Off",
+      "code": "TAC",
+      "date": "2026-03-07",
+      "week": 3,
+      "template": {
+        "title": "Tactical circuit (mixed modal) + sandbag finisher + pull-ups",
+        "good": [
+          "2 rounds easy: 10 swings (35), 8 goblet squats (35), 8 push-ups, 40s suitcase carry/side",
+          "Mobility 5 min"
+        ],
+        "better": [
+          "AMRAP 18-20 min: 12 swings (44), 8 DB push press, 10 rows total, 8 step-ups/burpees (scaled)",
+          "Sandbag carry density 8 min (50-60 lb)"
+        ],
+        "best": [
+          "5 rounds: 90s hard (sandbag carry + swings) / 90s easy walk",
+          "Pull-ups EMOM 10 min: 2-3 reps",
+          "Sandbag carry density 10 min (60-80 lb if solid)"
+        ],
+        "programOptions": [
+          "Base plan (as written)",
+          "P90X: Kenpo X + sandbag carry",
+          "P90X3: MMX / The Warrior",
+          "Insanity: Pure Cardio (Week 5+)"
+        ]
+      }
+    },
+    {
+      "day": "Sunday",
+      "shift": "15:00-23:00",
+      "code": "REC",
+      "date": "2026-03-08",
+      "week": 3,
+      "template": {
+        "title": "Recovery + readiness (Sunday before 15:00-23:00 shift)",
+        "good": [
+          "8-12 min mobility + 2 min breathing"
+        ],
+        "better": [
+          "10-15 min easy walk + mobility"
+        ],
+        "best": [
+          "20-30 min easy ride/walk + mobility (stop before fatigue)"
+        ],
+        "programOptions": [
+          "Base recovery (as written)",
+          "Insanity: Cardio Recovery",
+          "P90X3: Dynamix",
+          "P90X: X Stretch"
+        ]
+      }
+    },
+    {
+      "day": "Monday",
+      "shift": "Off",
+      "code": "SA",
+      "date": "2026-03-09",
+      "week": 3,
+      "template": {
+        "title": "Strength A (hinge + push + pull + core)",
+        "good": [
+          "KB swings: 5x10 (35-44 lb), rest 60s",
+          "Push-ups: 3x8-12 (stop 2 reps before failure)",
+          "1-arm DB row: 3x10/side",
+          "2 min breathing + quick stretch"
+        ],
+        "better": [
+          "Swings EMOM 8 min: 10 swings/min (35-44)",
+          "DB floor press: 4x8 (RPE ~7)",
+          "1-arm DB row: 4x10/side",
+          "Plank 2x45s + side plank 2x30s/side"
+        ],
+        "best": [
+          "Pull-ups: 5x2-3 strict (or band-assisted)",
+          "Swings EMOM 10 min: 10 swings/min (44-53)",
+          "DB floor press: 5x6 heavier",
+          "Farmer carry: 3-4 rounds x 40-60s"
+        ],
+        "programOptions": [
+          "Base plan (as written)",
+          "Simple & Sinister (scaled)",
+          "P90X3: Total Synergistics",
+          "P90X3: The Challenge",
+          "P90X: Chest & Back (Week 3+)"
+        ]
+      }
+    },
+    {
+      "day": "Tuesday",
+      "shift": "Off (possible day OT)",
+      "code": "C",
+      "date": "2026-03-10",
+      "week": 4,
+      "template": {
+        "title": "Conditioning (run/walk or bike intervals) + grip/core",
+        "good": [
+          "Peloton Low Impact 20 min + 5 min core",
+          "OR Run/Walk 20 min (1 min run / 1 min walk)"
+        ],
+        "better": [
+          "Run: warm-up 8 min; 8 rounds 30s hard / 90s easy; cool-down 5 min",
+          "Grip: farmer holds 4x30-45s",
+          "Core: dead bug 2x8/side + side plank 2x25s/side"
+        ],
+        "best": [
+          "Peloton Intervals 30-45 min OR Run: 6x2 min hard / 2 min easy",
+          "Grip: towel hangs 4x15-25s (or heavy holds)",
+          "Mobility 8 min"
+        ],
+        "programOptions": [
+          "Base plan (as written)",
+          "P90X3: Agility X / Accelerator / CVX",
+          "Insanity: Cardio Recovery (Week 1-2 friendly)",
+          "Insanity: Core Cardio & Balance (Week 3+)",
+          "P90X: Plyometrics (Week 4+; only 1 plyo/week)"
+        ]
+      }
+    },
+    {
+      "day": "Wednesday",
+      "shift": "Double 07:00-23:00",
+      "code": "MOB",
+      "date": "2026-03-11",
+      "week": 4,
+      "template": {
+        "title": "Mobility / recovery (Wednesday double)",
+        "good": [
+          "5-10 min: couch stretch 60s/side + calves 60s/side + open books 8/side"
+        ],
+        "better": [
+          "10-20 min mobility flow + 2 min nasal breathing (long exhales)"
+        ],
+        "best": [
+          "20-30 min easy walk/ride + 10 min mobility"
+        ],
+        "programOptions": [
+          "Base mobility (as written)",
+          "P90X: X Stretch",
+          "P90X3: Dynamix",
+          "P90X2: Recovery + Mobility"
+        ]
+      }
+    },
+    {
+      "day": "Thursday",
+      "shift": "09:00-17:00",
+      "code": "SB",
+      "date": "2026-03-12",
+      "week": 4,
+      "template": {
+        "title": "Strength B (squat + pull + carries/sandbag)",
+        "good": [
+          "Goblet squat: 3x8 (44 lb)",
+          "Pull-ups: 4x2 (band-assisted ok)",
+          "Suitcase carry: 3x40s/side",
+          "Quick stretch"
+        ],
+        "better": [
+          "Goblet squat: 5x8 (44-53)",
+          "DB RDL: 4x10",
+          "Pull-ups: 5 sets (leave 1 rep in tank)",
+          "Sandbag bear-hug carry: 4x40-60s (50-60 lb)"
+        ],
+        "best": [
+          "DB front squat (or heavy goblet): 5x6",
+          "DB RDL: 5x8 heavier",
+          "Pull-ups: 6 sets of 2-4",
+          "Sandbag carry density 10 min (40-60s carry / 40-60s rest)"
+        ],
+        "programOptions": [
+          "Base plan (as written)",
+          "Simple & Sinister (scaled) + Carry Finisher",
+          "P90X3: Eccentric Lower (be cautious first time)",
+          "P90X: Legs & Back (Week 4+)"
+        ]
+      }
+    },
+    {
+      "day": "Friday",
+      "shift": "15:00-23:00",
+      "code": "R",
+      "date": "2026-03-13",
+      "week": 4,
+      "template": {
+        "title": "Zone 2 (ruck or easy ride) + mobility",
+        "good": [
+          "Ruck 20 lb: 20-30 min easy OR easy ride 20-30 min",
+          "Stretch calves/hips 5 min"
+        ],
+        "better": [
+          "Ruck 20 lb: 40-60 min Zone 2 (conversational pace)",
+          "Foot check + calf stretch"
+        ],
+        "best": [
+          "Ruck 20-30 lb: 60-75 min if joints/feet feel great",
+          "OR 45 min Zone 2 ride + 10 min mobility"
+        ],
+        "programOptions": [
+          "Base plan (as written)",
+          "P90X3: Dynamix (after ruck)",
+          "P90X: X Stretch (after ruck)"
+        ]
+      }
+    },
+    {
+      "day": "Saturday",
+      "shift": "Off",
+      "code": "TAC",
+      "date": "2026-03-14",
+      "week": 4,
+      "template": {
+        "title": "Tactical circuit (mixed modal) + sandbag finisher + pull-ups",
+        "good": [
+          "2 rounds easy: 10 swings (35), 8 goblet squats (35), 8 push-ups, 40s suitcase carry/side",
+          "Mobility 5 min"
+        ],
+        "better": [
+          "AMRAP 18-20 min: 12 swings (44), 8 DB push press, 10 rows total, 8 step-ups/burpees (scaled)",
+          "Sandbag carry density 8 min (50-60 lb)"
+        ],
+        "best": [
+          "5 rounds: 90s hard (sandbag carry + swings) / 90s easy walk",
+          "Pull-ups EMOM 10 min: 2-3 reps",
+          "Sandbag carry density 10 min (60-80 lb if solid)"
+        ],
+        "programOptions": [
+          "Base plan (as written)",
+          "P90X: Kenpo X + sandbag carry",
+          "P90X3: MMX / The Warrior",
+          "Insanity: Pure Cardio (Week 5+)"
+        ]
+      }
+    },
+    {
+      "day": "Sunday",
+      "shift": "15:00-23:00",
+      "code": "REC",
+      "date": "2026-03-15",
+      "week": 4,
+      "template": {
+        "title": "Recovery + readiness (Sunday before 15:00-23:00 shift)",
+        "good": [
+          "8-12 min mobility + 2 min breathing"
+        ],
+        "better": [
+          "10-15 min easy walk + mobility"
+        ],
+        "best": [
+          "20-30 min easy ride/walk + mobility (stop before fatigue)"
+        ],
+        "programOptions": [
+          "Base recovery (as written)",
+          "Insanity: Cardio Recovery",
+          "P90X3: Dynamix",
+          "P90X: X Stretch"
+        ]
+      }
+    },
+    {
+      "day": "Monday",
+      "shift": "Off",
+      "code": "SA",
+      "date": "2026-03-16",
+      "week": 4,
+      "template": {
+        "title": "Strength A (hinge + push + pull + core)",
+        "good": [
+          "KB swings: 5x10 (35-44 lb), rest 60s",
+          "Push-ups: 3x8-12 (stop 2 reps before failure)",
+          "1-arm DB row: 3x10/side",
+          "2 min breathing + quick stretch"
+        ],
+        "better": [
+          "Swings EMOM 8 min: 10 swings/min (35-44)",
+          "DB floor press: 4x8 (RPE ~7)",
+          "1-arm DB row: 4x10/side",
+          "Plank 2x45s + side plank 2x30s/side"
+        ],
+        "best": [
+          "Pull-ups: 5x2-3 strict (or band-assisted)",
+          "Swings EMOM 10 min: 10 swings/min (44-53)",
+          "DB floor press: 5x6 heavier",
+          "Farmer carry: 3-4 rounds x 40-60s"
+        ],
+        "programOptions": [
+          "Base plan (as written)",
+          "Simple & Sinister (scaled)",
+          "P90X3: Total Synergistics",
+          "P90X3: The Challenge",
+          "P90X: Chest & Back (Week 3+)"
+        ]
+      }
+    },
+    {
+      "day": "Tuesday",
+      "shift": "Off (possible day OT)",
+      "code": "C",
+      "date": "2026-03-17",
+      "week": 5,
+      "template": {
+        "title": "Conditioning (run/walk or bike intervals) + grip/core",
+        "good": [
+          "Peloton Low Impact 20 min + 5 min core",
+          "OR Run/Walk 20 min (1 min run / 1 min walk)"
+        ],
+        "better": [
+          "Run: warm-up 8 min; 8 rounds 30s hard / 90s easy; cool-down 5 min",
+          "Grip: farmer holds 4x30-45s",
+          "Core: dead bug 2x8/side + side plank 2x25s/side"
+        ],
+        "best": [
+          "Peloton Intervals 30-45 min OR Run: 6x2 min hard / 2 min easy",
+          "Grip: towel hangs 4x15-25s (or heavy holds)",
+          "Mobility 8 min"
+        ],
+        "programOptions": [
+          "Base plan (as written)",
+          "P90X3: Agility X / Accelerator / CVX",
+          "Insanity: Cardio Recovery (Week 1-2 friendly)",
+          "Insanity: Core Cardio & Balance (Week 3+)",
+          "P90X: Plyometrics (Week 4+; only 1 plyo/week)"
+        ]
+      }
+    },
+    {
+      "day": "Wednesday",
+      "shift": "Double 07:00-23:00",
+      "code": "MOB",
+      "date": "2026-03-18",
+      "week": 5,
+      "template": {
+        "title": "Mobility / recovery (Wednesday double)",
+        "good": [
+          "5-10 min: couch stretch 60s/side + calves 60s/side + open books 8/side"
+        ],
+        "better": [
+          "10-20 min mobility flow + 2 min nasal breathing (long exhales)"
+        ],
+        "best": [
+          "20-30 min easy walk/ride + 10 min mobility"
+        ],
+        "programOptions": [
+          "Base mobility (as written)",
+          "P90X: X Stretch",
+          "P90X3: Dynamix",
+          "P90X2: Recovery + Mobility"
+        ]
+      }
+    },
+    {
+      "day": "Thursday",
+      "shift": "09:00-17:00",
+      "code": "SB",
+      "date": "2026-03-19",
+      "week": 5,
+      "template": {
+        "title": "Strength B (squat + pull + carries/sandbag)",
+        "good": [
+          "Goblet squat: 3x8 (44 lb)",
+          "Pull-ups: 4x2 (band-assisted ok)",
+          "Suitcase carry: 3x40s/side",
+          "Quick stretch"
+        ],
+        "better": [
+          "Goblet squat: 5x8 (44-53)",
+          "DB RDL: 4x10",
+          "Pull-ups: 5 sets (leave 1 rep in tank)",
+          "Sandbag bear-hug carry: 4x40-60s (50-60 lb)"
+        ],
+        "best": [
+          "DB front squat (or heavy goblet): 5x6",
+          "DB RDL: 5x8 heavier",
+          "Pull-ups: 6 sets of 2-4",
+          "Sandbag carry density 10 min (40-60s carry / 40-60s rest)"
+        ],
+        "programOptions": [
+          "Base plan (as written)",
+          "Simple & Sinister (scaled) + Carry Finisher",
+          "P90X3: Eccentric Lower (be cautious first time)",
+          "P90X: Legs & Back (Week 4+)"
+        ]
+      }
+    },
+    {
+      "day": "Friday",
+      "shift": "15:00-23:00",
+      "code": "R",
+      "date": "2026-03-20",
+      "week": 5,
+      "template": {
+        "title": "Zone 2 (ruck or easy ride) + mobility",
+        "good": [
+          "Ruck 20 lb: 20-30 min easy OR easy ride 20-30 min",
+          "Stretch calves/hips 5 min"
+        ],
+        "better": [
+          "Ruck 20 lb: 40-60 min Zone 2 (conversational pace)",
+          "Foot check + calf stretch"
+        ],
+        "best": [
+          "Ruck 20-30 lb: 60-75 min if joints/feet feel great",
+          "OR 45 min Zone 2 ride + 10 min mobility"
+        ],
+        "programOptions": [
+          "Base plan (as written)",
+          "P90X3: Dynamix (after ruck)",
+          "P90X: X Stretch (after ruck)"
+        ]
+      }
+    },
+    {
+      "day": "Saturday",
+      "shift": "Off",
+      "code": "TAC",
+      "date": "2026-03-21",
+      "week": 5,
+      "template": {
+        "title": "Tactical circuit (mixed modal) + sandbag finisher + pull-ups",
+        "good": [
+          "2 rounds easy: 10 swings (35), 8 goblet squats (35), 8 push-ups, 40s suitcase carry/side",
+          "Mobility 5 min"
+        ],
+        "better": [
+          "AMRAP 18-20 min: 12 swings (44), 8 DB push press, 10 rows total, 8 step-ups/burpees (scaled)",
+          "Sandbag carry density 8 min (50-60 lb)"
+        ],
+        "best": [
+          "5 rounds: 90s hard (sandbag carry + swings) / 90s easy walk",
+          "Pull-ups EMOM 10 min: 2-3 reps",
+          "Sandbag carry density 10 min (60-80 lb if solid)"
+        ],
+        "programOptions": [
+          "Base plan (as written)",
+          "P90X: Kenpo X + sandbag carry",
+          "P90X3: MMX / The Warrior",
+          "Insanity: Pure Cardio (Week 5+)"
+        ]
+      }
+    },
+    {
+      "day": "Sunday",
+      "shift": "15:00-23:00",
+      "code": "REC",
+      "date": "2026-03-22",
+      "week": 5,
+      "template": {
+        "title": "Recovery + readiness (Sunday before 15:00-23:00 shift)",
+        "good": [
+          "8-12 min mobility + 2 min breathing"
+        ],
+        "better": [
+          "10-15 min easy walk + mobility"
+        ],
+        "best": [
+          "20-30 min easy ride/walk + mobility (stop before fatigue)"
+        ],
+        "programOptions": [
+          "Base recovery (as written)",
+          "Insanity: Cardio Recovery",
+          "P90X3: Dynamix",
+          "P90X: X Stretch"
+        ]
+      }
+    },
+    {
+      "day": "Monday",
+      "shift": "Off",
+      "code": "SA",
+      "date": "2026-03-23",
+      "week": 5,
+      "template": {
+        "title": "Strength A (hinge + push + pull + core)",
+        "good": [
+          "KB swings: 5x10 (35-44 lb), rest 60s",
+          "Push-ups: 3x8-12 (stop 2 reps before failure)",
+          "1-arm DB row: 3x10/side",
+          "2 min breathing + quick stretch"
+        ],
+        "better": [
+          "Swings EMOM 8 min: 10 swings/min (35-44)",
+          "DB floor press: 4x8 (RPE ~7)",
+          "1-arm DB row: 4x10/side",
+          "Plank 2x45s + side plank 2x30s/side"
+        ],
+        "best": [
+          "Pull-ups: 5x2-3 strict (or band-assisted)",
+          "Swings EMOM 10 min: 10 swings/min (44-53)",
+          "DB floor press: 5x6 heavier",
+          "Farmer carry: 3-4 rounds x 40-60s"
+        ],
+        "programOptions": [
+          "Base plan (as written)",
+          "Simple & Sinister (scaled)",
+          "P90X3: Total Synergistics",
+          "P90X3: The Challenge",
+          "P90X: Chest & Back (Week 3+)"
+        ]
+      }
+    },
+    {
+      "day": "Tuesday",
+      "shift": "Off (possible day OT)",
+      "code": "C",
+      "date": "2026-03-24",
+      "week": 6,
+      "template": {
+        "title": "Conditioning (run/walk or bike intervals) + grip/core",
+        "good": [
+          "Peloton Low Impact 20 min + 5 min core",
+          "OR Run/Walk 20 min (1 min run / 1 min walk)"
+        ],
+        "better": [
+          "Run: warm-up 8 min; 8 rounds 30s hard / 90s easy; cool-down 5 min",
+          "Grip: farmer holds 4x30-45s",
+          "Core: dead bug 2x8/side + side plank 2x25s/side"
+        ],
+        "best": [
+          "Peloton Intervals 30-45 min OR Run: 6x2 min hard / 2 min easy",
+          "Grip: towel hangs 4x15-25s (or heavy holds)",
+          "Mobility 8 min"
+        ],
+        "programOptions": [
+          "Base plan (as written)",
+          "P90X3: Agility X / Accelerator / CVX",
+          "Insanity: Cardio Recovery (Week 1-2 friendly)",
+          "Insanity: Core Cardio & Balance (Week 3+)",
+          "P90X: Plyometrics (Week 4+; only 1 plyo/week)"
+        ]
+      }
+    },
+    {
+      "day": "Wednesday",
+      "shift": "Double 07:00-23:00",
+      "code": "MOB",
+      "date": "2026-03-25",
+      "week": 6,
+      "template": {
+        "title": "Mobility / recovery (Wednesday double)",
+        "good": [
+          "5-10 min: couch stretch 60s/side + calves 60s/side + open books 8/side"
+        ],
+        "better": [
+          "10-20 min mobility flow + 2 min nasal breathing (long exhales)"
+        ],
+        "best": [
+          "20-30 min easy walk/ride + 10 min mobility"
+        ],
+        "programOptions": [
+          "Base mobility (as written)",
+          "P90X: X Stretch",
+          "P90X3: Dynamix",
+          "P90X2: Recovery + Mobility"
+        ]
+      }
+    },
+    {
+      "day": "Thursday",
+      "shift": "09:00-17:00",
+      "code": "SB",
+      "date": "2026-03-26",
+      "week": 6,
+      "template": {
+        "title": "Strength B (squat + pull + carries/sandbag)",
+        "good": [
+          "Goblet squat: 3x8 (44 lb)",
+          "Pull-ups: 4x2 (band-assisted ok)",
+          "Suitcase carry: 3x40s/side",
+          "Quick stretch"
+        ],
+        "better": [
+          "Goblet squat: 5x8 (44-53)",
+          "DB RDL: 4x10",
+          "Pull-ups: 5 sets (leave 1 rep in tank)",
+          "Sandbag bear-hug carry: 4x40-60s (50-60 lb)"
+        ],
+        "best": [
+          "DB front squat (or heavy goblet): 5x6",
+          "DB RDL: 5x8 heavier",
+          "Pull-ups: 6 sets of 2-4",
+          "Sandbag carry density 10 min (40-60s carry / 40-60s rest)"
+        ],
+        "programOptions": [
+          "Base plan (as written)",
+          "Simple & Sinister (scaled) + Carry Finisher",
+          "P90X3: Eccentric Lower (be cautious first time)",
+          "P90X: Legs & Back (Week 4+)"
+        ]
+      }
+    },
+    {
+      "day": "Friday",
+      "shift": "15:00-23:00",
+      "code": "R",
+      "date": "2026-03-27",
+      "week": 6,
+      "template": {
+        "title": "Zone 2 (ruck or easy ride) + mobility",
+        "good": [
+          "Ruck 20 lb: 20-30 min easy OR easy ride 20-30 min",
+          "Stretch calves/hips 5 min"
+        ],
+        "better": [
+          "Ruck 20 lb: 40-60 min Zone 2 (conversational pace)",
+          "Foot check + calf stretch"
+        ],
+        "best": [
+          "Ruck 20-30 lb: 60-75 min if joints/feet feel great",
+          "OR 45 min Zone 2 ride + 10 min mobility"
+        ],
+        "programOptions": [
+          "Base plan (as written)",
+          "P90X3: Dynamix (after ruck)",
+          "P90X: X Stretch (after ruck)"
+        ]
+      }
+    },
+    {
+      "day": "Saturday",
+      "shift": "Off",
+      "code": "TAC",
+      "date": "2026-03-28",
+      "week": 6,
+      "template": {
+        "title": "Tactical circuit (mixed modal) + sandbag finisher + pull-ups",
+        "good": [
+          "2 rounds easy: 10 swings (35), 8 goblet squats (35), 8 push-ups, 40s suitcase carry/side",
+          "Mobility 5 min"
+        ],
+        "better": [
+          "AMRAP 18-20 min: 12 swings (44), 8 DB push press, 10 rows total, 8 step-ups/burpees (scaled)",
+          "Sandbag carry density 8 min (50-60 lb)"
+        ],
+        "best": [
+          "5 rounds: 90s hard (sandbag carry + swings) / 90s easy walk",
+          "Pull-ups EMOM 10 min: 2-3 reps",
+          "Sandbag carry density 10 min (60-80 lb if solid)"
+        ],
+        "programOptions": [
+          "Base plan (as written)",
+          "P90X: Kenpo X + sandbag carry",
+          "P90X3: MMX / The Warrior",
+          "Insanity: Pure Cardio (Week 5+)"
+        ]
+      }
+    },
+    {
+      "day": "Sunday",
+      "shift": "15:00-23:00",
+      "code": "REC",
+      "date": "2026-03-29",
+      "week": 6,
+      "template": {
+        "title": "Recovery + readiness (Sunday before 15:00-23:00 shift)",
+        "good": [
+          "8-12 min mobility + 2 min breathing"
+        ],
+        "better": [
+          "10-15 min easy walk + mobility"
+        ],
+        "best": [
+          "20-30 min easy ride/walk + mobility (stop before fatigue)"
+        ],
+        "programOptions": [
+          "Base recovery (as written)",
+          "Insanity: Cardio Recovery",
+          "P90X3: Dynamix",
+          "P90X: X Stretch"
+        ]
+      }
+    },
+    {
+      "day": "Monday",
+      "shift": "Off",
+      "code": "SA",
+      "date": "2026-03-30",
+      "week": 6,
+      "template": {
+        "title": "Strength A (hinge + push + pull + core)",
+        "good": [
+          "KB swings: 5x10 (35-44 lb), rest 60s",
+          "Push-ups: 3x8-12 (stop 2 reps before failure)",
+          "1-arm DB row: 3x10/side",
+          "2 min breathing + quick stretch"
+        ],
+        "better": [
+          "Swings EMOM 8 min: 10 swings/min (35-44)",
+          "DB floor press: 4x8 (RPE ~7)",
+          "1-arm DB row: 4x10/side",
+          "Plank 2x45s + side plank 2x30s/side"
+        ],
+        "best": [
+          "Pull-ups: 5x2-3 strict (or band-assisted)",
+          "Swings EMOM 10 min: 10 swings/min (44-53)",
+          "DB floor press: 5x6 heavier",
+          "Farmer carry: 3-4 rounds x 40-60s"
+        ],
+        "programOptions": [
+          "Base plan (as written)",
+          "Simple & Sinister (scaled)",
+          "P90X3: Total Synergistics",
+          "P90X3: The Challenge",
+          "P90X: Chest & Back (Week 3+)"
+        ]
+      }
+    },
+    {
+      "day": "Tuesday",
+      "shift": "Off (possible day OT)",
+      "code": "C",
+      "date": "2026-03-31",
+      "week": 7,
+      "template": {
+        "title": "Conditioning (run/walk or bike intervals) + grip/core",
+        "good": [
+          "Peloton Low Impact 20 min + 5 min core",
+          "OR Run/Walk 20 min (1 min run / 1 min walk)"
+        ],
+        "better": [
+          "Run: warm-up 8 min; 8 rounds 30s hard / 90s easy; cool-down 5 min",
+          "Grip: farmer holds 4x30-45s",
+          "Core: dead bug 2x8/side + side plank 2x25s/side"
+        ],
+        "best": [
+          "Peloton Intervals 30-45 min OR Run: 6x2 min hard / 2 min easy",
+          "Grip: towel hangs 4x15-25s (or heavy holds)",
+          "Mobility 8 min"
+        ],
+        "programOptions": [
+          "Base plan (as written)",
+          "P90X3: Agility X / Accelerator / CVX",
+          "Insanity: Cardio Recovery (Week 1-2 friendly)",
+          "Insanity: Core Cardio & Balance (Week 3+)",
+          "P90X: Plyometrics (Week 4+; only 1 plyo/week)"
+        ]
+      }
+    },
+    {
+      "day": "Wednesday",
+      "shift": "Double 07:00-23:00",
+      "code": "MOB",
+      "date": "2026-04-01",
+      "week": 7,
+      "template": {
+        "title": "Mobility / recovery (Wednesday double)",
+        "good": [
+          "5-10 min: couch stretch 60s/side + calves 60s/side + open books 8/side"
+        ],
+        "better": [
+          "10-20 min mobility flow + 2 min nasal breathing (long exhales)"
+        ],
+        "best": [
+          "20-30 min easy walk/ride + 10 min mobility"
+        ],
+        "programOptions": [
+          "Base mobility (as written)",
+          "P90X: X Stretch",
+          "P90X3: Dynamix",
+          "P90X2: Recovery + Mobility"
+        ]
+      }
+    },
+    {
+      "day": "Thursday",
+      "shift": "09:00-17:00",
+      "code": "SB",
+      "date": "2026-04-02",
+      "week": 7,
+      "template": {
+        "title": "Strength B (squat + pull + carries/sandbag)",
+        "good": [
+          "Goblet squat: 3x8 (44 lb)",
+          "Pull-ups: 4x2 (band-assisted ok)",
+          "Suitcase carry: 3x40s/side",
+          "Quick stretch"
+        ],
+        "better": [
+          "Goblet squat: 5x8 (44-53)",
+          "DB RDL: 4x10",
+          "Pull-ups: 5 sets (leave 1 rep in tank)",
+          "Sandbag bear-hug carry: 4x40-60s (50-60 lb)"
+        ],
+        "best": [
+          "DB front squat (or heavy goblet): 5x6",
+          "DB RDL: 5x8 heavier",
+          "Pull-ups: 6 sets of 2-4",
+          "Sandbag carry density 10 min (40-60s carry / 40-60s rest)"
+        ],
+        "programOptions": [
+          "Base plan (as written)",
+          "Simple & Sinister (scaled) + Carry Finisher",
+          "P90X3: Eccentric Lower (be cautious first time)",
+          "P90X: Legs & Back (Week 4+)"
+        ]
+      }
+    },
+    {
+      "day": "Friday",
+      "shift": "15:00-23:00",
+      "code": "R",
+      "date": "2026-04-03",
+      "week": 7,
+      "template": {
+        "title": "Zone 2 (ruck or easy ride) + mobility",
+        "good": [
+          "Ruck 20 lb: 20-30 min easy OR easy ride 20-30 min",
+          "Stretch calves/hips 5 min"
+        ],
+        "better": [
+          "Ruck 20 lb: 40-60 min Zone 2 (conversational pace)",
+          "Foot check + calf stretch"
+        ],
+        "best": [
+          "Ruck 20-30 lb: 60-75 min if joints/feet feel great",
+          "OR 45 min Zone 2 ride + 10 min mobility"
+        ],
+        "programOptions": [
+          "Base plan (as written)",
+          "P90X3: Dynamix (after ruck)",
+          "P90X: X Stretch (after ruck)"
+        ]
+      }
+    },
+    {
+      "day": "Saturday",
+      "shift": "Off",
+      "code": "TAC",
+      "date": "2026-04-04",
+      "week": 7,
+      "template": {
+        "title": "Tactical circuit (mixed modal) + sandbag finisher + pull-ups",
+        "good": [
+          "2 rounds easy: 10 swings (35), 8 goblet squats (35), 8 push-ups, 40s suitcase carry/side",
+          "Mobility 5 min"
+        ],
+        "better": [
+          "AMRAP 18-20 min: 12 swings (44), 8 DB push press, 10 rows total, 8 step-ups/burpees (scaled)",
+          "Sandbag carry density 8 min (50-60 lb)"
+        ],
+        "best": [
+          "5 rounds: 90s hard (sandbag carry + swings) / 90s easy walk",
+          "Pull-ups EMOM 10 min: 2-3 reps",
+          "Sandbag carry density 10 min (60-80 lb if solid)"
+        ],
+        "programOptions": [
+          "Base plan (as written)",
+          "P90X: Kenpo X + sandbag carry",
+          "P90X3: MMX / The Warrior",
+          "Insanity: Pure Cardio (Week 5+)"
+        ]
+      }
+    },
+    {
+      "day": "Sunday",
+      "shift": "15:00-23:00",
+      "code": "REC",
+      "date": "2026-04-05",
+      "week": 7,
+      "template": {
+        "title": "Recovery + readiness (Sunday before 15:00-23:00 shift)",
+        "good": [
+          "8-12 min mobility + 2 min breathing"
+        ],
+        "better": [
+          "10-15 min easy walk + mobility"
+        ],
+        "best": [
+          "20-30 min easy ride/walk + mobility (stop before fatigue)"
+        ],
+        "programOptions": [
+          "Base recovery (as written)",
+          "Insanity: Cardio Recovery",
+          "P90X3: Dynamix",
+          "P90X: X Stretch"
+        ]
+      }
+    },
+    {
+      "day": "Monday",
+      "shift": "Off",
+      "code": "SA",
+      "date": "2026-04-06",
+      "week": 7,
+      "template": {
+        "title": "Strength A (hinge + push + pull + core)",
+        "good": [
+          "KB swings: 5x10 (35-44 lb), rest 60s",
+          "Push-ups: 3x8-12 (stop 2 reps before failure)",
+          "1-arm DB row: 3x10/side",
+          "2 min breathing + quick stretch"
+        ],
+        "better": [
+          "Swings EMOM 8 min: 10 swings/min (35-44)",
+          "DB floor press: 4x8 (RPE ~7)",
+          "1-arm DB row: 4x10/side",
+          "Plank 2x45s + side plank 2x30s/side"
+        ],
+        "best": [
+          "Pull-ups: 5x2-3 strict (or band-assisted)",
+          "Swings EMOM 10 min: 10 swings/min (44-53)",
+          "DB floor press: 5x6 heavier",
+          "Farmer carry: 3-4 rounds x 40-60s"
+        ],
+        "programOptions": [
+          "Base plan (as written)",
+          "Simple & Sinister (scaled)",
+          "P90X3: Total Synergistics",
+          "P90X3: The Challenge",
+          "P90X: Chest & Back (Week 3+)"
+        ]
+      }
+    },
+    {
+      "day": "Tuesday",
+      "shift": "Off (possible day OT)",
+      "code": "C",
+      "date": "2026-04-07",
+      "week": 8,
+      "template": {
+        "title": "Conditioning (run/walk or bike intervals) + grip/core",
+        "good": [
+          "Peloton Low Impact 20 min + 5 min core",
+          "OR Run/Walk 20 min (1 min run / 1 min walk)"
+        ],
+        "better": [
+          "Run: warm-up 8 min; 8 rounds 30s hard / 90s easy; cool-down 5 min",
+          "Grip: farmer holds 4x30-45s",
+          "Core: dead bug 2x8/side + side plank 2x25s/side"
+        ],
+        "best": [
+          "Peloton Intervals 30-45 min OR Run: 6x2 min hard / 2 min easy",
+          "Grip: towel hangs 4x15-25s (or heavy holds)",
+          "Mobility 8 min"
+        ],
+        "programOptions": [
+          "Base plan (as written)",
+          "P90X3: Agility X / Accelerator / CVX",
+          "Insanity: Cardio Recovery (Week 1-2 friendly)",
+          "Insanity: Core Cardio & Balance (Week 3+)",
+          "P90X: Plyometrics (Week 4+; only 1 plyo/week)"
+        ]
+      }
+    },
+    {
+      "day": "Wednesday",
+      "shift": "Double 07:00-23:00",
+      "code": "MOB",
+      "date": "2026-04-08",
+      "week": 8,
+      "template": {
+        "title": "Mobility / recovery (Wednesday double)",
+        "good": [
+          "5-10 min: couch stretch 60s/side + calves 60s/side + open books 8/side"
+        ],
+        "better": [
+          "10-20 min mobility flow + 2 min nasal breathing (long exhales)"
+        ],
+        "best": [
+          "20-30 min easy walk/ride + 10 min mobility"
+        ],
+        "programOptions": [
+          "Base mobility (as written)",
+          "P90X: X Stretch",
+          "P90X3: Dynamix",
+          "P90X2: Recovery + Mobility"
+        ]
+      }
+    },
+    {
+      "day": "Thursday",
+      "shift": "09:00-17:00",
+      "code": "SB",
+      "date": "2026-04-09",
+      "week": 8,
+      "template": {
+        "title": "Strength B (squat + pull + carries/sandbag)",
+        "good": [
+          "Goblet squat: 3x8 (44 lb)",
+          "Pull-ups: 4x2 (band-assisted ok)",
+          "Suitcase carry: 3x40s/side",
+          "Quick stretch"
+        ],
+        "better": [
+          "Goblet squat: 5x8 (44-53)",
+          "DB RDL: 4x10",
+          "Pull-ups: 5 sets (leave 1 rep in tank)",
+          "Sandbag bear-hug carry: 4x40-60s (50-60 lb)"
+        ],
+        "best": [
+          "DB front squat (or heavy goblet): 5x6",
+          "DB RDL: 5x8 heavier",
+          "Pull-ups: 6 sets of 2-4",
+          "Sandbag carry density 10 min (40-60s carry / 40-60s rest)"
+        ],
+        "programOptions": [
+          "Base plan (as written)",
+          "Simple & Sinister (scaled) + Carry Finisher",
+          "P90X3: Eccentric Lower (be cautious first time)",
+          "P90X: Legs & Back (Week 4+)"
+        ]
+      }
+    },
+    {
+      "day": "Friday",
+      "shift": "15:00-23:00",
+      "code": "R",
+      "date": "2026-04-10",
+      "week": 8,
+      "template": {
+        "title": "Zone 2 (ruck or easy ride) + mobility",
+        "good": [
+          "Ruck 20 lb: 20-30 min easy OR easy ride 20-30 min",
+          "Stretch calves/hips 5 min"
+        ],
+        "better": [
+          "Ruck 20 lb: 40-60 min Zone 2 (conversational pace)",
+          "Foot check + calf stretch"
+        ],
+        "best": [
+          "Ruck 20-30 lb: 60-75 min if joints/feet feel great",
+          "OR 45 min Zone 2 ride + 10 min mobility"
+        ],
+        "programOptions": [
+          "Base plan (as written)",
+          "P90X3: Dynamix (after ruck)",
+          "P90X: X Stretch (after ruck)"
+        ]
+      }
+    },
+    {
+      "day": "Saturday",
+      "shift": "Off",
+      "code": "TAC",
+      "date": "2026-04-11",
+      "week": 8,
+      "template": {
+        "title": "Tactical circuit (mixed modal) + sandbag finisher + pull-ups",
+        "good": [
+          "2 rounds easy: 10 swings (35), 8 goblet squats (35), 8 push-ups, 40s suitcase carry/side",
+          "Mobility 5 min"
+        ],
+        "better": [
+          "AMRAP 18-20 min: 12 swings (44), 8 DB push press, 10 rows total, 8 step-ups/burpees (scaled)",
+          "Sandbag carry density 8 min (50-60 lb)"
+        ],
+        "best": [
+          "5 rounds: 90s hard (sandbag carry + swings) / 90s easy walk",
+          "Pull-ups EMOM 10 min: 2-3 reps",
+          "Sandbag carry density 10 min (60-80 lb if solid)"
+        ],
+        "programOptions": [
+          "Base plan (as written)",
+          "P90X: Kenpo X + sandbag carry",
+          "P90X3: MMX / The Warrior",
+          "Insanity: Pure Cardio (Week 5+)"
+        ]
+      }
+    },
+    {
+      "day": "Sunday",
+      "shift": "15:00-23:00",
+      "code": "REC",
+      "date": "2026-04-12",
+      "week": 8,
+      "template": {
+        "title": "Recovery + readiness (Sunday before 15:00-23:00 shift)",
+        "good": [
+          "8-12 min mobility + 2 min breathing"
+        ],
+        "better": [
+          "10-15 min easy walk + mobility"
+        ],
+        "best": [
+          "20-30 min easy ride/walk + mobility (stop before fatigue)"
+        ],
+        "programOptions": [
+          "Base recovery (as written)",
+          "Insanity: Cardio Recovery",
+          "P90X3: Dynamix",
+          "P90X: X Stretch"
+        ]
+      }
+    },
+    {
+      "day": "Monday",
+      "shift": "Off",
+      "code": "SA",
+      "date": "2026-04-13",
+      "week": 8,
+      "template": {
+        "title": "Strength A (hinge + push + pull + core)",
+        "good": [
+          "KB swings: 5x10 (35-44 lb), rest 60s",
+          "Push-ups: 3x8-12 (stop 2 reps before failure)",
+          "1-arm DB row: 3x10/side",
+          "2 min breathing + quick stretch"
+        ],
+        "better": [
+          "Swings EMOM 8 min: 10 swings/min (35-44)",
+          "DB floor press: 4x8 (RPE ~7)",
+          "1-arm DB row: 4x10/side",
+          "Plank 2x45s + side plank 2x30s/side"
+        ],
+        "best": [
+          "Pull-ups: 5x2-3 strict (or band-assisted)",
+          "Swings EMOM 10 min: 10 swings/min (44-53)",
+          "DB floor press: 5x6 heavier",
+          "Farmer carry: 3-4 rounds x 40-60s"
+        ],
+        "programOptions": [
+          "Base plan (as written)",
+          "Simple & Sinister (scaled)",
+          "P90X3: Total Synergistics",
+          "P90X3: The Challenge",
+          "P90X: Chest & Back (Week 3+)"
+        ]
+      }
+    },
+    {
+      "day": "Tuesday",
+      "shift": "Off (possible day OT)",
+      "code": "C",
+      "date": "2026-04-14",
+      "week": 9,
+      "template": {
+        "title": "Conditioning (run/walk or bike intervals) + grip/core",
+        "good": [
+          "Peloton Low Impact 20 min + 5 min core",
+          "OR Run/Walk 20 min (1 min run / 1 min walk)"
+        ],
+        "better": [
+          "Run: warm-up 8 min; 8 rounds 30s hard / 90s easy; cool-down 5 min",
+          "Grip: farmer holds 4x30-45s",
+          "Core: dead bug 2x8/side + side plank 2x25s/side"
+        ],
+        "best": [
+          "Peloton Intervals 30-45 min OR Run: 6x2 min hard / 2 min easy",
+          "Grip: towel hangs 4x15-25s (or heavy holds)",
+          "Mobility 8 min"
+        ],
+        "programOptions": [
+          "Base plan (as written)",
+          "P90X3: Agility X / Accelerator / CVX",
+          "Insanity: Cardio Recovery (Week 1-2 friendly)",
+          "Insanity: Core Cardio & Balance (Week 3+)",
+          "P90X: Plyometrics (Week 4+; only 1 plyo/week)"
+        ]
+      }
+    },
+    {
+      "day": "Wednesday",
+      "shift": "Double 07:00-23:00",
+      "code": "MOB",
+      "date": "2026-04-15",
+      "week": 9,
+      "template": {
+        "title": "Mobility / recovery (Wednesday double)",
+        "good": [
+          "5-10 min: couch stretch 60s/side + calves 60s/side + open books 8/side"
+        ],
+        "better": [
+          "10-20 min mobility flow + 2 min nasal breathing (long exhales)"
+        ],
+        "best": [
+          "20-30 min easy walk/ride + 10 min mobility"
+        ],
+        "programOptions": [
+          "Base mobility (as written)",
+          "P90X: X Stretch",
+          "P90X3: Dynamix",
+          "P90X2: Recovery + Mobility"
+        ]
+      }
+    },
+    {
+      "day": "Thursday",
+      "shift": "09:00-17:00",
+      "code": "SB",
+      "date": "2026-04-16",
+      "week": 9,
+      "template": {
+        "title": "Strength B (squat + pull + carries/sandbag)",
+        "good": [
+          "Goblet squat: 3x8 (44 lb)",
+          "Pull-ups: 4x2 (band-assisted ok)",
+          "Suitcase carry: 3x40s/side",
+          "Quick stretch"
+        ],
+        "better": [
+          "Goblet squat: 5x8 (44-53)",
+          "DB RDL: 4x10",
+          "Pull-ups: 5 sets (leave 1 rep in tank)",
+          "Sandbag bear-hug carry: 4x40-60s (50-60 lb)"
+        ],
+        "best": [
+          "DB front squat (or heavy goblet): 5x6",
+          "DB RDL: 5x8 heavier",
+          "Pull-ups: 6 sets of 2-4",
+          "Sandbag carry density 10 min (40-60s carry / 40-60s rest)"
+        ],
+        "programOptions": [
+          "Base plan (as written)",
+          "Simple & Sinister (scaled) + Carry Finisher",
+          "P90X3: Eccentric Lower (be cautious first time)",
+          "P90X: Legs & Back (Week 4+)"
+        ]
+      }
+    },
+    {
+      "day": "Friday",
+      "shift": "15:00-23:00",
+      "code": "R",
+      "date": "2026-04-17",
+      "week": 9,
+      "template": {
+        "title": "Zone 2 (ruck or easy ride) + mobility",
+        "good": [
+          "Ruck 20 lb: 20-30 min easy OR easy ride 20-30 min",
+          "Stretch calves/hips 5 min"
+        ],
+        "better": [
+          "Ruck 20 lb: 40-60 min Zone 2 (conversational pace)",
+          "Foot check + calf stretch"
+        ],
+        "best": [
+          "Ruck 20-30 lb: 60-75 min if joints/feet feel great",
+          "OR 45 min Zone 2 ride + 10 min mobility"
+        ],
+        "programOptions": [
+          "Base plan (as written)",
+          "P90X3: Dynamix (after ruck)",
+          "P90X: X Stretch (after ruck)"
+        ]
+      }
+    },
+    {
+      "day": "Saturday",
+      "shift": "Off",
+      "code": "TAC",
+      "date": "2026-04-18",
+      "week": 9,
+      "template": {
+        "title": "Tactical circuit (mixed modal) + sandbag finisher + pull-ups",
+        "good": [
+          "2 rounds easy: 10 swings (35), 8 goblet squats (35), 8 push-ups, 40s suitcase carry/side",
+          "Mobility 5 min"
+        ],
+        "better": [
+          "AMRAP 18-20 min: 12 swings (44), 8 DB push press, 10 rows total, 8 step-ups/burpees (scaled)",
+          "Sandbag carry density 8 min (50-60 lb)"
+        ],
+        "best": [
+          "5 rounds: 90s hard (sandbag carry + swings) / 90s easy walk",
+          "Pull-ups EMOM 10 min: 2-3 reps",
+          "Sandbag carry density 10 min (60-80 lb if solid)"
+        ],
+        "programOptions": [
+          "Base plan (as written)",
+          "P90X: Kenpo X + sandbag carry",
+          "P90X3: MMX / The Warrior",
+          "Insanity: Pure Cardio (Week 5+)"
+        ]
+      }
+    },
+    {
+      "day": "Sunday",
+      "shift": "15:00-23:00",
+      "code": "REC",
+      "date": "2026-04-19",
+      "week": 9,
+      "template": {
+        "title": "Recovery + readiness (Sunday before 15:00-23:00 shift)",
+        "good": [
+          "8-12 min mobility + 2 min breathing"
+        ],
+        "better": [
+          "10-15 min easy walk + mobility"
+        ],
+        "best": [
+          "20-30 min easy ride/walk + mobility (stop before fatigue)"
+        ],
+        "programOptions": [
+          "Base recovery (as written)",
+          "Insanity: Cardio Recovery",
+          "P90X3: Dynamix",
+          "P90X: X Stretch"
+        ]
+      }
+    },
+    {
+      "day": "Monday",
+      "shift": "Off",
+      "code": "SA",
+      "date": "2026-04-20",
+      "week": 9,
+      "template": {
+        "title": "Strength A (hinge + push + pull + core)",
+        "good": [
+          "KB swings: 5x10 (35-44 lb), rest 60s",
+          "Push-ups: 3x8-12 (stop 2 reps before failure)",
+          "1-arm DB row: 3x10/side",
+          "2 min breathing + quick stretch"
+        ],
+        "better": [
+          "Swings EMOM 8 min: 10 swings/min (35-44)",
+          "DB floor press: 4x8 (RPE ~7)",
+          "1-arm DB row: 4x10/side",
+          "Plank 2x45s + side plank 2x30s/side"
+        ],
+        "best": [
+          "Pull-ups: 5x2-3 strict (or band-assisted)",
+          "Swings EMOM 10 min: 10 swings/min (44-53)",
+          "DB floor press: 5x6 heavier",
+          "Farmer carry: 3-4 rounds x 40-60s"
+        ],
+        "programOptions": [
+          "Base plan (as written)",
+          "Simple & Sinister (scaled)",
+          "P90X3: Total Synergistics",
+          "P90X3: The Challenge",
+          "P90X: Chest & Back (Week 3+)"
+        ]
+      }
+    },
+    {
+      "day": "Tuesday",
+      "shift": "Off (possible day OT)",
+      "code": "C",
+      "date": "2026-04-21",
+      "week": 10,
+      "template": {
+        "title": "Conditioning (run/walk or bike intervals) + grip/core",
+        "good": [
+          "Peloton Low Impact 20 min + 5 min core",
+          "OR Run/Walk 20 min (1 min run / 1 min walk)"
+        ],
+        "better": [
+          "Run: warm-up 8 min; 8 rounds 30s hard / 90s easy; cool-down 5 min",
+          "Grip: farmer holds 4x30-45s",
+          "Core: dead bug 2x8/side + side plank 2x25s/side"
+        ],
+        "best": [
+          "Peloton Intervals 30-45 min OR Run: 6x2 min hard / 2 min easy",
+          "Grip: towel hangs 4x15-25s (or heavy holds)",
+          "Mobility 8 min"
+        ],
+        "programOptions": [
+          "Base plan (as written)",
+          "P90X3: Agility X / Accelerator / CVX",
+          "Insanity: Cardio Recovery (Week 1-2 friendly)",
+          "Insanity: Core Cardio & Balance (Week 3+)",
+          "P90X: Plyometrics (Week 4+; only 1 plyo/week)"
+        ]
+      }
+    },
+    {
+      "day": "Wednesday",
+      "shift": "Double 07:00-23:00",
+      "code": "MOB",
+      "date": "2026-04-22",
+      "week": 10,
+      "template": {
+        "title": "Mobility / recovery (Wednesday double)",
+        "good": [
+          "5-10 min: couch stretch 60s/side + calves 60s/side + open books 8/side"
+        ],
+        "better": [
+          "10-20 min mobility flow + 2 min nasal breathing (long exhales)"
+        ],
+        "best": [
+          "20-30 min easy walk/ride + 10 min mobility"
+        ],
+        "programOptions": [
+          "Base mobility (as written)",
+          "P90X: X Stretch",
+          "P90X3: Dynamix",
+          "P90X2: Recovery + Mobility"
+        ]
+      }
+    },
+    {
+      "day": "Thursday",
+      "shift": "09:00-17:00",
+      "code": "SB",
+      "date": "2026-04-23",
+      "week": 10,
+      "template": {
+        "title": "Strength B (squat + pull + carries/sandbag)",
+        "good": [
+          "Goblet squat: 3x8 (44 lb)",
+          "Pull-ups: 4x2 (band-assisted ok)",
+          "Suitcase carry: 3x40s/side",
+          "Quick stretch"
+        ],
+        "better": [
+          "Goblet squat: 5x8 (44-53)",
+          "DB RDL: 4x10",
+          "Pull-ups: 5 sets (leave 1 rep in tank)",
+          "Sandbag bear-hug carry: 4x40-60s (50-60 lb)"
+        ],
+        "best": [
+          "DB front squat (or heavy goblet): 5x6",
+          "DB RDL: 5x8 heavier",
+          "Pull-ups: 6 sets of 2-4",
+          "Sandbag carry density 10 min (40-60s carry / 40-60s rest)"
+        ],
+        "programOptions": [
+          "Base plan (as written)",
+          "Simple & Sinister (scaled) + Carry Finisher",
+          "P90X3: Eccentric Lower (be cautious first time)",
+          "P90X: Legs & Back (Week 4+)"
+        ]
+      }
+    },
+    {
+      "day": "Friday",
+      "shift": "15:00-23:00",
+      "code": "R",
+      "date": "2026-04-24",
+      "week": 10,
+      "template": {
+        "title": "Zone 2 (ruck or easy ride) + mobility",
+        "good": [
+          "Ruck 20 lb: 20-30 min easy OR easy ride 20-30 min",
+          "Stretch calves/hips 5 min"
+        ],
+        "better": [
+          "Ruck 20 lb: 40-60 min Zone 2 (conversational pace)",
+          "Foot check + calf stretch"
+        ],
+        "best": [
+          "Ruck 20-30 lb: 60-75 min if joints/feet feel great",
+          "OR 45 min Zone 2 ride + 10 min mobility"
+        ],
+        "programOptions": [
+          "Base plan (as written)",
+          "P90X3: Dynamix (after ruck)",
+          "P90X: X Stretch (after ruck)"
+        ]
+      }
+    },
+    {
+      "day": "Saturday",
+      "shift": "Off",
+      "code": "TAC",
+      "date": "2026-04-25",
+      "week": 10,
+      "template": {
+        "title": "Tactical circuit (mixed modal) + sandbag finisher + pull-ups",
+        "good": [
+          "2 rounds easy: 10 swings (35), 8 goblet squats (35), 8 push-ups, 40s suitcase carry/side",
+          "Mobility 5 min"
+        ],
+        "better": [
+          "AMRAP 18-20 min: 12 swings (44), 8 DB push press, 10 rows total, 8 step-ups/burpees (scaled)",
+          "Sandbag carry density 8 min (50-60 lb)"
+        ],
+        "best": [
+          "5 rounds: 90s hard (sandbag carry + swings) / 90s easy walk",
+          "Pull-ups EMOM 10 min: 2-3 reps",
+          "Sandbag carry density 10 min (60-80 lb if solid)"
+        ],
+        "programOptions": [
+          "Base plan (as written)",
+          "P90X: Kenpo X + sandbag carry",
+          "P90X3: MMX / The Warrior",
+          "Insanity: Pure Cardio (Week 5+)"
+        ]
+      }
+    },
+    {
+      "day": "Sunday",
+      "shift": "15:00-23:00",
+      "code": "REC",
+      "date": "2026-04-26",
+      "week": 10,
+      "template": {
+        "title": "Recovery + readiness (Sunday before 15:00-23:00 shift)",
+        "good": [
+          "8-12 min mobility + 2 min breathing"
+        ],
+        "better": [
+          "10-15 min easy walk + mobility"
+        ],
+        "best": [
+          "20-30 min easy ride/walk + mobility (stop before fatigue)"
+        ],
+        "programOptions": [
+          "Base recovery (as written)",
+          "Insanity: Cardio Recovery",
+          "P90X3: Dynamix",
+          "P90X: X Stretch"
+        ]
+      }
+    },
+    {
+      "day": "Monday",
+      "shift": "Off",
+      "code": "SA",
+      "date": "2026-04-27",
+      "week": 10,
+      "template": {
+        "title": "Strength A (hinge + push + pull + core)",
+        "good": [
+          "KB swings: 5x10 (35-44 lb), rest 60s",
+          "Push-ups: 3x8-12 (stop 2 reps before failure)",
+          "1-arm DB row: 3x10/side",
+          "2 min breathing + quick stretch"
+        ],
+        "better": [
+          "Swings EMOM 8 min: 10 swings/min (35-44)",
+          "DB floor press: 4x8 (RPE ~7)",
+          "1-arm DB row: 4x10/side",
+          "Plank 2x45s + side plank 2x30s/side"
+        ],
+        "best": [
+          "Pull-ups: 5x2-3 strict (or band-assisted)",
+          "Swings EMOM 10 min: 10 swings/min (44-53)",
+          "DB floor press: 5x6 heavier",
+          "Farmer carry: 3-4 rounds x 40-60s"
+        ],
+        "programOptions": [
+          "Base plan (as written)",
+          "Simple & Sinister (scaled)",
+          "P90X3: Total Synergistics",
+          "P90X3: The Challenge",
+          "P90X: Chest & Back (Week 3+)"
+        ]
+      }
+    },
+    {
+      "day": "Tuesday",
+      "shift": "Off (possible day OT)",
+      "code": "C",
+      "date": "2026-04-28",
+      "week": 11,
+      "template": {
+        "title": "Conditioning (run/walk or bike intervals) + grip/core",
+        "good": [
+          "Peloton Low Impact 20 min + 5 min core",
+          "OR Run/Walk 20 min (1 min run / 1 min walk)"
+        ],
+        "better": [
+          "Run: warm-up 8 min; 8 rounds 30s hard / 90s easy; cool-down 5 min",
+          "Grip: farmer holds 4x30-45s",
+          "Core: dead bug 2x8/side + side plank 2x25s/side"
+        ],
+        "best": [
+          "Peloton Intervals 30-45 min OR Run: 6x2 min hard / 2 min easy",
+          "Grip: towel hangs 4x15-25s (or heavy holds)",
+          "Mobility 8 min"
+        ],
+        "programOptions": [
+          "Base plan (as written)",
+          "P90X3: Agility X / Accelerator / CVX",
+          "Insanity: Cardio Recovery (Week 1-2 friendly)",
+          "Insanity: Core Cardio & Balance (Week 3+)",
+          "P90X: Plyometrics (Week 4+; only 1 plyo/week)"
+        ]
+      }
+    },
+    {
+      "day": "Wednesday",
+      "shift": "Double 07:00-23:00",
+      "code": "MOB",
+      "date": "2026-04-29",
+      "week": 11,
+      "template": {
+        "title": "Mobility / recovery (Wednesday double)",
+        "good": [
+          "5-10 min: couch stretch 60s/side + calves 60s/side + open books 8/side"
+        ],
+        "better": [
+          "10-20 min mobility flow + 2 min nasal breathing (long exhales)"
+        ],
+        "best": [
+          "20-30 min easy walk/ride + 10 min mobility"
+        ],
+        "programOptions": [
+          "Base mobility (as written)",
+          "P90X: X Stretch",
+          "P90X3: Dynamix",
+          "P90X2: Recovery + Mobility"
+        ]
+      }
+    },
+    {
+      "day": "Thursday",
+      "shift": "09:00-17:00",
+      "code": "SB",
+      "date": "2026-04-30",
+      "week": 11,
+      "template": {
+        "title": "Strength B (squat + pull + carries/sandbag)",
+        "good": [
+          "Goblet squat: 3x8 (44 lb)",
+          "Pull-ups: 4x2 (band-assisted ok)",
+          "Suitcase carry: 3x40s/side",
+          "Quick stretch"
+        ],
+        "better": [
+          "Goblet squat: 5x8 (44-53)",
+          "DB RDL: 4x10",
+          "Pull-ups: 5 sets (leave 1 rep in tank)",
+          "Sandbag bear-hug carry: 4x40-60s (50-60 lb)"
+        ],
+        "best": [
+          "DB front squat (or heavy goblet): 5x6",
+          "DB RDL: 5x8 heavier",
+          "Pull-ups: 6 sets of 2-4",
+          "Sandbag carry density 10 min (40-60s carry / 40-60s rest)"
+        ],
+        "programOptions": [
+          "Base plan (as written)",
+          "Simple & Sinister (scaled) + Carry Finisher",
+          "P90X3: Eccentric Lower (be cautious first time)",
+          "P90X: Legs & Back (Week 4+)"
+        ]
+      }
+    },
+    {
+      "day": "Friday",
+      "shift": "15:00-23:00",
+      "code": "R",
+      "date": "2026-05-01",
+      "week": 11,
+      "template": {
+        "title": "Zone 2 (ruck or easy ride) + mobility",
+        "good": [
+          "Ruck 20 lb: 20-30 min easy OR easy ride 20-30 min",
+          "Stretch calves/hips 5 min"
+        ],
+        "better": [
+          "Ruck 20 lb: 40-60 min Zone 2 (conversational pace)",
+          "Foot check + calf stretch"
+        ],
+        "best": [
+          "Ruck 20-30 lb: 60-75 min if joints/feet feel great",
+          "OR 45 min Zone 2 ride + 10 min mobility"
+        ],
+        "programOptions": [
+          "Base plan (as written)",
+          "P90X3: Dynamix (after ruck)",
+          "P90X: X Stretch (after ruck)"
+        ]
+      }
+    },
+    {
+      "day": "Saturday",
+      "shift": "Off",
+      "code": "TAC",
+      "date": "2026-05-02",
+      "week": 11,
+      "template": {
+        "title": "Tactical circuit (mixed modal) + sandbag finisher + pull-ups",
+        "good": [
+          "2 rounds easy: 10 swings (35), 8 goblet squats (35), 8 push-ups, 40s suitcase carry/side",
+          "Mobility 5 min"
+        ],
+        "better": [
+          "AMRAP 18-20 min: 12 swings (44), 8 DB push press, 10 rows total, 8 step-ups/burpees (scaled)",
+          "Sandbag carry density 8 min (50-60 lb)"
+        ],
+        "best": [
+          "5 rounds: 90s hard (sandbag carry + swings) / 90s easy walk",
+          "Pull-ups EMOM 10 min: 2-3 reps",
+          "Sandbag carry density 10 min (60-80 lb if solid)"
+        ],
+        "programOptions": [
+          "Base plan (as written)",
+          "P90X: Kenpo X + sandbag carry",
+          "P90X3: MMX / The Warrior",
+          "Insanity: Pure Cardio (Week 5+)"
+        ]
+      }
+    },
+    {
+      "day": "Sunday",
+      "shift": "15:00-23:00",
+      "code": "REC",
+      "date": "2026-05-03",
+      "week": 11,
+      "template": {
+        "title": "Recovery + readiness (Sunday before 15:00-23:00 shift)",
+        "good": [
+          "8-12 min mobility + 2 min breathing"
+        ],
+        "better": [
+          "10-15 min easy walk + mobility"
+        ],
+        "best": [
+          "20-30 min easy ride/walk + mobility (stop before fatigue)"
+        ],
+        "programOptions": [
+          "Base recovery (as written)",
+          "Insanity: Cardio Recovery",
+          "P90X3: Dynamix",
+          "P90X: X Stretch"
+        ]
+      }
+    },
+    {
+      "day": "Monday",
+      "shift": "Off",
+      "code": "SA",
+      "date": "2026-05-04",
+      "week": 11,
+      "template": {
+        "title": "Strength A (hinge + push + pull + core)",
+        "good": [
+          "KB swings: 5x10 (35-44 lb), rest 60s",
+          "Push-ups: 3x8-12 (stop 2 reps before failure)",
+          "1-arm DB row: 3x10/side",
+          "2 min breathing + quick stretch"
+        ],
+        "better": [
+          "Swings EMOM 8 min: 10 swings/min (35-44)",
+          "DB floor press: 4x8 (RPE ~7)",
+          "1-arm DB row: 4x10/side",
+          "Plank 2x45s + side plank 2x30s/side"
+        ],
+        "best": [
+          "Pull-ups: 5x2-3 strict (or band-assisted)",
+          "Swings EMOM 10 min: 10 swings/min (44-53)",
+          "DB floor press: 5x6 heavier",
+          "Farmer carry: 3-4 rounds x 40-60s"
+        ],
+        "programOptions": [
+          "Base plan (as written)",
+          "Simple & Sinister (scaled)",
+          "P90X3: Total Synergistics",
+          "P90X3: The Challenge",
+          "P90X: Chest & Back (Week 3+)"
+        ]
+      }
+    },
+    {
+      "day": "Tuesday",
+      "shift": "Off (possible day OT)",
+      "code": "C",
+      "date": "2026-05-05",
+      "week": 12,
+      "template": {
+        "title": "Conditioning (run/walk or bike intervals) + grip/core",
+        "good": [
+          "Peloton Low Impact 20 min + 5 min core",
+          "OR Run/Walk 20 min (1 min run / 1 min walk)"
+        ],
+        "better": [
+          "Run: warm-up 8 min; 8 rounds 30s hard / 90s easy; cool-down 5 min",
+          "Grip: farmer holds 4x30-45s",
+          "Core: dead bug 2x8/side + side plank 2x25s/side"
+        ],
+        "best": [
+          "Peloton Intervals 30-45 min OR Run: 6x2 min hard / 2 min easy",
+          "Grip: towel hangs 4x15-25s (or heavy holds)",
+          "Mobility 8 min"
+        ],
+        "programOptions": [
+          "Base plan (as written)",
+          "P90X3: Agility X / Accelerator / CVX",
+          "Insanity: Cardio Recovery (Week 1-2 friendly)",
+          "Insanity: Core Cardio & Balance (Week 3+)",
+          "P90X: Plyometrics (Week 4+; only 1 plyo/week)"
+        ]
+      }
+    },
+    {
+      "day": "Wednesday",
+      "shift": "Double 07:00-23:00",
+      "code": "MOB",
+      "date": "2026-05-06",
+      "week": 12,
+      "template": {
+        "title": "Mobility / recovery (Wednesday double)",
+        "good": [
+          "5-10 min: couch stretch 60s/side + calves 60s/side + open books 8/side"
+        ],
+        "better": [
+          "10-20 min mobility flow + 2 min nasal breathing (long exhales)"
+        ],
+        "best": [
+          "20-30 min easy walk/ride + 10 min mobility"
+        ],
+        "programOptions": [
+          "Base mobility (as written)",
+          "P90X: X Stretch",
+          "P90X3: Dynamix",
+          "P90X2: Recovery + Mobility"
+        ]
+      }
+    },
+    {
+      "day": "Thursday",
+      "shift": "09:00-17:00",
+      "code": "SB",
+      "date": "2026-05-07",
+      "week": 12,
+      "template": {
+        "title": "Strength B (squat + pull + carries/sandbag)",
+        "good": [
+          "Goblet squat: 3x8 (44 lb)",
+          "Pull-ups: 4x2 (band-assisted ok)",
+          "Suitcase carry: 3x40s/side",
+          "Quick stretch"
+        ],
+        "better": [
+          "Goblet squat: 5x8 (44-53)",
+          "DB RDL: 4x10",
+          "Pull-ups: 5 sets (leave 1 rep in tank)",
+          "Sandbag bear-hug carry: 4x40-60s (50-60 lb)"
+        ],
+        "best": [
+          "DB front squat (or heavy goblet): 5x6",
+          "DB RDL: 5x8 heavier",
+          "Pull-ups: 6 sets of 2-4",
+          "Sandbag carry density 10 min (40-60s carry / 40-60s rest)"
+        ],
+        "programOptions": [
+          "Base plan (as written)",
+          "Simple & Sinister (scaled) + Carry Finisher",
+          "P90X3: Eccentric Lower (be cautious first time)",
+          "P90X: Legs & Back (Week 4+)"
+        ]
+      }
+    },
+    {
+      "day": "Friday",
+      "shift": "15:00-23:00",
+      "code": "R",
+      "date": "2026-05-08",
+      "week": 12,
+      "template": {
+        "title": "Zone 2 (ruck or easy ride) + mobility",
+        "good": [
+          "Ruck 20 lb: 20-30 min easy OR easy ride 20-30 min",
+          "Stretch calves/hips 5 min"
+        ],
+        "better": [
+          "Ruck 20 lb: 40-60 min Zone 2 (conversational pace)",
+          "Foot check + calf stretch"
+        ],
+        "best": [
+          "Ruck 20-30 lb: 60-75 min if joints/feet feel great",
+          "OR 45 min Zone 2 ride + 10 min mobility"
+        ],
+        "programOptions": [
+          "Base plan (as written)",
+          "P90X3: Dynamix (after ruck)",
+          "P90X: X Stretch (after ruck)"
+        ]
+      }
+    },
+    {
+      "day": "Saturday",
+      "shift": "Off",
+      "code": "TAC",
+      "date": "2026-05-09",
+      "week": 12,
+      "template": {
+        "title": "Tactical circuit (mixed modal) + sandbag finisher + pull-ups",
+        "good": [
+          "2 rounds easy: 10 swings (35), 8 goblet squats (35), 8 push-ups, 40s suitcase carry/side",
+          "Mobility 5 min"
+        ],
+        "better": [
+          "AMRAP 18-20 min: 12 swings (44), 8 DB push press, 10 rows total, 8 step-ups/burpees (scaled)",
+          "Sandbag carry density 8 min (50-60 lb)"
+        ],
+        "best": [
+          "5 rounds: 90s hard (sandbag carry + swings) / 90s easy walk",
+          "Pull-ups EMOM 10 min: 2-3 reps",
+          "Sandbag carry density 10 min (60-80 lb if solid)"
+        ],
+        "programOptions": [
+          "Base plan (as written)",
+          "P90X: Kenpo X + sandbag carry",
+          "P90X3: MMX / The Warrior",
+          "Insanity: Pure Cardio (Week 5+)"
+        ]
+      }
+    },
+    {
+      "day": "Sunday",
+      "shift": "15:00-23:00",
+      "code": "REC",
+      "date": "2026-05-10",
+      "week": 12,
+      "template": {
+        "title": "Recovery + readiness (Sunday before 15:00-23:00 shift)",
+        "good": [
+          "8-12 min mobility + 2 min breathing"
+        ],
+        "better": [
+          "10-15 min easy walk + mobility"
+        ],
+        "best": [
+          "20-30 min easy ride/walk + mobility (stop before fatigue)"
+        ],
+        "programOptions": [
+          "Base recovery (as written)",
+          "Insanity: Cardio Recovery",
+          "P90X3: Dynamix",
+          "P90X: X Stretch"
+        ]
+      }
+    },
+    {
+      "day": "Monday",
+      "shift": "Off",
+      "code": "SA",
+      "date": "2026-05-11",
+      "week": 12,
+      "template": {
+        "title": "Strength A (hinge + push + pull + core)",
+        "good": [
+          "KB swings: 5x10 (35-44 lb), rest 60s",
+          "Push-ups: 3x8-12 (stop 2 reps before failure)",
+          "1-arm DB row: 3x10/side",
+          "2 min breathing + quick stretch"
+        ],
+        "better": [
+          "Swings EMOM 8 min: 10 swings/min (35-44)",
+          "DB floor press: 4x8 (RPE ~7)",
+          "1-arm DB row: 4x10/side",
+          "Plank 2x45s + side plank 2x30s/side"
+        ],
+        "best": [
+          "Pull-ups: 5x2-3 strict (or band-assisted)",
+          "Swings EMOM 10 min: 10 swings/min (44-53)",
+          "DB floor press: 5x6 heavier",
+          "Farmer carry: 3-4 rounds x 40-60s"
+        ],
+        "programOptions": [
+          "Base plan (as written)",
+          "Simple & Sinister (scaled)",
+          "P90X3: Total Synergistics",
+          "P90X3: The Challenge",
+          "P90X: Chest & Back (Week 3+)"
+        ]
+      }
+    }
+  ],
+  "carryFinisher": {
+    "title": "Carry Finisher Menu (for 'S&S + carries')",
+    "good": [
+      "Suitcase carry: 2 rounds/side x 40s; rest 40-60s",
+      "OR Farmer hold: 3x30-40s; rest 45-60s"
+    ],
+    "better": [
+      "Suitcase carry: 3 rounds/side x 45-60s; rest ~60s",
+      "OR Farmer carry/hold: 4 rounds x 45-60s; rest ~60s"
+    ],
+    "best": [
+      "Farmer carry ladder: 5 rounds x 60s with 60s rest",
+      "OR Sandbag bear-hug carry: 4-6 rounds x 40-60s with 60-90s rest (50-60 lb start; build to 60-80)"
+    ],
+    "default": "Suitcase carries (anti-rotation core + duty transfer)."
+  }
+}

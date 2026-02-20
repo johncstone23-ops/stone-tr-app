@@ -1,0 +1,324 @@
+{
+  "exercises": [
+    {
+      "name": "Kettlebell Swing (two-hand)",
+      "purpose": "Hip power, posterior chain strength, conditioning transfer, back resilience.",
+      "setup": [
+        "Stand with feet about shoulder width; KB a foot in front of you.",
+        "Hinge: push hips back, keep shins nearly vertical, spine neutral.",
+        "Grip the handle, tilt the bell toward you, pack shoulders (armpits tight)."
+      ],
+      "steps": [
+        "Hike-pass the bell back high between thighs (like snapping a football).",
+        "Snap hips forward hard; squeeze glutes; bell floats to chest height.",
+        "Arms stay relaxed like hooks; do not lift with shoulders.",
+        "Let the bell fall; hinge again; repeat. Breathing: sharp exhale at the top."
+      ],
+      "common_mistakes": [
+        "Squatting instead of hinging (knees too far forward).",
+        "Overextending at the top (ribs flaring, leaning back).",
+        "Lifting with arms/shoulders instead of driving with hips.",
+        "Letting the bell drop low (keep it high in the hinge)."
+      ],
+      "regressions": [
+        "Deadlift the KB (hinge practice) 3 x 8\u201310.",
+        "Swing with lighter bell (35\u201344 lb) and fewer reps."
+      ],
+      "progressions": [
+        "Increase bell weight (53\u201370 lb) while keeping crisp form.",
+        "Increase density: EMOM (every minute on the minute) sets.",
+        "One-hand swings after Week 6 if shoulders feel great."
+      ],
+      "tags": [
+        "kettlebell"
+      ]
+    },
+    {
+      "name": "Turkish Get-Up (TGU)",
+      "purpose": "Shoulder stability, core control, hip mobility, total-body coordination (excellent for duty durability).",
+      "setup": [
+        "Lie on back; KB in right hand, arm vertical; right knee bent, left leg straight.",
+        "Left arm at ~45 degrees for support; eyes on the bell."
+      ],
+      "steps": [
+        "Roll to left elbow (keep right arm locked).",
+        "Post to left hand; lift hips into a bridge (high hips).",
+        "Sweep left leg under to a lunge position (left knee under hip).",
+        "Windshield-wiper the back leg to square up; stand.",
+        "Reverse the steps back down with control. Switch sides."
+      ],
+      "common_mistakes": [
+        "Bent elbow (keep the bell-side elbow locked).",
+        "Rushing transitions; losing shoulder pack.",
+        "Letting the knee collapse inward on the lunge."
+      ],
+      "regressions": [
+        "Do it unloaded (shoe on fist) for 3 reps/side.",
+        "Use 35 lb and do partial get-ups (to elbow / to hand) first."
+      ],
+      "progressions": [
+        "Increase weight gradually (44\u201362 lb).",
+        "Add pauses: 2 seconds at elbow/hand/bridge/lunge."
+      ],
+      "tags": [
+        "kettlebell"
+      ]
+    },
+    {
+      "name": "Goblet Squat (KB or DB)",
+      "purpose": "Leg strength, hip mobility, posture under load.",
+      "setup": [
+        "Hold KB horns at chest (or a DB vertically).",
+        "Feet shoulder width; toes slightly out; brace core."
+      ],
+      "steps": [
+        "Sit down between hips; knees track over toes.",
+        "Keep chest tall; elbows inside knees at the bottom.",
+        "Drive up through midfoot; exhale near the top."
+      ],
+      "common_mistakes": [
+        "Heels lifting (ankle limitation).",
+        "Knees collapsing inward.",
+        "Rounding at the bottom."
+      ],
+      "regressions": [
+        "Box squat to a chair; reduce depth.",
+        "Bodyweight squats 3 x 10."
+      ],
+      "progressions": [
+        "Heavier bell (53\u201370 lb).",
+        "Tempo squats: 3 seconds down, 1 second pause."
+      ],
+      "tags": [
+        "dumbbell"
+      ]
+    },
+    {
+      "name": "DB Romanian Deadlift (RDL)",
+      "purpose": "Hamstrings/glutes/back strength; protects knees by strengthening hinge pattern.",
+      "setup": [
+        "DBs in hands; stand tall; slight knee bend; ribs down."
+      ],
+      "steps": [
+        "Hinge hips back; slide DBs down thighs; keep spine neutral.",
+        "Go to mid-shin or when hamstrings limit without rounding.",
+        "Drive hips forward; squeeze glutes at top."
+      ],
+      "common_mistakes": [
+        "Rounding back to chase depth.",
+        "Turning into a squat (too much knee bend)."
+      ],
+      "regressions": [
+        "KB deadlift from floor.",
+        "Shorter range of motion."
+      ],
+      "progressions": [
+        "Heavier DBs, fewer reps (5\u20138).",
+        "Single-leg RDL (balance)."
+      ],
+      "tags": [
+        "dumbbell"
+      ]
+    },
+    {
+      "name": "DB Floor Press",
+      "purpose": "Press strength with shoulder-friendly range; builds push power for duty/combatives.",
+      "setup": [
+        "Lie on floor; knees bent; DBs over chest; shoulder blades pulled down and back."
+      ],
+      "steps": [
+        "Lower elbows to floor under control (45 degrees from body).",
+        "Pause lightly; press up to lockout; do not shrug."
+      ],
+      "common_mistakes": [
+        "Elbows flared straight out.",
+        "Shrugging shoulders toward ears."
+      ],
+      "regressions": [
+        "Push-ups on incline.",
+        "Lighter DBs."
+      ],
+      "progressions": [
+        "Heavier DBs or pause reps.",
+        "Neutral grip for shoulder comfort."
+      ],
+      "tags": [
+        "dumbbell"
+      ]
+    },
+    {
+      "name": "DB Push Press",
+      "purpose": "Explosive overhead power; transfers to lifting, striking strength, and gear handling.",
+      "setup": [
+        "DBs at shoulders; feet hip width; brace core; glutes tight."
+      ],
+      "steps": [
+        "Dip 2\u20134 inches (small knee bend).",
+        "Drive hard and press overhead; lockout with biceps near ears.",
+        "Lower with control back to shoulders."
+      ],
+      "common_mistakes": [
+        "Deep squat dip (too much).",
+        "Pressing with loose core/arched back."
+      ],
+      "regressions": [
+        "Strict press lighter.",
+        "Half-kneeling single-arm press."
+      ],
+      "progressions": [
+        "Heavier DBs; reduce reps to 4\u20136."
+      ],
+      "tags": [
+        "dumbbell"
+      ]
+    },
+    {
+      "name": "1-Arm DB Row",
+      "purpose": "Pull strength for grappling, posture, and shoulder health; direct pull-up support.",
+      "setup": [
+        "One hand on bench/chair; hinge; back flat; DB hangs under shoulder."
+      ],
+      "steps": [
+        "Row DB to ribs/hip; elbow tight; pause 1 second.",
+        "Lower under control; keep torso still."
+      ],
+      "common_mistakes": [
+        "Twisting torso; jerking weight.",
+        "Shrugging shoulder up."
+      ],
+      "regressions": [
+        "Lighter DB; slow tempo."
+      ],
+      "progressions": [
+        "Heavier DB; 5\u20138 reps.",
+        "Chest-supported row if you add a bench."
+      ],
+      "tags": [
+        "dumbbell"
+      ]
+    },
+    {
+      "name": "Pull-up (strict) + Progressions",
+      "purpose": "Climbing readiness, grip, upper-back strength, PFQ benefit, combatives control.",
+      "setup": [
+        "Hands shoulder width; full hang; ribs down; glutes lightly tight."
+      ],
+      "steps": [
+        "Pull elbows to ribs; chest toward bar; chin clears bar.",
+        "Lower to full hang under control (2\u20133 seconds)."
+      ],
+      "common_mistakes": [
+        "Kipping or swinging; half reps; craning neck.",
+        "Shrugging shoulders to ears (no shoulder pack)."
+      ],
+      "regressions": [
+        "Band-assisted pull-ups (recommended band).",
+        "Negatives: jump to top, lower 5\u20138 seconds.",
+        "Scap pull-ups: 3 x 8."
+      ],
+      "progressions": [
+        "Add weight with backpack once you can do 8+ clean reps.",
+        "EMOM density: 2\u20133 reps each minute for 10 minutes."
+      ],
+      "tags": [
+        "pull-ups"
+      ]
+    },
+    {
+      "name": "Farmer Carry / Suitcase Carry",
+      "purpose": "Grip, trunk stiffness, posture under load, real-world strength (kids/gear).",
+      "setup": [
+        "Pick up heavy DBs (or one DB for suitcase). Stand tall; ribs down; chin tucked."
+      ],
+      "steps": [
+        "Walk slow and steady; shoulders down; avoid leaning.",
+        "Switch sides each set for suitcase carry."
+      ],
+      "common_mistakes": [
+        "Shrugging; leaning; rushing steps."
+      ],
+      "regressions": [
+        "Static holds 30\u201345 seconds."
+      ],
+      "progressions": [
+        "Longer time 60\u201390 seconds; heavier weight."
+      ],
+      "tags": [
+        "core"
+      ]
+    },
+    {
+      "name": "Sandbag Bear-Hug Carry",
+      "purpose": "Odd-object strength, grappling carryover, back and trunk durability.",
+      "setup": [
+        "Hug bag high on chest; elbows down; brace; tall posture."
+      ],
+      "steps": [
+        "Walk controlled; short steps; breathe behind the shield (slow exhales)."
+      ],
+      "common_mistakes": [
+        "Bag too low (pulls low back).",
+        "Leaning back; flaring ribs."
+      ],
+      "regressions": [
+        "Use 50 lb; shorter sets (20\u201330 sec)."
+      ],
+      "progressions": [
+        "60\u201380 lb; 40\u201360 sec sets; add slight hills."
+      ],
+      "tags": [
+        "core",
+        "sandbag"
+      ]
+    },
+    {
+      "name": "Plank / Side Plank / Dead Bug",
+      "purpose": "Core stiffness without spinal wear; protects back; transfers to fighting and rucking.",
+      "setup": [
+        "Plank: elbows under shoulders; ribs down; glutes tight.",
+        "Side plank: elbow under shoulder; hips stacked."
+      ],
+      "steps": [
+        "Hold steady; breathe; avoid sagging.",
+        "Dead bug: low back pressed into floor; move opposite arm/leg slowly."
+      ],
+      "common_mistakes": [
+        "Hips sagging; holding breath; fast dead bug reps."
+      ],
+      "regressions": [
+        "Knee plank; shorter holds."
+      ],
+      "progressions": [
+        "Longer holds; add suitcase carry core work."
+      ],
+      "tags": [
+        "core"
+      ]
+    },
+    {
+      "name": "Rucking (20 lb)",
+      "purpose": "Aerobic base, leg/tendon durability, kit tolerance, fat loss with low joint impact.",
+      "setup": [
+        "Pack weight high and tight; shoulder straps snug; waist belt if available.",
+        "Foot care: tape hotspots early; wool socks; dry feet post-ruck."
+      ],
+      "steps": [
+        "Walk at conversational pace (Zone 2).",
+        "Posture: tall; ribs down; short stride; arms swing naturally."
+      ],
+      "common_mistakes": [
+        "Too much weight too soon; trying to jog with a ruck.",
+        "Overstriding (heel striking hard)."
+      ],
+      "regressions": [
+        "Shorter time (20\u201330 min)."
+      ],
+      "progressions": [
+        "Add time first; then consider 25\u201330 lb after Week 4 if joints feel good."
+      ],
+      "tags": [
+        "rucking"
+      ]
+    }
+  ]
+}
