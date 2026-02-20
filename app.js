@@ -206,8 +206,8 @@ function renderWarmupChecklist(day){
           <div class="small">Check items as you go. Keep it easy—warm, loose, ready.</div>
         </div>
         <div class="row">
-          <button class="btn secondary" id="wuAll">All</button>
-          <button class="btn secondary" id="wuReset">Reset</button>
+          <button type="button" class="btn secondary" id="wuAll">All</button>
+          <button type="button" class="btn secondary" id="wuReset">Reset</button>
         </div>
       </div>
       <div class="checks">${rows}</div>
@@ -239,7 +239,7 @@ async function init(){
 }
 function registerSW(){
   if("serviceWorker" in navigator){
-    navigator.serviceWorker.register("./service-worker.js?v=20260220054442").catch(()=>{});
+    navigator.serviceWorker.register("./service-worker.js?v=20260220060203").catch(()=>{});
   }
 }
 function wireTabs(){
@@ -606,6 +606,47 @@ function postWire(tab){
     const focus = STORE.focusDate ? STORE.focusDate : todayISO();
     const day = getClosestDay(focus);
     ensureKey(day.date);
+    ensureWarmupKey(day.date); // warm-up checklist state
+    ensureShieldState();       // streak shield state
+
+    // Warm-up checklist wiring
+    document.querySelectorAll(".wu").forEach(cb=>{
+      cb.addEventListener("change", ()=>{
+        const item = cb.dataset.item;
+        STORE.warmups[day.date][item] = cb.checked;
+        saveStore();
+        render("today");
+      });
+    });
+
+    // Warm-up quick buttons
+    const wuAll = document.getElementById("wuAll");
+    const wuReset = document.getElementById("wuReset");
+    if(wuAll){
+      wuAll.addEventListener("click", ()=>{
+        (warmupFor(day.code)||[]).forEach(it=>{ STORE.warmups[day.date][it] = true; });
+        saveStore();
+        render("today");
+      });
+    }
+    if(wuReset){
+      wuReset.addEventListener("click", ()=>{
+        (warmupFor(day.code)||[]).forEach(it=>{ STORE.warmups[day.date][it] = false; });
+        saveStore();
+        render("today");
+      });
+    }
+
+    // Streak shield buttons (only visible when applicable)
+    const bSW = document.getElementById("useShieldW");
+    const bSWU = document.getElementById("useShieldWU");
+    const bUSW = document.getElementById("undoShieldW");
+    const bUSWU = document.getElementById("undoShieldWU");
+    if(bSW){ bSW.addEventListener("click", ()=>{ applyShield("workout", day.date); render("today"); }); }
+    if(bSWU){ bSWU.addEventListener("click", ()=>{ applyShield("warmup", day.date); render("today"); }); }
+    if(bUSW){ bUSW.addEventListener("click", ()=>{ clearShield("workout", day.date); render("today"); }); }
+    if(bUSWU){ bUSWU.addEventListener("click", ()=>{ clearShield("warmup", day.date); render("today"); }); }
+
 
     document.querySelectorAll('[data-intensity]').forEach(btn=>{
       btn.addEventListener("click", ()=>{
