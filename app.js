@@ -76,6 +76,45 @@ function getClosestDay(dateISO){
   if(dateISO > last) return PLAN.days[PLAN.days.length-1];
   return getDay(dateISO) || PLAN.days[0];
 }
+
+function warmupFor(code){
+  // 5–8 min default warm-up. Designed for off‑duty / home gear and street-ready movement quality.
+  // Keep it easy: you should feel warmer, looser, and more "snappy"—not fatigued.
+  if(code==="R" || code==="C"){
+    return [
+      "1–2 min easy: brisk walk or easy pedal (Peloton)",
+      "Breathing reset: 3 slow nasal breaths, long exhale",
+      "Ankles: 10 ankle rocks/side + 10 calf pumps",
+      "Hips: 10 leg swings front/back + 10 side/side each",
+      "Glutes: 10 glute bridges + 6 bodyweight reverse lunges/side",
+      "Run primer: 2 x 20s relaxed strides (or 30s fast walk)"
+    ];
+  }
+  if(code==="SB" || code==="SA" || code==="TAC"){
+    return [
+      "1–2 min easy: jump rope / marching in place / easy Peloton spin",
+      "T‑spine + shoulders: 6 cat‑cow + 6 thoracic rotations/side",
+      "Hinge + squat pattern: 10 hip hinges + 6 goblet squat pry (light KB/DB)",
+      "Scap + push: 8 scap push‑ups + 10 band pull‑aparts (or Y‑T‑W x 5 each)",
+      "Core brace: dead bug 6/side (slow)",
+      "Grip primer (optional): 20–30s easy hang or light farmer hold"
+    ];
+  }
+  if(code==="MOB"){
+    return [
+      "Start with 60–90s easy movement (walk/pedal)",
+      "Then begin the mobility flow as written (that IS the warm‑up)"
+    ];
+  }
+  // REC or anything else
+  return [
+    "2–3 min easy walk",
+    "Joint circles: neck/shoulders/hips (gentle)",
+    "Light mobility: world's greatest stretch x 3/side",
+    "Finish with 3 slow breaths"
+  ];
+}
+
 function ul(items){
   return `<ul class="list">${items.map(i=>`<li>${esc(i)}</li>`).join("")}</ul>`;
 }
@@ -119,6 +158,12 @@ function renderToday(){
       <h1 class="h1">${fmtDate(day.date)} - ${esc(t.title)}</h1>
       <div class="small">Pick GOOD / BETTER / BEST, choose a Program option, and check it off.</div>
       <div class="chips" style="margin-top:10px">${iPills}</div>
+    </section>
+
+    <section class="card">
+      <div class="h2">Warm-up (5–8 min)</div>
+      ${ul(warmupFor(day.code))}
+      <div class="small">Note: Peloton classes include a warm-up, but still do 60–90 seconds of easy joint prep first. Run workouts already include a longer warm-up when specified.</div>
     </section>
 
     <section class="card">
