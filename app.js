@@ -239,7 +239,7 @@ async function init(){
 }
 function registerSW(){
   if("serviceWorker" in navigator){
-    navigator.serviceWorker.register("./service-worker.js?v=20260220050810").catch(()=>{});
+    navigator.serviceWorker.register("./service-worker.js?v=20260220054442").catch(()=>{});
   }
 }
 function wireTabs(){

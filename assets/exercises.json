@@ -319,6 +319,45 @@
       "tags": [
         "rucking"
       ]
+    },
+    {
+      "name": "Norwegian 4x4 (VO2max Intervals)",
+      "purpose": "Raise VO2 max and improve high-end aerobic power with sustained, repeatable hard efforts.",
+      "setup": [
+        "Peloton bike preferred (lower impact than running while you\u2019re rebuilding).",
+        "If you have a heart-rate strap, pair it (optional). Otherwise use RPE and output consistency.",
+        "Pick a ride type where you can control intensity: \u2018Just Ride/Scenic\u2019, a Power Zone ride, or any class where you can ignore callouts and ride your targets."
+      ],
+      "steps": [
+        "Warm-up: 10 minutes easy (Zone 1\u20132). Include 2\u20133 x 20s smooth pickups with 40s easy to wake the legs.",
+        "Work x4: 4 minutes hard in Power Zone 5 (VO2) OR RPE 8\u20139 (you can say 1\u20133 words).",
+        "Recover between reps: 3 minutes very easy (Zone 1\u20132 spin). Let breathing settle.",
+        "Cool-down: 5\u201310 minutes easy + quick calves/hips mobility."
+      ],
+      "common_mistakes": [
+        "Starting rep 1 like a sprint (you\u2019ll fade badly by rep 3\u20134).",
+        "Making recoveries too hard (they should feel almost \u2018too easy\u2019).",
+        "Chasing a peak output instead of a repeatable output. Aim for steadiness across all 4 reps (within ~5%)."
+      ],
+      "regressions": [
+        "Weeks 1\u20132: 4 x 2:00 hard / 2:00 easy.",
+        "Weeks 3\u20134: 4 x 3:00 hard / 2\u20133:00 easy.",
+        "If knees/feet are cranky, keep it on the bike until tolerance improves."
+      ],
+      "progressions": [
+        "After 2\u20133 weeks of full 4x4, add a small amount of output (or slightly increase resistance) while keeping cadence smooth.",
+        "Optional: add 10\u201315 minutes Zone 2 after the intervals if time allows (not required).",
+        "If you know your FTP (Power Zone test): target ~105\u2013120% FTP for the work reps, but prioritize repeatability."
+      ],
+      "tags": [
+        "aerobic",
+        "conditioning",
+        "intervals",
+        "peloton",
+        "power-zone",
+        "running",
+        "vo2"
+      ]
     }
   ]
 }
