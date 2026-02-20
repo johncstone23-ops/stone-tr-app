@@ -4,7 +4,7 @@ const PLAN_URL = "assets/plan.json";
 const EX_URL = "assets/exercises.json";
 let PLAN=null;
 let EX=null;
-const BUILD_ID = "20260220060814";
+const BUILD_ID = "20260220061426";
 
 function assetUrl(rel){
   return new URL(rel, window.location.href).toString();
@@ -190,7 +190,7 @@ function renderWarmupChecklist(day){
   const items = warmupFor(day.code) || [];
   ensureWarmupKey(day.date);
   const state = STORE.warmups[day.date] || {};
-  const rows = items.map((txt)=>{
+  const rows = items.map((txt,i)=>{
     const checked = (state[i] || state[txt]) ? "checked" : "";
     return `<label class="checkrow"><input type="checkbox" class="wu" data-date="${day.date}" data-idx="${i}" data-item="${escAttr(txt)}" ${checked}/> <span>${esc(txt)}</span></label>`;
   }).join("");
@@ -282,7 +282,7 @@ async function init(){
 }
 function registerSW(){
   if("serviceWorker" in navigator){
-    navigator.serviceWorker.register("./service-worker.js?v=20260220060814").catch(()=>{});
+    navigator.serviceWorker.register("./service-worker.js?v=20260220061426").catch(()=>{});
   }
 }
 function wireTabs(){
