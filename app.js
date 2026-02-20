@@ -14,9 +14,10 @@ function loadStore(){
       rucks:{},    // date -> {distance, timeMin, weight, pace, notes}
       pullups:{}   // date -> {maxStrict, totalReps, variant, assist, notes}
       ,warmups:{} // date -> { itemText: true/false }
+      ,shielded:{workout:{}, warmup:{}} // per-date shields applied
     };
   }catch{
-    return {done:{}, notes:{}, choice:{}, rpe:{}, intensity:{}, focusDate:null, measures:{}, rucks:{}, pullups:{}, warmups:{}};
+    return {done:{}, notes:{}, choice:{}, rpe:{}, intensity:{}, focusDate:null, measures:{}, rucks:{}, pullups:{}, warmups:{}, shielded:{workout:{}, warmup:{}}};
   }
 }
 let STORE = loadStore();
@@ -74,6 +75,92 @@ function blankScreenWatchdog(){
 function ensureWarmupKey(dateISO){
   if(!STORE.warmups) STORE.warmups = {};
   if(!(dateISO in STORE.warmups)) STORE.warmups[dateISO] = {};
+
+function ensureShieldState(){
+  if(!STORE.shielded) STORE.shielded = {workout:{}, warmup:{}};
+  if(!STORE.shielded.workout) STORE.shielded.workout = {};
+  if(!STORE.shielded.warmup) STORE.shielded.warmup = {};
+}
+function monthKey(dateISO){
+  return dateISO.slice(0,7); // YYYY-MM
+}
+function shieldsUsedThisMonth(type, dateISO){
+  ensureShieldState();
+  const mk = monthKey(dateISO);
+  const map = STORE.shielded[type] || {};
+  return Object.keys(map).filter(d => d.startsWith(mk) && map[d]).length;
+}
+function shieldAvailable(type, dateISO){
+  // 1 shield per calendar month per streak type
+  return shieldsUsedThisMonth(type, dateISO) < 1;
+}
+function isShielded(type, dateISO){
+  ensureShieldState();
+  return !!STORE.shielded?.[type]?.[dateISO];
+}
+function applyShield(type, dateISO){
+  ensureShieldState();
+  if(!shieldAvailable(type, dateISO)) return false;
+  STORE.shielded[type][dateISO] = true;
+  saveStore();
+  return true;
+}
+function clearShield(type, dateISO){
+  ensureShieldState();
+  if(STORE.shielded[type] && STORE.shielded[type][dateISO]){
+    delete STORE.shielded[type][dateISO];
+    saveStore();
+    return true;
+  }
+  return false;
+}
+function warmupDoneForDate(dateISO, code){
+  // Warm-up "done" = every checklist item checked for that day's warmupFor(code).
+  const items = warmupFor(code) || [];
+  if(items.length===0) return false;
+  const state = STORE.warmups?.[dateISO] || {};
+  return items.every(it => !!state[it]);
+}
+function calcStreaksForType(type, dateISO){
+  // type: "workout" uses STORE.done; "warmup" uses warmupDoneForDate
+  const days = (PLAN?.days || []);
+  const dates = days.map(d=>d.date);
+  ensureShieldState();
+
+  const doneArr = days.map(d=>{
+    if(type==="workout") return !!STORE.done?.[d.date] || isShielded("workout", d.date);
+    return warmupDoneForDate(d.date, d.code) || isShielded("warmup", d.date);
+  });
+
+  let longest=0, run=0;
+  for(const f of doneArr){
+    if(f){ run++; longest=Math.max(longest, run); }
+    else run=0;
+  }
+
+  const idx0 = dates.indexOf(dateISO);
+  if(idx0 < 0) return { current: 0, longest, atRisk:false, canShield:false, shieldedToday:false, usedThisMonth:0 };
+
+  let idx = idx0;
+  let atRisk = false;
+
+  const todayDone = doneArr[idx];
+  if(!todayDone){
+    idx = idx - 1;
+    atRisk = true;
+  }
+  let current=0;
+  while(idx >= 0 && doneArr[idx]){
+    current++; idx--;
+  }
+  if(current===0) atRisk=false;
+
+  const usedThisMonth = shieldsUsedThisMonth(type, dateISO);
+  const canShield = atRisk && shieldAvailable(type, dateISO);
+  const shieldedToday = isShielded(type, dateISO);
+
+  return { current, longest, atRisk, canShield, shieldedToday, usedThisMonth };
+}
 }
 function renderWarmupChecklist(day){
   const items = warmupFor(day.code) || [];
@@ -88,6 +175,10 @@ function renderWarmupChecklist(day){
       <div class="row" style="justify-content:space-between">
         <div>
           <div class="h2" style="margin:0">Warm-up (5–8 min) Checklist</div>
+          <div class="row" style="margin-top:6px;gap:8px;flex-wrap:wrap">
+            <span class="pill">Warm-up status: ${warmupDoneForDate(day.date, day.code) ? "Complete" : "In progress"}</span>
+            ${isShielded("warmup", day.date) ? `<span class="pill">🛡 Shielded today</span>` : ``}
+          </div>
           <div class="small">Check items as you go. Keep it easy—warm, loose, ready.</div>
         </div>
         <div class="row">
@@ -113,7 +204,7 @@ async function init(){
 }
 function registerSW(){
   if("serviceWorker" in navigator){
-    navigator.serviceWorker.register("./service-worker.js?v=20260220043721").catch(()=>{});
+    navigator.serviceWorker.register("./service-worker.js?v=20260220044655").catch(()=>{});
   }
 }
 function wireTabs(){
@@ -196,6 +287,9 @@ function renderToday(){
   ensureKey(day.date);
   const t = day.template;
 
+  const streakW = calcStreaksForType('workout', day.date);
+  const streakWU = calcStreaksForType('warmup', day.date);
+
   const opt = t.programOptions.map(o=>`<option ${STORE.choice[day.date]===o?'selected':''}>${esc(o)}</option>`).join("");
   const checked = STORE.done[day.date] ? "checked" : "";
 
@@ -215,7 +309,12 @@ function renderToday(){
         <span class="pill">${esc(day.code)}</span>
         <span class="pill">${esc(day.shift)}</span>
         <span class="pill">Week ${day.week}</span>
+        <span class="pill">🔥 Workout Streak: ${streakW.current}</span>
+        <span class="pill">🏆 Workout Best: ${streakW.longest}</span>
+        <span class="pill">🧘 Warm-up Streak: ${streakWU.current}</span>
+        <span class="pill">🏆 Warm-up Best: ${streakWU.longest}</span>
       </div>
+      ${(streakW.atRisk || streakWU.atRisk) ? `<div class="small" style="margin-top:6px">${streakW.atRisk ? "Complete today&#39;s workout to keep your workout streak alive. " : ""}${streakWU.atRisk ? "Finish today&#39;s warm-up checklist to keep your warm-up streak alive." : ""}</div>` : ``}
       <h1 class="h1">${fmtDate(day.date)} - ${esc(t.title)}</h1>
       <div class="small">Pick GOOD / BETTER / BEST, choose a Program option, and check it off.</div>
       <div class="chips" style="margin-top:10px">${iPills}</div>
@@ -500,7 +599,39 @@ document.getElementById("prev").addEventListener("click", ()=>jump(day.date, -1)
       }, 50);
     });
 
-    document.getElementById("jumpLogs").addEventListener("click", ()=>{
+    
+    // Streak Shield buttons (1 per month per streak type)
+    const bSW = document.getElementById("useShieldW");
+    const bSWU = document.getElementById("useShieldWU");
+    const bUSW = document.getElementById("undoShieldW");
+    const bUSWU = document.getElementById("undoShieldWU");
+
+    if(bSW){
+      bSW.addEventListener("click", ()=>{
+        applyShield("workout", day.date);
+        render("today");
+      });
+    }
+    if(bSWU){
+      bSWU.addEventListener("click", ()=>{
+        applyShield("warmup", day.date);
+        render("today");
+      });
+    }
+    if(bUSW){
+      bUSW.addEventListener("click", ()=>{
+        clearShield("workout", day.date);
+        render("today");
+      });
+    }
+    if(bUSWU){
+      bUSWU.addEventListener("click", ()=>{
+        clearShield("warmup", day.date);
+        render("today");
+      });
+    }
+
+document.getElementById("jumpLogs").addEventListener("click", ()=>{
       document.querySelectorAll(".tab").forEach(b=>b.classList.remove("active"));
       document.querySelector('[data-tab="log"]').classList.add("active");
       render("log");
@@ -853,3 +984,37 @@ function importData(ev){
 }
 
 init();
+function calcStreaksFor(dateISO){
+  // Backwards compat wrapper (workout)
+  return calcStreaksForType('workout', dateISO);
+}
+
+function _deprecated_calcStreaksFor(dateISO){
+  // Computes workout streaks based on STORE.done across PLAN.days (in order).
+  // "Current" streak counts consecutive completed days up to dateISO (or up to yesterday if today isn't completed yet).
+  const dates = (PLAN?.days || []).map(d=>d.date);
+  const done = dates.map(d => !!STORE.done?.[d]);
+  let longest = 0, run = 0;
+  for(const f of done){
+    if(f){ run++; longest = Math.max(longest, run); }
+    else { run = 0; }
+  }
+  const idx0 = dates.indexOf(dateISO);
+  if(idx0 < 0) return { current: 0, longest, atRisk: false };
+  let idx = idx0;
+  let atRisk = false;
+
+  if(!done[idx]){
+    // Not completed yet today: current streak is up to yesterday.
+    idx = idx - 1;
+    atRisk = true;
+  }
+  let current = 0;
+  while(idx >= 0 && done[idx]){
+    current++;
+    idx--;
+  }
+  if(current === 0) atRisk = false; // no streak to lose
+  return { current, longest, atRisk };
+}
+
