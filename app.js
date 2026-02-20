@@ -239,7 +239,7 @@ async function init(){
 }
 function registerSW(){
   if("serviceWorker" in navigator){
-    navigator.serviceWorker.register("./service-worker.js?v=20260220045909").catch(()=>{});
+    navigator.serviceWorker.register("./service-worker.js?v=20260220050810").catch(()=>{});
   }
 }
 function wireTabs(){
@@ -1007,4 +1007,87 @@ function importData(ev){
 init();
 function calcStreaksFor(dateISO){ return calcStreaksForType("workout", dateISO); }
 
+
+
+// ===== Global streak helpers (workout + warm-up) + Streak Shield =====
+function ensureShieldState(){
+  if(!STORE.shielded) STORE.shielded = {workout:{}, warmup:{}};
+  if(!STORE.shielded.workout) STORE.shielded.workout = {};
+  if(!STORE.shielded.warmup) STORE.shielded.warmup = {};
+}
+function monthKey(dateISO){ return dateISO.slice(0,7); } // YYYY-MM
+function shieldsUsedThisMonth(type, dateISO){
+  ensureShieldState();
+  const mk = monthKey(dateISO);
+  const map = STORE.shielded[type] || {};
+  return Object.keys(map).filter(d => d.startsWith(mk) && map[d]).length;
+}
+function shieldAvailable(type, dateISO){
+  // 1 shield per calendar month per streak type
+  return shieldsUsedThisMonth(type, dateISO) < 1;
+}
+function isShielded(type, dateISO){
+  ensureShieldState();
+  return !!STORE.shielded?.[type]?.[dateISO];
+}
+function applyShield(type, dateISO){
+  ensureShieldState();
+  if(!shieldAvailable(type, dateISO)) return false;
+  STORE.shielded[type][dateISO] = true;
+  saveStore();
+  return true;
+}
+function clearShield(type, dateISO){
+  ensureShieldState();
+  if(STORE.shielded[type] && STORE.shielded[type][dateISO]){
+    delete STORE.shielded[type][dateISO];
+    saveStore();
+    return true;
+  }
+  return false;
+}
+function warmupDoneForDate(dateISO, code){
+  const items = warmupFor(code) || [];
+  if(items.length===0) return false;
+  const state = STORE.warmups?.[dateISO] || {};
+  return items.every(it => !!state[it]);
+}
+function calcStreaksForType(type, dateISO){
+  const days = (PLAN?.days || []);
+  const dates = days.map(d=>d.date);
+  ensureShieldState();
+
+  const doneArr = days.map(d=>{
+    if(type==="workout") return !!STORE.done?.[d.date] || isShielded("workout", d.date);
+    return warmupDoneForDate(d.date, d.code) || isShielded("warmup", d.date);
+  });
+
+  let longest=0, run=0;
+  for(const f of doneArr){
+    if(f){ run++; longest=Math.max(longest, run); }
+    else run=0;
+  }
+
+  const idx0 = dates.indexOf(dateISO);
+  if(idx0 < 0) return { current: 0, longest, atRisk:false, canShield:false, shieldedToday:false, usedThisMonth:0 };
+
+  let idx = idx0;
+  let atRisk = false;
+
+  if(!doneArr[idx]){
+    idx = idx - 1;
+    atRisk = true;
+  }
+
+  let current=0;
+  while(idx >= 0 && doneArr[idx]){ current++; idx--; }
+  if(current===0) atRisk=false;
+
+  const usedThisMonth = shieldsUsedThisMonth(type, dateISO);
+  const canShield = atRisk && shieldAvailable(type, dateISO);
+  const shieldedToday = isShielded(type, dateISO);
+
+  return { current, longest, atRisk, canShield, shieldedToday, usedThisMonth };
+}
+// ===== End streak helpers =====
 
