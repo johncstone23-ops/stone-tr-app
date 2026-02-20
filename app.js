@@ -13,9 +13,10 @@ function loadStore(){
       measures:{}, // date -> {weight, waist, neck, chest, hips, thigh, arm}
       rucks:{},    // date -> {distance, timeMin, weight, pace, notes}
       pullups:{}   // date -> {maxStrict, totalReps, variant, assist, notes}
+      ,warmups:{} // date -> { itemText: true/false }
     };
   }catch{
-    return {done:{}, notes:{}, choice:{}, rpe:{}, intensity:{}, focusDate:null, measures:{}, rucks:{}, pullups:{}};
+    return {done:{}, notes:{}, choice:{}, rpe:{}, intensity:{}, focusDate:null, measures:{}, rucks:{}, pullups:{}, warmups:{}};
   }
 }
 let STORE = loadStore();
@@ -41,6 +42,36 @@ function ensureKey(dateISO){
   if(!(dateISO in STORE.choice)) STORE.choice[dateISO]="Base plan (as written)";
   if(!(dateISO in STORE.rpe)) STORE.rpe[dateISO]="";
   if(!(dateISO in STORE.intensity)) STORE.intensity[dateISO]="";
+
+function ensureWarmupKey(dateISO){
+  if(!STORE.warmups) STORE.warmups = {};
+  if(!(dateISO in STORE.warmups)) STORE.warmups[dateISO] = {};
+}
+function renderWarmupChecklist(day){
+  const items = warmupFor(day.code) || [];
+  ensureWarmupKey(day.date);
+  const state = STORE.warmups[day.date] || {};
+  const rows = items.map((txt)=>{
+    const checked = state[txt] ? "checked" : "";
+    return `<label class="checkrow"><input type="checkbox" class="wu" data-date="${day.date}" data-item="${escAttr(txt)}" ${checked}/> <span>${esc(txt)}</span></label>`;
+  }).join("");
+  return `
+    <section class="card" id="warmupCard">
+      <div class="row" style="justify-content:space-between">
+        <div>
+          <div class="h2" style="margin:0">Warm-up (5–8 min) Checklist</div>
+          <div class="small">Check items as you go. Keep it easy—warm, loose, ready.</div>
+        </div>
+        <div class="row">
+          <button class="btn secondary" id="wuAll">All</button>
+          <button class="btn secondary" id="wuReset">Reset</button>
+        </div>
+      </div>
+      <div class="checks">${rows}</div>
+      <div class="small" style="margin-top:8px">Peloton classes include a warm-up, but still do 60–90 seconds of easy joint prep first. Run workouts already include a longer warm-up when specified.</div>
+    </section>
+  `;
+}
 }
 
 async function init(){
@@ -160,11 +191,7 @@ function renderToday(){
       <div class="chips" style="margin-top:10px">${iPills}</div>
     </section>
 
-    <section class="card">
-      <div class="h2">Warm-up (5–8 min)</div>
-      ${ul(warmupFor(day.code))}
-      <div class="small">Note: Peloton classes include a warm-up, but still do 60–90 seconds of easy joint prep first. Run workouts already include a longer warm-up when specified.</div>
-    </section>
+    ${renderWarmupChecklist(day)}
 
     <section class="card">
       <div class="row">
