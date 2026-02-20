@@ -14,10 +14,9 @@ function loadStore(){
       rucks:{},    // date -> {distance, timeMin, weight, pace, notes}
       pullups:{}   // date -> {maxStrict, totalReps, variant, assist, notes}
       ,warmups:{} // date -> { itemText: true/false }
-      ,shielded:{workout:{}, warmup:{}} // per-date shields applied
     };
   }catch{
-    return {done:{}, notes:{}, choice:{}, rpe:{}, intensity:{}, focusDate:null, measures:{}, rucks:{}, pullups:{}, warmups:{}, shielded:{workout:{}, warmup:{}}};
+    return {done:{}, notes:{}, choice:{}, rpe:{}, intensity:{}, focusDate:null, measures:{}, rucks:{}, pullups:{}, warmups:{}};
   }
 }
 let STORE = loadStore();
@@ -81,9 +80,7 @@ function ensureShieldState(){
   if(!STORE.shielded.workout) STORE.shielded.workout = {};
   if(!STORE.shielded.warmup) STORE.shielded.warmup = {};
 }
-function monthKey(dateISO){
-  return dateISO.slice(0,7); // YYYY-MM
-}
+function monthKey(dateISO){ return dateISO.slice(0,7); } // YYYY-MM
 function shieldsUsedThisMonth(type, dateISO){
   ensureShieldState();
   const mk = monthKey(dateISO);
@@ -115,14 +112,14 @@ function clearShield(type, dateISO){
   return false;
 }
 function warmupDoneForDate(dateISO, code){
-  // Warm-up "done" = every checklist item checked for that day's warmupFor(code).
+  // Warm-up done = all warm-up checklist items checked for that day's warmup list.
   const items = warmupFor(code) || [];
   if(items.length===0) return false;
   const state = STORE.warmups?.[dateISO] || {};
   return items.every(it => !!state[it]);
 }
 function calcStreaksForType(type, dateISO){
-  // type: "workout" uses STORE.done; "warmup" uses warmupDoneForDate
+  // type: "workout" uses STORE.done; "warmup" uses warmupDoneForDate.
   const days = (PLAN?.days || []);
   const dates = days.map(d=>d.date);
   ensureShieldState();
@@ -132,6 +129,7 @@ function calcStreaksForType(type, dateISO){
     return warmupDoneForDate(d.date, d.code) || isShielded("warmup", d.date);
   });
 
+  // Longest streak
   let longest=0, run=0;
   for(const f of doneArr){
     if(f){ run++; longest=Math.max(longest, run); }
@@ -144,15 +142,14 @@ function calcStreaksForType(type, dateISO){
   let idx = idx0;
   let atRisk = false;
 
-  const todayDone = doneArr[idx];
-  if(!todayDone){
+  // If today isn't done yet, streak is "through yesterday" and is at risk.
+  if(!doneArr[idx]){
     idx = idx - 1;
     atRisk = true;
   }
+
   let current=0;
-  while(idx >= 0 && doneArr[idx]){
-    current++; idx--;
-  }
+  while(idx >= 0 && doneArr[idx]){ current++; idx--; }
   if(current===0) atRisk=false;
 
   const usedThisMonth = shieldsUsedThisMonth(type, dateISO);
@@ -161,6 +158,7 @@ function calcStreaksForType(type, dateISO){
 
   return { current, longest, atRisk, canShield, shieldedToday, usedThisMonth };
 }
+
 }
 function renderWarmupChecklist(day){
   const items = warmupFor(day.code) || [];
@@ -204,7 +202,7 @@ async function init(){
 }
 function registerSW(){
   if("serviceWorker" in navigator){
-    navigator.serviceWorker.register("./service-worker.js?v=20260220044655").catch(()=>{});
+    navigator.serviceWorker.register("./service-worker.js?v=20260220045217").catch(()=>{});
   }
 }
 function wireTabs(){
@@ -320,7 +318,25 @@ function renderToday(){
       <div class="chips" style="margin-top:10px">${iPills}</div>
     </section>
 
+    
+    <section class="card">
+      <div class="row" style="justify-content:space-between;flex-wrap:wrap">
+        <div class="row" style="flex-wrap:wrap">
+          <span class="pill">🛡 Workout Shield: ${streakW.usedThisMonth}/1 used</span>
+          <span class="pill">🛡 Warm-up Shield: ${streakWU.usedThisMonth}/1 used</span>
+        </div>
+        <div class="row" style="flex-wrap:wrap">
+          ${(streakW.canShield && !streakW.shieldedToday) ? `<button class="btn secondary" id="useShieldW">Use workout shield today</button>` : ``}
+          ${(streakWU.canShield && !streakWU.shieldedToday) ? `<button class="btn secondary" id="useShieldWU">Use warm-up shield today</button>` : ``}
+          ${(streakW.shieldedToday) ? `<button class="ghost" id="undoShieldW">Undo workout shield</button>` : ``}
+          ${(streakWU.shieldedToday) ? `<button class="ghost" id="undoShieldWU">Undo warm-up shield</button>` : ``}
+        </div>
+      </div>
+      <div class="small">Shield = 1 “free pass” per month per streak type. Use it only if you miss a day and want to keep the streak.</div>
+    </section>
+
     ${renderWarmupChecklist(day)}
+
 
     <section class="card">
       <div class="row">
@@ -599,39 +615,7 @@ document.getElementById("prev").addEventListener("click", ()=>jump(day.date, -1)
       }, 50);
     });
 
-    
-    // Streak Shield buttons (1 per month per streak type)
-    const bSW = document.getElementById("useShieldW");
-    const bSWU = document.getElementById("useShieldWU");
-    const bUSW = document.getElementById("undoShieldW");
-    const bUSWU = document.getElementById("undoShieldWU");
-
-    if(bSW){
-      bSW.addEventListener("click", ()=>{
-        applyShield("workout", day.date);
-        render("today");
-      });
-    }
-    if(bSWU){
-      bSWU.addEventListener("click", ()=>{
-        applyShield("warmup", day.date);
-        render("today");
-      });
-    }
-    if(bUSW){
-      bUSW.addEventListener("click", ()=>{
-        clearShield("workout", day.date);
-        render("today");
-      });
-    }
-    if(bUSWU){
-      bUSWU.addEventListener("click", ()=>{
-        clearShield("warmup", day.date);
-        render("today");
-      });
-    }
-
-document.getElementById("jumpLogs").addEventListener("click", ()=>{
+    document.getElementById("jumpLogs").addEventListener("click", ()=>{
       document.querySelectorAll(".tab").forEach(b=>b.classList.remove("active"));
       document.querySelector('[data-tab="log"]').classList.add("active");
       render("log");
@@ -984,37 +968,6 @@ function importData(ev){
 }
 
 init();
-function calcStreaksFor(dateISO){
-  // Backwards compat wrapper (workout)
-  return calcStreaksForType('workout', dateISO);
-}
+function calcStreaksFor(dateISO){ return calcStreaksForType("workout", dateISO); }
 
-function _deprecated_calcStreaksFor(dateISO){
-  // Computes workout streaks based on STORE.done across PLAN.days (in order).
-  // "Current" streak counts consecutive completed days up to dateISO (or up to yesterday if today isn't completed yet).
-  const dates = (PLAN?.days || []).map(d=>d.date);
-  const done = dates.map(d => !!STORE.done?.[d]);
-  let longest = 0, run = 0;
-  for(const f of done){
-    if(f){ run++; longest = Math.max(longest, run); }
-    else { run = 0; }
-  }
-  const idx0 = dates.indexOf(dateISO);
-  if(idx0 < 0) return { current: 0, longest, atRisk: false };
-  let idx = idx0;
-  let atRisk = false;
-
-  if(!done[idx]){
-    // Not completed yet today: current streak is up to yesterday.
-    idx = idx - 1;
-    atRisk = true;
-  }
-  let current = 0;
-  while(idx >= 0 && done[idx]){
-    current++;
-    idx--;
-  }
-  if(current === 0) atRisk = false; // no streak to lose
-  return { current, longest, atRisk };
-}
 
