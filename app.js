@@ -4,6 +4,7 @@ const PLAN_URL = "assets/plan.json";
 const EX_URL = "assets/exercises.json";
 let PLAN=null;
 let EX=null;
+const BUILD_ID = "20260220060814";
 
 function assetUrl(rel){
   return new URL(rel, window.location.href).toString();
@@ -138,11 +139,10 @@ function clearShield(type, dateISO){
   return false;
 }
 function warmupDoneForDate(dateISO, code){
-  // Warm-up done = all warm-up checklist items checked for that day's warmup list.
   const items = warmupFor(code) || [];
   if(items.length===0) return false;
   const state = STORE.warmups?.[dateISO] || {};
-  return items.every(it => !!state[it]);
+  return items.every((txt,i)=> !!(state[i] || state[txt]));
 }
 function calcStreaksForType(type, dateISO){
   // type: "workout" uses STORE.done; "warmup" uses warmupDoneForDate.
@@ -191,11 +191,11 @@ function renderWarmupChecklist(day){
   ensureWarmupKey(day.date);
   const state = STORE.warmups[day.date] || {};
   const rows = items.map((txt)=>{
-    const checked = state[txt] ? "checked" : "";
-    return `<label class="checkrow"><input type="checkbox" class="wu" data-date="${day.date}" data-item="${escAttr(txt)}" ${checked}/> <span>${esc(txt)}</span></label>`;
+    const checked = (state[i] || state[txt]) ? "checked" : "";
+    return `<label class="checkrow"><input type="checkbox" class="wu" data-date="${day.date}" data-idx="${i}" data-item="${escAttr(txt)}" ${checked}/> <span>${esc(txt)}</span></label>`;
   }).join("");
   return `
-    <section class="card" id="warmupCard">
+    <section class="card" id="warmupCard" data-date="${day.date}" data-code="${day.code}">
       <div class="row" style="justify-content:space-between">
         <div>
           <div class="h2" style="margin:0">Warm-up (5–8 min) Checklist</div>
@@ -228,6 +228,49 @@ async function init(){
     }).catch(()=>({exercises:[]}));
     registerSW();
     wireTabs();
+    // Warm-up delegated handlers (works even after re-render)
+    // Warm-up delegated handlers
+    document.addEventListener("click", (e)=>{
+      const t = e.target;
+      if(!t) return;
+      if(t.id === "wuAll" || t.id === "wuReset"){
+        const card = document.getElementById("warmupCard");
+        if(!card) return;
+        const date = card.dataset.date;
+        const code = card.dataset.code;
+        ensureWarmupKey(date);
+        const items = warmupFor(code) || [];
+        items.forEach((txt,i)=>{
+          STORE.warmups[date][i] = (t.id === "wuAll");
+          // also keep text key for backwards compat with old versions
+          STORE.warmups[date][txt] = (t.id === "wuAll");
+        });
+        saveStore();
+        // quick visual feedback
+        const old = t.textContent;
+        t.textContent = (t.id === "wuAll") ? "✓" : "↺";
+        setTimeout(()=>{ t.textContent = old; }, 600);
+        render("today");
+      }
+    });
+
+    document.addEventListener("change", (e)=>{
+      const t = e.target;
+      if(!t || !t.classList || !t.classList.contains("wu")) return;
+      const date = t.dataset.date;
+      const idx = t.dataset.idx;
+      const item = t.dataset.item;
+      ensureWarmupKey(date);
+      if(idx !== undefined && idx !== null){
+        STORE.warmups[date][idx] = t.checked;
+      }
+      if(item){
+        STORE.warmups[date][item] = t.checked; // backwards compat
+      }
+      saveStore();
+      render("today");
+    });
+
     render("today");
     blankScreenWatchdog();
     document.getElementById("exportBtn").addEventListener("click", exportData);
@@ -239,7 +282,7 @@ async function init(){
 }
 function registerSW(){
   if("serviceWorker" in navigator){
-    navigator.serviceWorker.register("./service-worker.js?v=20260220060203").catch(()=>{});
+    navigator.serviceWorker.register("./service-worker.js?v=20260220060814").catch(()=>{});
   }
 }
 function wireTabs(){
@@ -609,7 +652,7 @@ function postWire(tab){
     ensureWarmupKey(day.date); // warm-up checklist state
     ensureShieldState();       // streak shield state
 
-    // Warm-up checklist wiring
+    // Warm-up checklist wiring (handled by delegated handlers)
     document.querySelectorAll(".wu").forEach(cb=>{
       cb.addEventListener("change", ()=>{
         const item = cb.dataset.item;
