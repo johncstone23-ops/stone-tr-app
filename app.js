@@ -4,7 +4,260 @@ const PLAN_URL = "assets/plan.json";
 const EX_URL = "assets/exercises.json";
 let PLAN=null;
 let EX=null;
-const BUILD_ID = "20260220061426";
+const BUILD_ID = "20260220064407";
+
+
+// ===== Nutrition & Recovery (Offline) =====
+const RECIPES = [
+  {
+    id:"ip_salsa_chicken",
+    name:"Instant Pot Salsa Chicken (batch)",
+    tags:["instant pot","high protein","meal prep","kid-friendly"],
+    servings:8,
+    per:{kcal:250,p:35,c:6,f:8},
+    ingredients:[
+      "2.5–3 lb boneless skinless chicken breast (or 50/50 breast + thighs)",
+      "16 oz salsa (choose mild for family)",
+      "1 tbsp olive oil (optional)",
+      "1 tbsp taco seasoning (or 2 tsp each cumin + chili powder + garlic powder)",
+      "1 tsp salt (adjust to salsa)",
+      "1 cup low-sodium chicken broth (or water)"
+    ],
+    steps:[
+      "Trim chicken. Add broth/water to Instant Pot. Place chicken in (do not pack tightly).",
+      "Pour salsa over chicken. Sprinkle seasoning + salt. Add olive oil if using.",
+      "Cook: High Pressure 10 minutes for breasts (12–14 for thicker / thighs). Natural release 10 minutes, then quick release.",
+      "Shred in pot with two forks. Stir to coat. If watery: sauté 5–8 minutes to thicken.",
+      "Cool fast (spread in shallow container). Portion into 8 servings. Refrigerate 3–4 days or freeze up to 3 months."
+    ],
+    uses:[
+      "Bowl: 1 cup chicken + 1 cup rice/quinoa + veggies.",
+      "Tacos: 4 oz chicken + tortillas + slaw.",
+      "Salad: chicken over greens + beans + corn."
+    ]
+  },
+  {
+    id:"af_salmon",
+    name:"Air Fryer Salmon (Breville) + Rice/Quinoa",
+    tags:["air fryer","omega-3","dinner","fast"],
+    servings:4,
+    per:{kcal:430,p:40,c:35,f:14},
+    ingredients:[
+      "4 x 6 oz salmon fillets",
+      "1 tbsp olive oil or avocado oil",
+      "1 tsp kosher salt",
+      "1 tsp garlic powder",
+      "1 tsp paprika",
+      "1 lemon (zest + wedges)",
+      "2 cups cooked rice or quinoa (batch-prepped)",
+      "Optional: frozen broccoli or green beans"
+    ],
+    steps:[
+      "Pat salmon dry. Rub with oil, salt, garlic, paprika, lemon zest.",
+      "Breville Air Fry: 400°F for 8–12 minutes (thicker fillets longer) until it flakes easily.",
+      "Serve with 1/2 cup cooked rice/quinoa per person (adjust for goals) + veg.",
+      "Leftovers: flake into rice bowl, salad, or wraps."
+    ]
+  },
+  {
+    id:"egg_bake",
+    name:"Sheet-Pan Egg & Veggie Bake (breakfast prep)",
+    tags:["breakfast","meal prep","eggs"],
+    servings:6,
+    per:{kcal:260,p:22,c:10,f:14},
+    ingredients:[
+      "12 large eggs",
+      "1 cup cottage cheese or Greek yogurt (optional, boosts protein)",
+      "2 cups chopped veggies (spinach, peppers, onions, mushrooms)",
+      "8 oz turkey sausage or ham (optional)",
+      "1 tsp salt, 1/2 tsp pepper",
+      "Cooking spray / parchment"
+    ],
+    steps:[
+      "Heat oven 350°F. Line a sheet pan (or 9x13) with parchment + spray.",
+      "Whisk eggs + cottage cheese/yogurt + salt/pepper. Fold in veggies + meat.",
+      "Bake 22–28 minutes until set. Rest 10 minutes. Cut into 6 squares.",
+      "Store: fridge 4 days. Reheat 60–90 seconds microwave or 8 minutes air fryer at 325°F."
+    ]
+  },
+  {
+    id:"ip_turkey_chili",
+    name:"Instant Pot Turkey Chili (family pot)",
+    tags:["instant pot","family","fiber"],
+    servings:8,
+    per:{kcal:360,p:33,c:32,f:10},
+    ingredients:[
+      "2 lb lean ground turkey",
+      "1 tbsp olive oil",
+      "1 large onion, diced",
+      "3 cloves garlic, minced",
+      "2 bell peppers, diced",
+      "2 tbsp chili powder + 1 tbsp cumin",
+      "1 tsp salt + pepper",
+      "28 oz crushed tomatoes",
+      "2 cans beans (kidney/black), drained",
+      "1 cup broth or water",
+      "Optional: 1 cup corn"
+    ],
+    steps:[
+      "Sauté mode: oil → onion/pepper 3–4 min → add turkey, brown 5–7 min → add garlic + spices 30 sec.",
+      "Add tomatoes + beans + broth. Pressure cook 12 minutes. Natural release 10 minutes.",
+      "Taste. Adjust salt/heat. Serve with rice, Greek yogurt, cheese, or avocado.",
+      "Freeze in single-meal containers."
+    ]
+  },
+  {
+    id:"overnight_oats",
+    name:"Overnight Oats (on-the-go) + Protein",
+    tags:["on the go","breakfast","kid-friendly"],
+    servings:1,
+    per:{kcal:480,p:35,c:58,f:12},
+    ingredients:[
+      "1/2 cup rolled oats",
+      "3/4 cup milk (or almond milk) + 1/4 cup Greek yogurt",
+      "1 scoop protein (Legion whey or Orgain)",
+      "1 tbsp chia seeds (optional)",
+      "1/2 cup berries or 1 banana",
+      "Cinnamon + pinch of salt"
+    ],
+    steps:[
+      "Mix everything in a jar. Refrigerate overnight (or 4+ hours).",
+      "In the morning: stir, add a splash of milk if thick, top with fruit/nuts if desired."
+    ]
+  },
+  {
+    id:"rice_quinoa_batch",
+    name:"Batch Rice + Quinoa (weekly prep)",
+    tags:["meal prep","staples"],
+    servings:10,
+    per:{kcal:210,p:4,c:45,f:2},
+    ingredients:[
+      "White rice: 3 cups dry (makes ~9 cups cooked)",
+      "Quinoa: 2 cups dry (makes ~6 cups cooked)",
+      "Salt",
+      "Optional: broth instead of water"
+    ],
+    steps:[
+      "Instant Pot Rice: rinse → 1:1 water → High Pressure 4 min → Natural release 10 min.",
+      "Instant Pot Quinoa: rinse → 1:1.25 water → High Pressure 1 min → Natural release 10 min.",
+      "Cool, portion into 1-cup containers. Refrigerate 4–5 days or freeze."
+    ]
+  }
+];
+
+
+const WEEKLY_ROTATION = {
+  prepDay:"Sunday (or Monday if Sunday is a shift)",
+  batchSteps:[
+    "Cook: Instant Pot Salsa Chicken (8 servings).",
+    "Cook: Rice + Quinoa batch (10 servings total).",
+    "Bake: Sheet-pan Egg & Veggie Bake (6 servings).",
+    "Optional: Instant Pot Turkey Chili (8 servings).",
+    "Wash/chop: veggies + fruit (grab-and-go).",
+    "Pack: 2–3 ‘go bags’ in fridge (protein + carb + fruit)."
+  ],
+  dinners:[
+    {day:"Mon", meal:"Salmon + rice/quinoa + veg"},
+    {day:"Tue", meal:"Turkey chili night (family pot)"},
+    {day:"Wed", meal:"Salsa chicken tacos/bowls (fast after a double)"},
+    {day:"Thu", meal:"Sheet-pan chicken/veg + rice (or leftovers)"},
+    {day:"Fri", meal:"Salmon leftovers or quick protein bowls before shift"},
+    {day:"Sat", meal:"Family choice (keep protein first)"},
+    {day:"Sun", meal:"Shift-friendly: chili or chicken bowl packed"}
+  ],
+  grabAndGo:[
+    "Protein shake + banana",
+    "Greek yogurt + berries",
+    "Jerky + fruit",
+    "Hard boiled eggs + apples",
+    "Tuna packet + rice cup"
+  ],
+  weeklyShop:[
+    "Chicken breast/thighs (3 lb)",
+    "Salmon fillets (4–6 portions)",
+    "Lean ground turkey (2 lb)",
+    "Eggs (2 dozen)",
+    "Greek yogurt / cottage cheese",
+    "Salsa + crushed tomatoes + beans",
+    "Rice + quinoa",
+    "Frozen broccoli/green beans",
+    "Onions, peppers, spinach",
+    "Fruit (bananas/berries/apples)",
+    "Nuts or trail mix (portion-controlled)"
+  ]
+};
+
+const MEAL_TEMPLATES = {
+  hard:{
+    title:"Hard Training Day (strength/intervals/ruck)",
+    goal:{kcal:2200,p:180,c:210,f:70},
+    plan:[
+      {slot:"Breakfast", item:"Sheet-pan egg bake (1 square) + fruit"},
+      {slot:"Lunch", item:"Salsa chicken bowl: chicken + rice/quinoa + veg"},
+      {slot:"Snack", item:"Greek yogurt OR protein shake + nuts"},
+      {slot:"Dinner", item:"Air fryer salmon + rice/quinoa + veg"},
+      {slot:"Late/Shift snack", item:"Cottage cheese or shake (if needed) + water/electrolytes"}
+    ]
+  },
+  easy:{
+    title:"Easy / Recovery Day",
+    goal:{kcal:2000,p:180,c:140,f:75},
+    plan:[
+      {slot:"Breakfast", item:"Eggs (3) + veggies + 1 slice toast OR egg bake"},
+      {slot:"Lunch", item:"Turkey chili (1–1.5 cups) OR chicken salad bowl"},
+      {slot:"Snack", item:"Protein shake OR jerky + fruit"},
+      {slot:"Dinner", item:"Salmon or lean meat + big salad/veg + small rice/quinoa"},
+      {slot:"Optional", item:"Herbal tea, magnesium in the evening (if you use it)"}
+    ]
+  }
+};
+
+function nutritionDayType(code){
+  const s=(code||"").toLowerCase();
+  if(s.includes("4x4") || s.includes("ruck") || s.includes("strength") || s.includes("p90x") || s.includes("insanity")) return "hard";
+  if(s.includes("rest") || s.includes("recovery") || s.includes("mobility")) return "easy";
+  // S&S days count as medium -> treat as hard for fueling unless you keep it truly easy.
+  if(s.includes("s&s") || s.includes("simple & sinister")) return "hard";
+  return "easy";
+}
+
+// Recovery routines (CastleFlexx + Chirp)
+const RECOVERY_ROUTINES = [
+  {
+    id:"am_quick",
+    name:"Quick AM Mobility (8 minutes)",
+    gear:"CastleFlexx + Chirp wheel",
+    steps:[
+      {t:"1:00", what:"Nasal breathing + tall posture (reset ribs/pelvis)"},
+      {t:"2:00", what:"CastleFlexx: calf/ankle dorsiflexion (each side 1:00) — toes pulled back in the foot hammock; keep neutral spine"},
+      {t:"2:00", what:"CastleFlexx: hamstring stretch (each side 1:00) — hinge at hips, don’t round low back"},
+      {t:"2:00", what:"Chirp: Back roll (10-inch or 12-inch) — align groove with spine, slow rolls 6–10 passes, stay relaxed"}
+    ],
+    notes:"Stop if sharp pain/tingling. Go gentle at first. (See Chirp 'Ways to use the wheel' + CastleFlexx 'toe dorsiflexion/foot hammock' details.)"
+  },
+  {
+    id:"post_shift",
+    name:"Post‑Shift Decompression (10 minutes)",
+    gear:"Chirp wheels + CastleFlexx",
+    steps:[
+      {t:"3:00", what:"Chirp: back roll 10-inch (slow) + pause on tight spots"},
+      {t:"2:00", what:"Chirp: neck support (6-inch or 4-inch) — ‘yes/no’ micro-movements"},
+      {t:"3:00", what:"CastleFlexx: hip flexor / quad bias stretch (each side 1:30)"},
+      {t:"2:00", what:"Box breathing 4‑4‑4‑4"}
+    ]
+  },
+  {
+    id:"ruck_ready",
+    name:"Ruck‑Readiness (8 minutes)",
+    gear:"CastleFlexx",
+    steps:[
+      {t:"2:00", what:"Foot/plantar fascia: toes back + ankle dorsiflexion (each side 1:00)"},
+      {t:"2:00", what:"Calf stretch: straight knee (1:00) + bent knee (1:00) each side"},
+      {t:"2:00", what:"Hamstring stretch (each side 1:00)"},
+      {t:"2:00", what:"Glute/hip external rotation (figure‑4 on floor or seated) 1:00 each"}
+    ]
+  }
+];
 
 function assetUrl(rel){
   return new URL(rel, window.location.href).toString();
@@ -47,7 +300,42 @@ function loadStore(){
   }
 }
 let STORE = loadStore();
+normalizeStore();
 function saveStore(){ localStorage.setItem(STORE_KEY, JSON.stringify(STORE)); }
+
+
+function normalizeStore(){
+  // Backward-compatible defaults for new features
+  if(!STORE.nutrition) STORE.nutrition = {water:{}, waterGoalOz:100, calories:{}, calorieGoal:2100, macroGoal:{p:170,c:190,f:70}, foodLog:{}, shopping:{}, supplements:[], meds:[]};
+  if(!STORE.nutrition.water) STORE.nutrition.water = {};
+  if(!STORE.nutrition.calories) STORE.nutrition.calories = {};
+  if(!STORE.nutrition.foodLog) STORE.nutrition.foodLog = {};
+  if(!STORE.nutrition.shopping) STORE.nutrition.shopping = {};
+  if(!Array.isArray(STORE.nutrition.supplements)) STORE.nutrition.supplements = [];
+  if(!STORE.nutrition.suppPrefilled){
+    // Optional starter list (edit/delete as you like)
+    STORE.nutrition.supplements = STORE.nutrition.supplements.length ? STORE.nutrition.supplements : [
+      {name:"Creatine monohydrate", dose:"3–5 g", time:"Daily (any time)"},
+      {name:"Omega‑3 (fish oil)", dose:"Enough to give 1–2 g EPA+DHA", time:"With a meal"},
+      {name:"Vitamin D3", dose:"1000–2000 IU (or per labs)", time:"With a meal"},
+      {name:"Magnesium glycinate", dose:"200–400 mg", time:"Evening"},
+      {name:"L‑theanine (optional)", dose:"100–200 mg", time:"With coffee (optional)"},
+      {name:"Basic multivitamin (optional)", dose:"per label", time:"Morning"}
+    ];
+    STORE.nutrition.suppPrefilled = true;
+  }
+  if(!Array.isArray(STORE.nutrition.meds)) STORE.nutrition.meds = [];
+  if(typeof STORE.nutrition.waterGoalOz!=="number") STORE.nutrition.waterGoalOz = 100;
+  if(typeof STORE.nutrition.calorieGoal!=="number") STORE.nutrition.calorieGoal = 2100;
+  if(!STORE.nutrition.macroGoal) STORE.nutrition.macroGoal = {p:170,c:190,f:70};
+  // Per-day structures
+  const d = STORE.focusDate || todayISO();
+  if(!(d in STORE.nutrition.water)) STORE.nutrition.water[d] = {oz:0};
+  if(!(d in STORE.nutrition.calories)) STORE.nutrition.calories[d] = {kcal:0,p:0,c:0,f:0};
+  if(!(d in STORE.nutrition.foodLog)) STORE.nutrition.foodLog[d] = [];
+  if(!(d in STORE.nutrition.shopping)) STORE.nutrition.shopping[d] = {};
+}
+
 
 function todayISO(){
   const n=new Date();
@@ -352,6 +640,8 @@ function render(tab){
   if(tab==="today") view.innerHTML = renderToday();
   if(tab==="calendar") view.innerHTML = renderCalendar();
   if(tab==="log") view.innerHTML = renderLogs();
+  if(tab==="nutrition") view.innerHTML = renderNutrition();
+  if(tab==="recovery") view.innerHTML = renderRecovery();
   if(tab==="library") view.innerHTML = renderLibrary();
   if(tab==="manual") view.innerHTML = renderManual();
   postWire(tab);
@@ -584,6 +874,258 @@ function renderLogs(){
       <hr>
       <canvas id="chartPullups" width="900" height="180"></canvas>
     </section>
+  `;
+}
+
+
+function ensureNutritionDay(dateISO){
+  if(!STORE.nutrition) normalizeStore();
+  if(!(dateISO in STORE.nutrition.water)) STORE.nutrition.water[dateISO] = {oz:0};
+  if(!(dateISO in STORE.nutrition.calories)) STORE.nutrition.calories[dateISO] = {kcal:0,p:0,c:0,f:0};
+  if(!(dateISO in STORE.nutrition.foodLog)) STORE.nutrition.foodLog[dateISO] = [];
+  if(!(dateISO in STORE.nutrition.shopping)) STORE.nutrition.shopping[dateISO] = {};
+}
+
+function renderNutrition(){
+  const f = STORE.focusDate || todayISO();
+  ensureNutritionDay(f);
+  const day = (PLAN?.days || []).find(d=>d.date===f);
+  const code = day?.code || "";
+  const t = MEAL_TEMPLATES[nutritionDayType(code)] || MEAL_TEMPLATES.easy;
+  const w = STORE.nutrition.water[f]?.oz || 0;
+  const wg = STORE.nutrition.waterGoalOz || 100;
+  const cal = STORE.nutrition.calories[f] || {kcal:0,p:0,c:0,f:0};
+  const cg = STORE.nutrition.calorieGoal || t.goal.kcal;
+  const mg = STORE.nutrition.macroGoal || t.goal;
+
+  const log = STORE.nutrition.foodLog[f] || [];
+  const logRows = log.map((it,idx)=>`
+    <tr>
+      <td class="small">${esc(it.time||"")}</td>
+      <td>${esc(it.name||"")}</td>
+      <td class="right">${esc(it.kcal||0)}</td>
+      <td class="right small">${esc(it.p||0)}/${esc(it.c||0)}/${esc(it.f||0)}</td>
+      <td class="right"><button class="mini danger" data-action="foodDel" data-idx="${idx}">✕</button></td>
+    </tr>`).join("");
+
+  const recipeCards = RECIPES.map(r=>`
+    <div class="card">
+      <div class="row between">
+        <div>
+          <div class="h2">${esc(r.name)}</div>
+          <div class="small">${r.tags.map(t=>`<span class="pill">${esc(t)}</span>`).join(" ")}</div>
+          <div class="small">Per serving: <b>${r.per.kcal} kcal</b> • P/C/F ${r.per.p}/${r.per.c}/${r.per.f}</div>
+        </div>
+        <div class="col" style="gap:8px;align-items:flex-end">
+          <button class="mini" data-action="recipeToggle" data-id="${escAttr(r.id)}">View</button>
+          <button class="mini" data-action="recipeLog" data-id="${escAttr(r.id)}">Log 1</button>
+          <button class="mini" data-action="recipeShop" data-id="${escAttr(r.id)}">Add to list</button>
+        </div>
+      </div>
+      <div class="recipeBody hidden" id="recipe_${escAttr(r.id)}">
+        <div class="h3">Ingredients</div>
+        <ul class="list">${r.ingredients.map(x=>`<li>${esc(x)}</li>`).join("")}</ul>
+        <div class="h3">Steps</div>
+        <ol class="list">${r.steps.map(x=>`<li>${esc(x)}</li>`).join("")}</ol>
+        ${r.uses?`<div class="h3">Use it for</div><ul class="list">${r.uses.map(x=>`<li>${esc(x)}</li>`).join("")}</ul>`:""}
+      </div>
+    </div>
+  `).join("");
+
+  const shop = STORE.nutrition.shopping[f] || {};
+  const shopItems = Object.keys(shop);
+  const shopListHtml = shopItems.length ? shopItems.map(item=>`
+    <label class="checkrow">
+      <input type="checkbox" data-action="shopToggle" data-item="${escAttr(item)}" ${shop[item]?"checked":""}/>
+      <span>${esc(item)}</span>
+    </label>`).join("") : `<div class="small">No items yet. Tap “Add to list” on a recipe or add items below.</div>`;
+
+  return `
+  <section class="card">
+    <div class="row between">
+      <div>
+        <div class="h1">Nutrition</div>
+        <div class="small">Date: <b>${esc(fmtDate(f))}</b> • Plan: <span class="pill">${esc(code||"—")}</span></div>
+      </div>
+      <div class="pill">Build ${esc(BUILD_ID)}</div>
+    </div>
+  </section>
+
+  <section class="grid2">
+    <div class="card">
+      <div class="h2">Water</div>
+      <div class="small">Goal: <b>${wg} oz</b> (edit below)</div>
+      <div class="progress"><div class="bar" style="width:${Math.min(100, Math.round((w/wg)*100))}%"></div></div>
+      <div class="row between">
+        <div class="big">${w} oz</div>
+        <div class="small">${Math.round((w/wg)*100)}%</div>
+      </div>
+      <div class="row wrap" style="gap:8px;margin-top:8px">
+        <button class="mini" data-action="waterAdd" data-oz="8">+8</button>
+        <button class="mini" data-action="waterAdd" data-oz="16">+16</button>
+        <button class="mini" data-action="waterAdd" data-oz="24">+24</button>
+        <button class="mini danger" data-action="waterReset">Reset</button>
+      </div>
+      <div class="row" style="gap:8px;margin-top:10px">
+        <label class="small">Goal oz</label>
+        <input id="waterGoal" class="inp" type="number" min="40" max="200" value="${wg}" />
+        <button class="mini" data-action="waterSaveGoal">Save</button>
+      </div>
+      <div class="small" style="margin-top:8px">Tip: On ruck days, add electrolytes if you’re sweating heavily.</div>
+    </div>
+
+    <div class="card">
+      <div class="h2">Calories & Macros</div>
+      <div class="small">Goal: <b>${cg} kcal</b> • Macro goal P/C/F: <b>${mg.p}/${mg.c}/${mg.f}</b></div>
+      <div class="progress"><div class="bar" style="width:${Math.min(100, Math.round((cal.kcal/cg)*100))}%"></div></div>
+      <div class="row between">
+        <div class="big">${cal.kcal} kcal</div>
+        <div class="small">P/C/F ${cal.p}/${cal.c}/${cal.f}</div>
+      </div>
+      <div class="row" style="gap:8px;margin-top:10px;flex-wrap:wrap">
+        <input id="foodName" class="inp" placeholder="Food (e.g., shake, chicken bowl)" />
+        <input id="foodKcal" class="inp" type="number" placeholder="kcal" style="width:90px"/>
+        <input id="foodP" class="inp" type="number" placeholder="P" style="width:70px"/>
+        <input id="foodC" class="inp" type="number" placeholder="C" style="width:70px"/>
+        <input id="foodF" class="inp" type="number" placeholder="F" style="width:70px"/>
+        <button class="mini" data-action="foodAdd">Add</button>
+        <button class="mini danger" data-action="foodClear">Clear day</button>
+      </div>
+      <div class="small" style="margin-top:8px">Shortcut: tap “Log 1” on a recipe to auto-add macros.</div>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="h2">Today’s simple plan</div>
+    <div class="small">${esc(t.title)} • Suggested goal: <b>${t.goal.kcal} kcal</b> • P/C/F <b>${t.goal.p}/${t.goal.c}/${t.goal.f}</b></div>
+    <table class="tbl" style="margin-top:10px">
+      <thead><tr><th>Slot</th><th>Meal</th></tr></thead>
+      <tbody>${t.plan.map(x=>`<tr><td class="small">${esc(x.slot)}</td><td>${esc(x.item)}</td></tr>`).join("")}</tbody>
+    </table>
+  </section>
+
+  <section class="card">
+    <div class="h2">Food log</div>
+    <table class="tbl">
+      <thead><tr><th class="small">Time</th><th>Item</th><th class="right">kcal</th><th class="right small">P/C/F</th><th></th></tr></thead>
+      <tbody>${logRows || `<tr><td colspan="5" class="small">No entries yet.</td></tr>`}</tbody>
+    </table>
+  </section>
+
+  <section class="card">
+    <div class="h2">Shopping list (today)</div>
+    <div class="small">Tap a recipe’s “Add to list” button, or add your own item.</div>
+    <div class="shopbox">${shopListHtml}</div>
+    <div class="row" style="gap:8px;margin-top:10px">
+      <input id="shopAddTxt" class="inp" placeholder="Add item (e.g., salmon, eggs, salsa)" />
+      <button class="mini" data-action="shopAdd">Add</button>
+      <button class="mini danger" data-action="shopClearChecked">Clear checked</button>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="h2">Supplements & meds (quick list)</div>
+    <div class="small">This is a private list stored only on this device (LocalStorage). Always confirm with your clinician/pharmacist if you’re on prescriptions.</div>
+    <div class="grid2" style="margin-top:10px">
+      <div class="card" style="margin:0">
+        <div class="h3">Supplements</div>
+        <div id="suppList">${(STORE.nutrition.supplements||[]).map((s,idx)=>`
+          <div class="row between">
+            <div><b>${esc(s.name||"")}</b> <span class="small">${esc(s.dose||"")}</span><div class="small">${esc(s.time||"")}</div></div>
+            <button class="mini danger" data-action="suppDel" data-idx="${idx}">✕</button>
+          </div>`).join("") || `<div class="small">None yet.</div>`}
+        </div>
+        <div class="row" style="gap:8px;margin-top:8px;flex-wrap:wrap">
+          <input id="suppName" class="inp" placeholder="Name (e.g., creatine, fish oil)" />
+          <input id="suppDose" class="inp" placeholder="Dose" style="width:110px"/>
+          <input id="suppTime" class="inp" placeholder="Timing" style="width:120px"/>
+          <button class="mini" data-action="suppAdd">Add</button>
+        </div>
+      </div>
+      <div class="card" style="margin:0">
+        <div class="h3">Meds</div>
+        <div id="medList">${(STORE.nutrition.meds||[]).map((s,idx)=>`
+          <div class="row between">
+            <div><b>${esc(s.name||"")}</b> <span class="small">${esc(s.dose||"")}</span><div class="small">${esc(s.time||"")}</div></div>
+            <button class="mini danger" data-action="medDel" data-idx="${idx}">✕</button>
+          </div>`).join("") || `<div class="small">None yet.</div>`}
+        </div>
+        <div class="row" style="gap:8px;margin-top:8px;flex-wrap:wrap">
+          <input id="medName" class="inp" placeholder="Medication name" />
+          <input id="medDose" class="inp" placeholder="Dose" style="width:110px"/>
+          <input id="medTime" class="inp" placeholder="Time" style="width:120px"/>
+          <button class="mini" data-action="medAdd">Add</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <section class="card">
+    <details>
+      <summary class="h2">Weekly rotation (simple & repeatable)</summary>
+      <div class="small" style="margin-top:8px">Prep day: <b>${esc(WEEKLY_ROTATION.prepDay)}</b></div>
+      <div class="h3">Batch prep checklist</div>
+      <ul class="list">${WEEKLY_ROTATION.batchSteps.map(x=>`<li>${esc(x)}</li>`).join("")}</ul>
+      <div class="h3">Dinners</div>
+      <table class="tbl">
+        <thead><tr><th>Day</th><th>Plan</th></tr></thead>
+        <tbody>${WEEKLY_ROTATION.dinners.map(x=>`<tr><td class="small">${esc(x.day)}</td><td>${esc(x.meal)}</td></tr>`).join("")}</tbody>
+      </table>
+      <div class="h3">Grab‑and‑go options</div>
+      <ul class="list">${WEEKLY_ROTATION.grabAndGo.map(x=>`<li>${esc(x)}</li>`).join("")}</ul>
+      <div class="h3">Master shopping list</div>
+      <div class="row wrap" style="gap:8px;margin-top:6px">
+        <button class="mini" data-action="shopAddWeekly">Add all to today’s list</button>
+      </div>
+      <ul class="list">${WEEKLY_ROTATION.weeklyShop.map(x=>`<li>${esc(x)}</li>`).join("")}</ul>
+    </details>
+  </section>
+
+<section class="card">
+    <div class="h2">Recipes (offline)</div>
+    <div class="small">These are built-in so you can use the app without internet.</div>
+    <div class="stack" style="margin-top:10px">${recipeCards}</div>
+  </section>
+  `;
+}
+
+function renderRecovery(){
+  const list = RECOVERY_ROUTINES.map(r=>`
+    <div class="card">
+      <div class="row between">
+        <div>
+          <div class="h2">${esc(r.name)}</div>
+          <div class="small">Gear: ${esc(r.gear||"")}</div>
+        </div>
+        <button class="mini" data-action="routineToggle" data-id="${escAttr(r.id)}">Checklist</button>
+      </div>
+      <div class="routineBody hidden" id="routine_${escAttr(r.id)}">
+        <div class="small" style="margin-top:8px">${esc(r.notes||"")}</div>
+        <div class="h3">Steps</div>
+        <div class="checklist">
+          ${r.steps.map((s,idx)=>`
+            <label class="checkrow">
+              <input type="checkbox" data-action="routineCheck" data-r="${escAttr(r.id)}" data-i="${idx}"/>
+              <span><b class="pill">${esc(s.t)}</b> ${esc(s.what)}</span>
+            </label>`).join("")}
+        </div>
+      </div>
+    </div>
+  `).join("");
+
+  return `
+    <section class="card">
+      <div class="row between">
+        <div>
+          <div class="h1">Recovery</div>
+          <div class="small">CastleFlexx + Chirp wheel routines (offline)</div>
+        </div>
+        <div class="pill">Build ${esc(BUILD_ID)}</div>
+      </div>
+      <div class="small" style="margin-top:8px">If you get sharp pain, numbness/tingling, or symptoms that feel “nerve-y,” stop and reset to gentler positions.</div>
+    </section>
+    <section class="stack">${list}</section>
   `;
 }
 
@@ -845,6 +1387,158 @@ document.getElementById("prev").addEventListener("click", ()=>jump(day.date, -1)
       });
     });
   }
+
+  if(tab==="nutrition"){
+    const f = STORE.focusDate || todayISO();
+    ensureNutritionDay(f);
+
+    // Water
+    document.querySelectorAll('[data-action="waterAdd"]').forEach(b=>{
+      b.addEventListener("click", ()=>{
+        const oz = parseInt(b.dataset.oz||"0",10);
+        STORE.nutrition.water[f].oz = (STORE.nutrition.water[f].oz||0) + oz;
+        saveStore(); render("nutrition");
+      });
+    });
+    const wreset=document.querySelector('[data-action="waterReset"]');
+    if(wreset) wreset.addEventListener("click", ()=>{ STORE.nutrition.water[f].oz=0; saveStore(); render("nutrition"); });
+    const wsave=document.querySelector('[data-action="waterSaveGoal"]');
+    if(wsave) wsave.addEventListener("click", ()=>{
+      const v = parseInt(document.getElementById("waterGoal").value||"0",10);
+      if(v>0){ STORE.nutrition.waterGoalOz=v; saveStore(); render("nutrition"); }
+    });
+
+    // Food add
+    const addBtn=document.querySelector('[data-action="foodAdd"]');
+    if(addBtn) addBtn.addEventListener("click", ()=>{
+      const name=document.getElementById("foodName").value.trim();
+      const kcal=parseInt(document.getElementById("foodKcal").value||"0",10);
+      const p=parseInt(document.getElementById("foodP").value||"0",10);
+      const c=parseInt(document.getElementById("foodC").value||"0",10);
+      const fat=parseInt(document.getElementById("foodF").value||"0",10);
+      if(!name) return;
+      STORE.nutrition.foodLog[f].push({time:new Date().toLocaleTimeString([], {hour:"2-digit", minute:"2-digit"}), name, kcal, p, c, f:fat});
+      const day = STORE.nutrition.calories[f];
+      day.kcal += kcal; day.p += p; day.c += c; day.f += fat;
+      saveStore(); render("nutrition");
+    });
+    const clearBtn=document.querySelector('[data-action="foodClear"]');
+    if(clearBtn) clearBtn.addEventListener("click", ()=>{
+      if(!confirm("Clear today's calorie totals and food log?")) return;
+      STORE.nutrition.foodLog[f]=[];
+      STORE.nutrition.calories[f]={kcal:0,p:0,c:0,f:0};
+      saveStore(); render("nutrition");
+    });
+
+    // Food delete
+    document.querySelectorAll('[data-action="foodDel"]').forEach(b=>{
+      b.addEventListener("click", ()=>{
+        const idx=parseInt(b.dataset.idx,10);
+        const it=STORE.nutrition.foodLog[f][idx];
+        if(!it) return;
+        STORE.nutrition.foodLog[f].splice(idx,1);
+        const day=STORE.nutrition.calories[f];
+        day.kcal -= (it.kcal||0); day.p -= (it.p||0); day.c -= (it.c||0); day.f -= (it.f||0);
+        saveStore(); render("nutrition");
+      });
+    });
+
+    // Recipes: toggle/log/shop
+    document.querySelectorAll('[data-action="recipeToggle"]').forEach(b=>{
+      b.addEventListener("click", ()=>{
+        const id=b.dataset.id;
+        const el=document.getElementById("recipe_"+id);
+        if(el) el.classList.toggle("hidden");
+      });
+    });
+    document.querySelectorAll('[data-action="recipeLog"]').forEach(b=>{
+      b.addEventListener("click", ()=>{
+        const id=b.dataset.id;
+        const r=RECIPES.find(x=>x.id===id);
+        if(!r) return;
+        STORE.nutrition.foodLog[f].push({time:new Date().toLocaleTimeString([], {hour:"2-digit", minute:"2-digit"}), name:r.name, kcal:r.per.kcal, p:r.per.p, c:r.per.c, f:r.per.f});
+        const day=STORE.nutrition.calories[f];
+        day.kcal += r.per.kcal; day.p += r.per.p; day.c += r.per.c; day.f += r.per.f;
+        saveStore(); render("nutrition");
+      });
+    });
+    document.querySelectorAll('[data-action="recipeShop"]').forEach(b=>{
+      b.addEventListener("click", ()=>{
+        const id=b.dataset.id;
+        const r=RECIPES.find(x=>x.id===id);
+        if(!r) return;
+        r.ingredients.forEach(line=>{
+          const base=line.replace(/^\d+[\w\s\-\/]*\s+/,'').trim();
+          if(base.length<2) return;
+          if(!(base in STORE.nutrition.shopping[f])) STORE.nutrition.shopping[f][base]=false;
+        });
+        saveStore(); render("nutrition");
+      });
+    });
+
+    // Shopping
+    document.querySelectorAll('[data-action="shopToggle"]').forEach(cb=>{
+      cb.addEventListener("change", ()=>{
+        const item=cb.dataset.item;
+        STORE.nutrition.shopping[f][item]=cb.checked;
+        saveStore();
+      });
+    });
+    const shopAdd=document.querySelector('[data-action="shopAdd"]');
+    if(shopAdd) shopAdd.addEventListener("click", ()=>{
+      const t=document.getElementById("shopAddTxt").value.trim();
+      if(!t) return;
+      STORE.nutrition.shopping[f][t]=false;
+      saveStore(); render("nutrition");
+    });
+    const shopClear=document.querySelector('[data-action="shopClearChecked"]');
+    if(shopClear) shopClear.addEventListener("click", ()=>{
+      const items=STORE.nutrition.shopping[f]||{};
+      Object.keys(items).forEach(k=>{ if(items[k]) delete items[k]; });
+      saveStore(); render("nutrition");
+    });
+
+    // Supplements / meds
+    const suppAdd=document.querySelector('[data-action="suppAdd"]');
+    if(suppAdd) suppAdd.addEventListener("click", ()=>{
+      const name=document.getElementById("suppName").value.trim();
+      if(!name) return;
+      STORE.nutrition.supplements.push({name, dose:document.getElementById("suppDose").value.trim(), time:document.getElementById("suppTime").value.trim()});
+      saveStore(); render("nutrition");
+    });
+    document.querySelectorAll('[data-action="suppDel"]').forEach(b=>{
+      b.addEventListener("click", ()=>{
+        const idx=parseInt(b.dataset.idx,10);
+        STORE.nutrition.supplements.splice(idx,1);
+        saveStore(); render("nutrition");
+      });
+    });
+    const medAdd=document.querySelector('[data-action="medAdd"]');
+    if(medAdd) medAdd.addEventListener("click", ()=>{
+      const name=document.getElementById("medName").value.trim();
+      if(!name) return;
+      STORE.nutrition.meds.push({name, dose:document.getElementById("medDose").value.trim(), time:document.getElementById("medTime").value.trim()});
+      saveStore(); render("nutrition");
+    });
+    document.querySelectorAll('[data-action="medDel"]').forEach(b=>{
+      b.addEventListener("click", ()=>{
+        const idx=parseInt(b.dataset.idx,10);
+        STORE.nutrition.meds.splice(idx,1);
+        saveStore(); render("nutrition");
+      });
+    });
+  }
+
+  if(tab==="recovery"){
+    document.querySelectorAll('[data-action="routineToggle"]').forEach(b=>{
+      b.addEventListener("click", ()=>{
+        const id=b.dataset.id;
+        const el=document.getElementById("routine_"+id);
+        if(el) el.classList.toggle("hidden");
+      });
+    });
+  }
+
 }
 
 // Timer
@@ -1174,4 +1868,3 @@ function calcStreaksForType(type, dateISO){
   return { current, longest, atRisk, canShield, shieldedToday, usedThisMonth };
 }
 // ===== End streak helpers =====
-
