@@ -4,7 +4,7 @@ const PLAN_URL = "assets/plan.json";
 const EX_URL = "assets/exercises.json";
 let PLAN=null;
 let EX=null;
-const BUILD_ID = "20260220064407";
+const BUILD_ID = "20260221210140";
 
 
 // ===== Nutrition & Recovery (Offline) =====
@@ -359,6 +359,94 @@ function ensureKey(dateISO){
   if(!(dateISO in STORE.intensity)) STORE.intensity[dateISO]="";
 }
 
+function findExercisesForItem(itemText){
+  if(!itemText) return [];
+  const t = itemText.toLowerCase();
+  const out = [];
+
+  // Movement keyword → exercise name mapping
+  const add = (name)=>{
+    if(!name) return;
+    if(!(EX && EX.exercises)) return;
+    if((EX.exercises||[]).some(e=>e.name===name) && !out.includes(name)) out.push(name);
+  };
+
+  if(t.includes("norwegian 4x4")) add("Norwegian 4x4 (VO2max Intervals)");
+  if(t.includes("kb swing") || t.includes("swings")) add("Kettlebell Swing (two-hand)");
+  if(t.includes("get-up") || t.includes("get up") || t.includes("tgu")) add("Turkish Get-Up (TGU)");
+  if(t.includes("push-up") || t.includes("pushups")) add("Push-up");
+  if(t.includes("1-arm db row") || t.includes("db row") || t.includes("rows")) add("1-Arm DB Row");
+  if(t.includes("floor press")) add("DB Floor Press");
+  if(t.includes("goblet squat")) add("Goblet Squat (KB or DB)");
+  if(t.includes("front squat")) add("DB Front Squat (or heavy goblet)");
+  if(t.includes("db rdl") || t.includes("romanian deadlift") || t.includes("rdl")) add("DB Romanian Deadlift (RDL)");
+  if(t.includes("push press")) add("DB Push Press");
+  if(t.includes("pull-up") || t.includes("pull up") || t.includes("chin")) add("Pull-up (strict) + Progressions");
+
+  if(t.includes("suitcase carry") || t.includes("farmer carry") || t.includes("farmer hold")) add("Farmer Carry / Suitcase Carry");
+  if(t.includes("sandbag") && t.includes("carry")) add("Sandbag Bear-Hug Carry");
+  if(t.includes("step-up") || t.includes("step ups")) add("Step-Up (weighted optional)");
+  if(t.includes("burpee")) add("Burpee (scaled)");
+
+  if(t.includes("plank") || t.includes("side plank") || t.includes("dead bug")) add("Plank / Side Plank / Dead Bug");
+
+  if(t.includes("couch stretch")) add("Couch Stretch (Hip Flexor)");
+  if(t.includes("open books") || t.includes("open book")) add("Open Book (Thoracic Rotation)");
+  if(t.includes("calf") && t.includes("stretch")) add("Calf Stretch (Gastrocnemius/Soleus)");
+  if(t.includes("breathing")) add("Breathing Reset (2 minutes)");
+  if(t.includes("zone 2 ride") || (t.includes("easy ride") && t.includes("peloton"))) add("Peloton Zone 2 Ride (Aerobic Base)");
+  if(t.includes("ruck")) add("Rucking (20 lb)");
+
+  if(t.includes("castleflexx") || t.includes("castle flexx") || t.includes("castle flex")) add("CastleFlexx Routine (calves/hamstrings/hips)");
+  if(t.includes("chirp")) add("Chirp Wheel Routine (T-spine extension)");
+
+  return out;
+}
+
+function openExercisePicker(names, itemText){
+  const overlay = document.createElement("div");
+  overlay.style.position="fixed";
+  overlay.style.inset="0";
+  overlay.style.background="rgba(0,0,0,0.65)";
+  overlay.style.padding="14px";
+  overlay.style.zIndex="9999";
+  overlay.style.overflow="auto";
+
+  const card = document.createElement("div");
+  card.className="card";
+  card.style.maxWidth="980px";
+  card.style.margin="0 auto";
+
+  card.innerHTML = `
+    <div class="row" style="justify-content:space-between">
+      <div>
+        <div class="h1" style="margin:0">Instructions</div>
+        <div class="small">This workout line includes multiple movements. Pick one:</div>
+      </div>
+      <button class="ghost" id="closePick">Close</button>
+    </div>
+    <div class="small" style="margin-top:8px">${esc(itemText||"")}</div>
+    <hr>
+    <div class="checks">
+      ${names.map(n=>`<button type="button" class="ghost pickEx" data-ex="${escAttr(n)}">${esc(n)}</button>`).join("")}
+    </div>
+  `;
+  overlay.appendChild(card);
+  document.body.appendChild(overlay);
+
+  card.querySelector("#closePick").addEventListener("click", ()=>overlay.remove());
+  overlay.addEventListener("click", (e)=>{ if(e.target===overlay) overlay.remove(); });
+
+  card.querySelectorAll(".pickEx").forEach(b=>{
+    b.addEventListener("click", ()=>{
+      const exName = b.dataset.ex;
+      overlay.remove();
+      openExerciseModal(exName);
+    });
+  });
+}
+
+
 function blankScreenWatchdog(){
   // If something fails after load (cached SW serving old files, JSON mismatch, etc.), don't stay blank.
   setTimeout(()=>{
@@ -516,6 +604,18 @@ async function init(){
     }).catch(()=>({exercises:[]}));
     registerSW();
     wireTabs();
+    // exlink delegated (open mini instructions without leaving Today)
+    // exlink delegated
+    document.addEventListener("click", (e)=>{
+      const btn = e.target && (e.target.closest ? e.target.closest(".exlink") : null);
+      if(!btn) return;
+      const item = btn.dataset.item || btn.textContent || "";
+      const names = findExercisesForItem(item);
+      if(!names.length) return;
+      if(names.length===1) openExerciseModal(names[0]);
+      else openExercisePicker(names, item);
+    });
+
     // Warm-up delegated handlers (works even after re-render)
     // Warm-up delegated handlers
     document.addEventListener("click", (e)=>{
@@ -570,7 +670,7 @@ async function init(){
 }
 function registerSW(){
   if("serviceWorker" in navigator){
-    navigator.serviceWorker.register("./service-worker.js?v=20260220061426").catch(()=>{});
+    navigator.serviceWorker.register("./service-worker.js?v=20260221210140").catch(()=>{});
   }
 }
 function wireTabs(){
@@ -632,7 +732,14 @@ function warmupFor(code){
 }
 
 function ul(items){
-  return `<ul class="list">${items.map(i=>`<li>${esc(i)}</li>`).join("")}</ul>`;
+  return `<ul class="list">${items.map(i=>{
+    const matches = findExercisesForItem(i);
+    if(matches && matches.length){
+      // Store the full item text; click handler decides whether to open one modal or a picker.
+      return `<li><button type="button" class="exlink" data-item="${escAttr(i)}">${esc(i)}</button></li>`;
+    }
+    return `<li>${esc(i)}</li>`;
+  }).join("")}</ul>`;
 }
 
 function render(tab){
@@ -677,6 +784,7 @@ function renderToday(){
         <span class="pill">${esc(day.code)}</span>
         <span class="pill">${esc(day.shift)}</span>
         <span class="pill">Week ${day.week}</span>
+        <span class="pill">Build ${BUILD_ID}</span>
         <span class="pill">🔥 Workout Streak: ${streakW.current}</span>
         <span class="pill">🏆 Workout Best: ${streakW.longest}</span>
         <span class="pill">🧘 Warm-up Streak: ${streakWU.current}</span>

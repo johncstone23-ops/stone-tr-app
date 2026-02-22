@@ -324,15 +324,15 @@
       "name": "Norwegian 4x4 (VO2max Intervals)",
       "purpose": "Raise VO2 max and improve high-end aerobic power with sustained, repeatable hard efforts.",
       "setup": [
-        "Peloton bike preferred (lower impact than running while you\u2019re rebuilding).",
+        "Peloton bike preferred (lower impact while rebuilding).",
         "If you have a heart-rate strap, pair it (optional). Otherwise use RPE and output consistency.",
-        "Pick a ride type where you can control intensity: \u2018Just Ride/Scenic\u2019, a Power Zone ride, or any class where you can ignore callouts and ride your targets."
+        "Pick a ride where you control intensity: \u2018Just Ride/Scenic\u2019, a Power Zone ride, or ignore instructor callouts and ride your targets."
       ],
       "steps": [
-        "Warm-up: 10 minutes easy (Zone 1\u20132). Include 2\u20133 x 20s smooth pickups with 40s easy to wake the legs.",
-        "Work x4: 4 minutes hard in Power Zone 5 (VO2) OR RPE 8\u20139 (you can say 1\u20133 words).",
-        "Recover between reps: 3 minutes very easy (Zone 1\u20132 spin). Let breathing settle.",
-        "Cool-down: 5\u201310 minutes easy + quick calves/hips mobility."
+        "Warm-up: 10 minutes easy (Zone 1\u20132). Add 2\u20133 x 20s smooth pickups with 40s easy.",
+        "Work x4: 4 minutes hard in Power Zone 5 OR RPE 8\u20139 (you can say 1\u20133 words).",
+        "Recover: 3 minutes very easy (Zone 1\u20132). Let breathing settle.",
+        "Cool-down: 5\u201310 minutes easy + calves/hips mobility."
       ],
       "common_mistakes": [
         "Starting rep 1 like a sprint (you\u2019ll fade badly by rep 3\u20134).",
@@ -345,9 +345,9 @@
         "If knees/feet are cranky, keep it on the bike until tolerance improves."
       ],
       "progressions": [
-        "After 2\u20133 weeks of full 4x4, add a small amount of output (or slightly increase resistance) while keeping cadence smooth.",
-        "Optional: add 10\u201315 minutes Zone 2 after the intervals if time allows (not required).",
-        "If you know your FTP (Power Zone test): target ~105\u2013120% FTP for the work reps, but prioritize repeatability."
+        "After 2\u20133 weeks at full 4x4, add a small amount of output while keeping all 4 reps within ~5%.",
+        "Optional: add 10\u201315 minutes Zone 2 after the intervals if time allows.",
+        "If you know your FTP: target ~105\u2013120% FTP for work reps, but prioritize repeatability."
       ],
       "tags": [
         "aerobic",
@@ -357,6 +357,397 @@
         "power-zone",
         "running",
         "vo2"
+      ]
+    },
+    {
+      "name": "Push-up",
+      "purpose": "Upper-body pushing strength/endurance, trunk stiffness, shoulder health when done with good mechanics.",
+      "setup": [
+        "Hands slightly wider than shoulders; screw hands into floor (external rotation torque).",
+        "Body in a straight line: ribs down, glutes lightly squeezed, chin tucked."
+      ],
+      "steps": [
+        "Lower under control until chest is just above floor (or to a target like a yoga block).",
+        "Elbows about 30\u201345\u00b0 from torso (not flared straight out).",
+        "Press back up by pushing the floor away; keep whole body moving as one unit."
+      ],
+      "common_mistakes": [
+        "Sagging hips/arched lower back (lose brace).",
+        "Elbows flared 90\u00b0 (irritates shoulders).",
+        "Partial range with no control."
+      ],
+      "regressions": [
+        "Incline push-ups on a bench/counter (same body line).",
+        "Knees push-ups only if you can keep a straight line from knees to head."
+      ],
+      "progressions": [
+        "Feet elevated push-ups.",
+        "Tempo: 3 seconds down, pause 1, press up.",
+        "Weighted vest/plate (later)."
+      ],
+      "tags": [
+        "bodyweight",
+        "push",
+        "upper",
+        "core"
+      ]
+    },
+    {
+      "name": "Dead Bug",
+      "purpose": "Anti-extension core control (protects low back), improves brace for lifting/carries.",
+      "setup": [
+        "Lie on back, knees/hips at 90\u00b0, arms to ceiling.",
+        "Flatten ribs toward pelvis (gentle posterior pelvic tilt)."
+      ],
+      "steps": [
+        "Slowly extend opposite arm and leg away from center while keeping low back from arching.",
+        "Pause briefly; return; alternate sides.",
+        "Breathe out on the reach; inhale on return."
+      ],
+      "common_mistakes": [
+        "Lower back arches off floor.",
+        "Rushing the reps.",
+        "Holding breath the whole set."
+      ],
+      "regressions": [
+        "Only move legs (arms stay up) or only move arms.",
+        "Shorter range of motion."
+      ],
+      "progressions": [
+        "Add a light dumbbell to the moving hand.",
+        "Longer lever: extend leg lower to the floor without arching."
+      ],
+      "tags": [
+        "core",
+        "anti-extension",
+        "bodyweight"
+      ]
+    },
+    {
+      "name": "Side Plank",
+      "purpose": "Lateral core strength (anti-rotation), hip stability, duty/ruck transfer.",
+      "setup": [
+        "Elbow under shoulder; forearm on floor; feet stacked (or staggered).",
+        "Body straight line head-to-heels; top shoulder stacked over bottom."
+      ],
+      "steps": [
+        "Lift hips; squeeze glutes; keep ribs down.",
+        "Hold while breathing slowly through nose.",
+        "Switch sides."
+      ],
+      "common_mistakes": [
+        "Hips sagging or rotating forward.",
+        "Shoulder shrugged up to ear."
+      ],
+      "regressions": [
+        "Knee side plank (knees bent).",
+        "Shorter holds (10\u201320s) with perfect form."
+      ],
+      "progressions": [
+        "Top leg raises.",
+        "Weighted side plank (light plate/DB on hip)."
+      ],
+      "tags": [
+        "core",
+        "anti-rotation",
+        "bodyweight"
+      ]
+    },
+    {
+      "name": "Plank",
+      "purpose": "Trunk stiffness for carries/lifting; protects back when you can breathe under tension.",
+      "setup": [
+        "Elbows under shoulders; forearms parallel.",
+        "Ribs down; glutes lightly squeezed; quads on."
+      ],
+      "steps": [
+        "Hold a straight line head-to-heels; breathe slowly (no breath-holding).",
+        "If form breaks, stop\u2014quality over time."
+      ],
+      "common_mistakes": [
+        "Hips too high (turns into shoulder hold).",
+        "Hips sagging/low back arching.",
+        "Holding breath."
+      ],
+      "regressions": [
+        "High plank on hands.",
+        "Short sets: 10\u201320s on / 10s off."
+      ],
+      "progressions": [
+        "RKC plank (harder: pull elbows toward toes).",
+        "Plank with shoulder taps (anti-rotation)."
+      ],
+      "tags": [
+        "core",
+        "bodyweight"
+      ]
+    },
+    {
+      "name": "Couch Stretch (Hip Flexor)",
+      "purpose": "Hip flexor/quadriceps mobility\u2014useful for rucking, sitting in a cruiser, squatting mechanics.",
+      "setup": [
+        "Kneel with back shin against couch/wall; front foot planted in a lunge.",
+        "Start upright; lightly squeeze glute on the back-leg side."
+      ],
+      "steps": [
+        "Tuck pelvis slightly (ribs down) and gently shift forward until you feel the stretch in hip flexor/quad.",
+        "Hold 45\u201390s per side, breathing slowly."
+      ],
+      "common_mistakes": [
+        "Overarching low back to chase range.",
+        "Letting front knee collapse inward."
+      ],
+      "regressions": [
+        "Move farther from wall (less knee bend).",
+        "Do a standard half-kneeling hip flexor stretch."
+      ],
+      "progressions": [
+        "Reach same-side arm overhead while keeping ribs down.",
+        "Add a gentle glute squeeze + exhale to deepen."
+      ],
+      "tags": [
+        "mobility",
+        "hips",
+        "recovery"
+      ]
+    },
+    {
+      "name": "Open Book (Thoracic Rotation)",
+      "purpose": "Thoracic mobility for shoulder health, posture, and breathing mechanics.",
+      "setup": [
+        "Lie on side, hips and knees bent; knees stacked on each other.",
+        "Arms straight out in front, palms together."
+      ],
+      "steps": [
+        "Rotate top arm across your body, opening chest toward the floor behind you.",
+        "Keep knees together (use a pillow between knees if needed).",
+        "Breathe out as you open; pause 1\u20132 seconds; return. 6\u201310 reps/side."
+      ],
+      "common_mistakes": [
+        "Knees separating or hips rolling back.",
+        "Forcing range with shoulder instead of trunk."
+      ],
+      "regressions": [
+        "Reduce range; keep motion pain-free.",
+        "Support the top arm with a pillow."
+      ],
+      "progressions": [
+        "Hold end range 3\u20135 seconds each rep.",
+        "Add slow nasal breathing (4\u20136 sec exhales)."
+      ],
+      "tags": [
+        "mobility",
+        "thoracic",
+        "recovery"
+      ]
+    },
+    {
+      "name": "Calf Stretch (Gastrocnemius/Soleus)",
+      "purpose": "Improve ankle mobility and reduce calf/foot tightness for running/rucking.",
+      "setup": [
+        "Hands on wall; one foot back, heel down.",
+        "Keep toes pointed forward."
+      ],
+      "steps": [
+        "Straight-knee stretch (gastroc): back leg straight, lean in 45\u201360s.",
+        "Bent-knee stretch (soleus): bend back knee slightly, keep heel down 45\u201360s.",
+        "Repeat both sides."
+      ],
+      "common_mistakes": [
+        "Heel lifting off floor.",
+        "Foot turned outward excessively."
+      ],
+      "regressions": [
+        "Shorter holds (20\u201330s)."
+      ],
+      "progressions": [
+        "Add ankle rocks 10 reps after stretching.",
+        "Do calf raises 2x10 after (strength + mobility)."
+      ],
+      "tags": [
+        "mobility",
+        "ankles",
+        "recovery",
+        "rucking"
+      ]
+    },
+    {
+      "name": "Step-Up (weighted optional)",
+      "purpose": "Single-leg strength and knee/hip stability; good for stairs, pursuits, ruck terrain.",
+      "setup": [
+        "Use a stable box/step (knee roughly 90\u00b0 or lower).",
+        "Foot fully on the box; torso tall."
+      ],
+      "steps": [
+        "Drive through the working foot to stand on the box; avoid pushing off the back foot.",
+        "Control the descent; keep knee tracking over toes.",
+        "Do all reps one side or alternate."
+      ],
+      "common_mistakes": [
+        "Bouncing off the back foot.",
+        "Knee collapsing inward.",
+        "Dropping down uncontrolled."
+      ],
+      "regressions": [
+        "Lower step height.",
+        "Bodyweight only."
+      ],
+      "progressions": [
+        "Hold DBs at sides or a sandbag bear-hug.",
+        "Slow eccentric: 3 seconds down."
+      ],
+      "tags": [
+        "lower",
+        "single-leg",
+        "strength"
+      ]
+    },
+    {
+      "name": "Burpee (scaled)",
+      "purpose": "Full-body conditioning; explosive get-up ability (scale to protect joints).",
+      "setup": [
+        "Clear space; pick your scale before you start.",
+        "Options: step-back burpee, no-push-up, no-jump, hands-elevated."
+      ],
+      "steps": [
+        "Hands down \u2192 step or jump feet back to plank.",
+        "Optional push-up \u2192 step/jump feet forward.",
+        "Stand tall (optional small hop)."
+      ],
+      "common_mistakes": [
+        "Letting low back sag in plank.",
+        "Slamming hips down / collapsing.",
+        "Going too fast and losing mechanics."
+      ],
+      "regressions": [
+        "Hands elevated on bench.",
+        "Step back/step forward; no jump."
+      ],
+      "progressions": [
+        "Add push-up + small jump.",
+        "Add target (touch overhead)."
+      ],
+      "tags": [
+        "conditioning",
+        "bodyweight"
+      ]
+    },
+    {
+      "name": "Breathing Reset (2 minutes)",
+      "purpose": "Downshift stress, improve recovery between shifts and sessions; reinforces rib position for core control.",
+      "setup": [
+        "Sit or lie on back with knees bent.",
+        "One hand on belly, one on chest."
+      ],
+      "steps": [
+        "Inhale through nose 3\u20134 seconds, feel belly expand.",
+        "Exhale 5\u20137 seconds, feel ribs drop and abs gently engage.",
+        "Repeat for 2 minutes."
+      ],
+      "common_mistakes": [
+        "Fast shallow chest breathing.",
+        "Forcing inhale too big (causes tension)."
+      ],
+      "regressions": [
+        "Start with 4 in / 4 out."
+      ],
+      "progressions": [
+        "Add 2-second pause after exhale.",
+        "Try box breathing 4-4-4-4 when stressed."
+      ],
+      "tags": [
+        "recovery",
+        "breathing",
+        "stress"
+      ]
+    },
+    {
+      "name": "Peloton Zone 2 Ride (Aerobic Base)",
+      "purpose": "Build aerobic base and recovery capacity; supports VO2 gains and rucking without beating up joints.",
+      "setup": [
+        "Choose 'Just Ride/Scenic' or a low-intensity class you can ride at your target.",
+        "Use talk test: you should be able to speak in sentences."
+      ],
+      "steps": [
+        "Warm up 5 min easy.",
+        "Ride 20\u201360+ min at easy conversational effort (RPE 3\u20134).",
+        "Cool down 3\u20135 min easy."
+      ],
+      "common_mistakes": [
+        "Riding too hard (turns into tempo).",
+        "No warm-up/cool-down."
+      ],
+      "regressions": [
+        "Start with 20\u201330 minutes."
+      ],
+      "progressions": [
+        "Add 5 minutes per week until 45\u201360 min.",
+        "Keep it easy even when you feel good."
+      ],
+      "tags": [
+        "peloton",
+        "aerobic",
+        "conditioning"
+      ]
+    },
+    {
+      "name": "CastleFlexx Routine (calves/hamstrings/hips)",
+      "purpose": "Assisted stretching sequence using CastleFlexx to improve lower-body mobility for rucking and riding.",
+      "setup": [
+        "Use the CastleFlexx as directed by the manufacturer; keep movement pain-free.",
+        "Aim for 'mild to moderate' stretch, not sharp pain."
+      ],
+      "steps": [
+        "Calf stretch: 45\u201360s/side (straight knee), then 45\u201360s/side (bent knee).",
+        "Hamstring stretch: 45\u201360s/side, keep spine long (no rounding).",
+        "Hip/quad stretch (if supported): 45\u201360s/side.",
+        "Finish with 3 slow breaths."
+      ],
+      "common_mistakes": [
+        "Forcing range and holding breath.",
+        "Numbness/tingling (back off immediately)."
+      ],
+      "regressions": [
+        "Shorter holds (20\u201330s)."
+      ],
+      "progressions": [
+        "Add a second round on tight sides.",
+        "Use after VO2 day and ruck day."
+      ],
+      "tags": [
+        "mobility",
+        "recovery",
+        "rucking"
+      ]
+    },
+    {
+      "name": "Chirp Wheel Routine (T-spine extension)",
+      "purpose": "Thoracic spine mobility and postural reset\u2014helpful for desk/cruiser posture and shoulder comfort.",
+      "setup": [
+        "Use a chirp wheel size that feels safe; start with gentler size first.",
+        "Support head/neck as needed; keep pressure comfortable."
+      ],
+      "steps": [
+        "Place wheel at mid-back; gently extend over it while breathing out.",
+        "Roll 1\u20132 inches up/down to find tight spots; pause 20\u201330s and breathe.",
+        "Do 3\u20135 positions from mid-back to upper-back (avoid direct pressure on low back).",
+        "Finish with 6 open books per side."
+      ],
+      "common_mistakes": [
+        "Rolling aggressively or holding breath.",
+        "Putting wheel on low back instead of mid/upper back."
+      ],
+      "regressions": [
+        "Use largest wheel and smaller range."
+      ],
+      "progressions": [
+        "Add gentle overhead reach while breathing out.",
+        "Combine with couch stretch after long shifts."
+      ],
+      "tags": [
+        "mobility",
+        "thoracic",
+        "recovery"
       ]
     }
   ]
