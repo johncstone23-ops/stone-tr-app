@@ -4,7 +4,7 @@ const PLAN_URL = "assets/plan.json";
 const EX_URL = "assets/exercises.json";
 let PLAN=null;
 let EX=null;
-const BUILD_ID = "20260221210140";
+const BUILD_ID = "20260222021252";
 
 
 // ===== Nutrition & Recovery (Offline) =====
@@ -582,8 +582,8 @@ function renderWarmupChecklist(day){
           <div class="small">Check items as you go. Keep it easy—warm, loose, ready.</div>
         </div>
         <div class="row">
-          <button type="button" class="btn secondary" id="wuAll">All</button>
-          <button type="button" class="btn secondary" id="wuReset">Reset</button>
+          <button type="button" class="btn secondary" id="wuAll" aria-label="Select all warm-up items">All</button>
+          <button type="button" class="btn secondary" id="wuReset" aria-label="Reset warm-up checklist">Reset</button>
         </div>
       </div>
       <div class="checks">${rows}</div>
@@ -670,7 +670,7 @@ async function init(){
 }
 function registerSW(){
   if("serviceWorker" in navigator){
-    navigator.serviceWorker.register("./service-worker.js?v=20260221210140").catch(()=>{});
+    navigator.serviceWorker.register("./service-worker.js?v=20260222021252").catch(()=>{});
   }
 }
 function wireTabs(){
@@ -761,6 +761,7 @@ function renderToday(){
   const day = getClosestDay(focus);
   ensureKey(day.date);
   const t = day.template;
+  const warmupComplete = warmupDoneForDate(day.date, day.code) || isShielded('warmup', day.date);
 
   const streakW = calcStreaksForType('workout', day.date);
   const streakWU = calcStreaksForType('warmup', day.date);
@@ -819,14 +820,18 @@ function renderToday(){
     <section class="card">
       <div class="row">
         <label class="pill"><input type="checkbox" id="done" ${checked}/> Completed</label>
-        <label class="pill">RPE (1-10): <input id="rpe" value="${escAttr(STORE.rpe[day.date]||"")}" style="width:70px"/></label>
         <label class="pill">Program:
           <select id="choice">${opt}</select>
         </label>
         ${tiredBtn}
-        ${showSS ? `<a class="ghost" id="ssLink" href="${ssUrl}" target="_blank" rel="noopener">S&amp;S follow-along video</a>` : ``}
-        <button class="btn secondary" id="jumpLogs">Open Logs</button>
       </div>
+      <details class="card" style="margin-top:10px">
+        <summary class="ghost" id="moreOptsSummary">More options</summary>
+        <div class="row" style="margin-top:10px">
+          <label class="pill">RPE (1-10): <input id="rpe" aria-label="RPE 1 to 10" value="${escAttr(STORE.rpe[day.date]||"")}" style="width:70px"/></label>
+          <button type="button" class="btn secondary" id="jumpLogs">Open Logs</button>
+        </div>
+      </details>
 
       <div id="goodSection">
         <div class="h2">GOOD (15-25 min)</div>
@@ -851,7 +856,7 @@ function renderToday(){
       <div class="small">Tip: "Tired / short on time" auto-selects GOOD and sets 25:00.</div>
 
       <div class="h2">Notes</div>
-      <textarea id="notes" placeholder="How did it feel? Anything to adjust?">${esc(STORE.notes[day.date]||"")}</textarea>
+      <textarea id="notes" aria-label="Workout notes" placeholder="How did it feel? Anything to adjust?">${esc(STORE.notes[day.date]||"")}</textarea>
 
       <div class="row" style="margin-top:10px">
         <button class="btn" id="save">Save</button>
@@ -924,6 +929,17 @@ function renderLogs(){
         <span class="pill">Ruck pace auto-calculates</span>
         <span class="pill">Charts are local + offline</span>
       </div>
+    </section>
+
+    <section class="card">
+      <div class="row" style="justify-content:space-between;align-items:center">
+        <div>
+          <div class="h2" style="margin:0">Start here (30 sec)</div>
+          <div class="small">1) Pick GOOD/BETTER/BEST • 2) Warm-up checklist • 3) Do the work</div>
+        </div>
+        <button type="button" class="btn" id="ctaStart">${warmupComplete ? "Start workout" : "Start warm-up"}</button>
+      </div>
+      <div class="small" style="margin-top:8px">${warmupComplete ? "Warm-up complete. Hit the workout and keep the streak alive." : "Knock out the warm-up first—fast win and protects joints."}</div>
     </section>
 
     <section class="card">
@@ -1299,6 +1315,21 @@ function postWire(tab){
     const focus = STORE.focusDate ? STORE.focusDate : todayISO();
     const day = getClosestDay(focus);
     ensureKey(day.date);
+    // Primary CTA (Start warm-up / Start workout)
+    const cta = document.getElementById("ctaStart");
+    if(cta){
+      cta.addEventListener("click", ()=>{
+        const wuDone = warmupDoneForDate(day.date, day.code) || isShielded("warmup", day.date);
+        if(!wuDone){
+          const el = document.getElementById("warmupCard");
+          if(el) el.scrollIntoView({behavior:"smooth", block:"start"});
+        }else{
+          const el = document.getElementById("goodSection") || document.getElementById("workoutCard");
+          if(el) el.scrollIntoView({behavior:"smooth", block:"start"});
+        }
+      });
+    }
+
     ensureWarmupKey(day.date); // warm-up checklist state
     ensureShieldState();       // streak shield state
 
@@ -1392,7 +1423,17 @@ document.getElementById("prev").addEventListener("click", ()=>jump(day.date, -1)
       render("log");
     });
 
-    wireTimerUI();
+    
+    const jumpLogsBtn = document.getElementById("jumpLogs");
+    if(jumpLogsBtn){
+      jumpLogsBtn.addEventListener("click", ()=>{
+        document.querySelectorAll(".tab").forEach(b=>b.classList.remove("active"));
+        const t = document.querySelector('[data-tab="log"]');
+        if(t){ t.classList.add("active"); }
+        render("log");
+      });
+    }
+wireTimerUI();
   }
 
   if(tab==="calendar"){

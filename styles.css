@@ -62,3 +62,7 @@ canvas{width:100%;max-width:980px;height:180px;background:rgba(255,255,255,.03);
 
 .exlink{background:transparent;border:0;color:var(--ink);padding:0;text-align:left;cursor:pointer;font:inherit}
 .exlink:hover{text-decoration:underline}
+
+summary.ghost{list-style:none}
+summary.ghost::-webkit-details-marker{display:none}
+details.card{padding:12px}

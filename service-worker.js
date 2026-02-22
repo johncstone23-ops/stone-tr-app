@@ -1,5 +1,5 @@
 
-const CACHE_NAME = "stone-tr-v20260221210140";
+const CACHE_NAME = "stone-tr-v20260222021252";
 const ASSETS = [
   "./",
   "./index.html",
